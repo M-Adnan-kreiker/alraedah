@@ -94,6 +94,7 @@ export default {
 
 	env: {
 		EP: process.env.EP,
+		BASE_URL: process.env.BASE_URL,
 	},
 
 	firebase: firebaseConfig,
