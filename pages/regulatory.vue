@@ -1,5 +1,5 @@
 <template>
-	<div>Regulatory</div>
+	<div>Regulatory test</div>
 </template>
 
 <script lang="ts">
