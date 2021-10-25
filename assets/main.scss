@@ -25,3 +25,9 @@ $font-family: 'Tajawal', sans-serif;
 
 $body-font-family: 'Tajawal', sans-serif;
 $heading-font-family: 'Tajawal', sans-serif;
+.v-application {
+	.v-btn--active::before,
+	.v-btn:focus::before {
+		opacity: 0 !important;
+	}
+}

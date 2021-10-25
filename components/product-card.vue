@@ -112,7 +112,14 @@ export default class extends Vue {
 		'--margin': this.marginColumn,
 	};
 	get showButton() {
-		if (this.$route.name === 'products') return true;
+		if (
+			this.$route.name === 'products___ar' ||
+			this.$route.name === 'products___en'
+		)
+			return true;
+	}
+	mounted() {
+		console.log(this.$route.name);
 	}
 }
 </script>

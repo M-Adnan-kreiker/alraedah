@@ -5,7 +5,7 @@ export default {
 	baseUrl: process.env.BASE_URL,
 	// skipSettingLocaleOnNavigate: true,
 	langDir: '~/utils/locales/',
-	strategy: 'no_prefix',
+	// strategy: 'no_prefix',
 	defaultLocale: 'en',
 	locales: [
 		{

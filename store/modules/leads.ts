@@ -32,6 +32,7 @@ export default class Leads extends VuexModule {
 				`${process.env.EP}/prospects/createProspect`,
 				payload
 			);
+			console.log(data);
 			if (data.status === 200) {
 				this.setLead(payload);
 			}

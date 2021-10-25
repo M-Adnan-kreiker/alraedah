@@ -11,8 +11,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+// import { Component, Vue } from 'vue-property-decorator';
 import OpenReplay from '@openreplay/tracker/cjs';
-
 @Component
 export default class extends Vue {
 	created() {

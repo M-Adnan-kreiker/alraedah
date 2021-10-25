@@ -3,7 +3,7 @@
 		<!-- Header -->
 		<v-app-bar height="80%" class="px-4" color="white">
 			<v-row align-content="center" align="center" style="flex-wrap: nowrap">
-				<v-btn to="/" text color="white"
+				<v-btn :to="localeRoute('/')" text color="white"
 					><img
 						height="80"
 						class="d-inline-block"
@@ -15,6 +15,8 @@
 					<v-btn
 						:to="localeRoute('/')"
 						text
+						nuxt
+						exact-active-class="active"
 						dense
 						small
 						class="
@@ -38,6 +40,8 @@
 								v-bind="attrs"
 								v-on="on"
 								text
+								exact-active-class="active"
+								nuxt
 								small
 								:to="localeRoute('/products')"
 								class="
@@ -70,8 +74,26 @@
 						</v-list>
 					</v-menu>
 					<v-btn
+						:to="localeRoute('/pricing')"
+						text
+						nuxt
+						exact-active-class="active"
+						dense
+						small
+						class="
+							primary--text
+							py-5
+							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
+							mr-0 mr-md-2
+							font-weight-bold
+						"
+						color="primary"
+						>{{ $t('header.pricing') }}</v-btn
+					>
+					<v-btn
 						dense
 						text
+						exact-active-class="active"
 						small
 						class="
 							primary--text
@@ -86,6 +108,8 @@
 					<v-btn
 						dense
 						text
+						nuxt
+						exact-active-class="active"
 						small
 						:to="localeRoute('/careers')"
 						class="
@@ -109,6 +133,8 @@
 								v-bind="attrs"
 								v-on="on"
 								text
+								nuxt
+								exact-active-class="active"
 								small
 								:to="localeRoute('/about-us')"
 								class="
@@ -254,6 +280,8 @@
 							<v-btn
 								:to="localeRoute(link.link)"
 								text
+								exact-active-class="active"
+								nuxt
 								class="
 									text-capitalize text-sm-caption text-md-body-1
 									font-weight-bold
@@ -316,9 +344,12 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
+	mounted() {
+		console.log(this.$i18n.locale);
+	}
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
-
+		// this.$nuxt.$emit('language-changed');
 		// logs an event in analytics, can be seen in the console
 		this.$fire.analytics.logEvent('select_content', {
 			content_type: 'changeing locale',
@@ -359,12 +390,16 @@ export default class extends Vue {
 	display: none;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 825px) {
 	.burger {
-		display: unset;
+		display: unset !important;
 	}
 	.nav-list {
 		display: none !important;
 	}
+}
+.active {
+	background: #1d4283cc;
+	color: white !important;
 }
 </style>

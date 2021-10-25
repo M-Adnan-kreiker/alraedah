@@ -1,7 +1,7 @@
 // import Vuex from 'vuex';
 // import OpenReplay from '@openreplay/tracker/cjs';
-// import * as trackerVuex from '@openreplay/tracker-vuex/cjs';
-// // import trackerVuex from '@openreplay/tracker-vuex/cjs';
+// // @ts-ignore
+// import trackerVuex from '@openreplay/tracker-vuex/cjs';
 // //...
 // const tracker = new OpenReplay({
 // 	projectKey: 'ptApJJm32giY5X4e0tSU',
@@ -27,5 +27,6 @@
 // );
 // const store = new Vuex.Store({
 // 	//...
+// 	// @ts-ignore
 // 	plugins: [vuexPlugin],
 // });

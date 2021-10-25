@@ -14,6 +14,7 @@ export default {
 	header: {
 		home: 'Home',
 		products: 'Products',
+		pricing: 'Pricing',
 		solutions: 'Solutions',
 		careers: 'Careers',
 		aboutUs: 'About us',
