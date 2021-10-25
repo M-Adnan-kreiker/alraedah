@@ -9,6 +9,10 @@ export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: headConfig,
 
+	generate: {
+		dir: 'public',
+	},
+
 	target: 'static',
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
