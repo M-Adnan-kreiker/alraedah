@@ -30,7 +30,8 @@
 					<v-menu
 						:nudge-left="$i18n.locale === 'en' ? 52 : 95"
 						open-on-hover
-						nudge-bottom="40"
+						nudge-bottom="30"
+						style="position: relative; z-index: 20"
 					>
 						<template v-slot:activator="{ on, attrs }">
 							<v-btn
@@ -100,7 +101,8 @@
 					<v-menu
 						:nudge-left="$i18n.locale === 'en' ? 36 : 7"
 						open-on-hover
-						nudge-bottom="40"
+						nudge-bottom="28"
+						style="position: relative; z-index: 20"
 					>
 						<template v-slot:activator="{ on, attrs }">
 							<v-btn
