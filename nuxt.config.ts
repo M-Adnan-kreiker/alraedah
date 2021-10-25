@@ -26,7 +26,6 @@ export default {
 		{ src: '~/utils/plugins/auth.plugin.ts' },
 		{ src: '~/utils/plugins/openreplay.plugin.ts' },
 		{ src: '~/utils/plugins/veeValidate.plugin.client.ts', mode: 'client' },
-		// { src: '~/utils/plugins/aos.plugin.client.ts', mode: 'client' },
 	],
 
 	extendPlugins(plugins: { src: string }[]) {
@@ -99,7 +98,7 @@ export default {
 
 	firebase: firebaseConfig,
 
-	sitemap: sitemapConfig,
+	sitemap: [{ sitemapConfig }, { hostname: process.env.BASE_URL }],
 
 	robots: robotsConfig,
 
