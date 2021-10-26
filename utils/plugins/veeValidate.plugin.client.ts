@@ -28,6 +28,7 @@ extend('email', {
 	...email,
 	message: 'Email must be valid',
 });
+// setInteractionMode('lazy');
 
 Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);

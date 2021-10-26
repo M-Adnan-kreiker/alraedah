@@ -111,78 +111,7 @@
 					</div>
 				</v-col>
 			</v-row>
-			<!-- <div
-				:style="{
-					background:
-						'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
-					height: securityDepositColumn,
-					width: '20%',
-					position: 'absolute',
-					left: '8.5%',
-					bottom: '20%',
-				}"
-			>
-				<p
-					class="
-						primary--text
-						text-subtitle-2 text-sm-body-1 text-no-wrap
-						graph
-						text-center
-						font-weight-bold
-						mt-n8
-					"
-				>
-					{{ moneyFormatter(securityDeposit) }}
-				</p>
-			</div>
-			<div
-				:style="{
-					background:
-						'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
-					height: netFinancingAmountColumn,
-					width: '20%',
-					position: 'absolute',
-					left: '38.5%',
-					bottom: '20%',
-				}"
-			>
-				<p
-					class="
-						primary--text
-						text-subtitle-2 text-sm-body-1 text-no-wrap
-						graph
-						text-center
-						font-weight-bold
-						mt-n8
-					"
-				>
-					{{ moneyFormatter(netFinancingAmount) }}
-				</p>
-			</div>
-			<div
-				:style="{
-					background:
-						'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
-					height: totalPaybackAmountColumn,
-					width: '20%',
-					position: 'absolute',
-					bottom: '20%',
-					left: '68.5%',
-				}"
-			>
-				<p
-					class="
-						primary--text
-						text-center text-subtitle-2 text-no-wrap
-						graph
-						text-sm-body-1
-						font-weight-bold
-						mt-n8
-					"
-				>
-					{{ moneyFormatter(totalPaybackAmount) }}
-				</p>
-			</div> -->
+
 			<div class="d-flex">
 				<div
 					style="

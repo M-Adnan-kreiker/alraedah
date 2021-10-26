@@ -11,7 +11,11 @@
 						alt="alraedah logo"
 				/></v-btn>
 				<v-spacer></v-spacer>
-				<v-list class="d-flex flex-nowrap nav-list" style="align-items: center">
+				<v-list
+					id="nav-list"
+					class="d-flex flex-nowrap"
+					style="align-items: center"
+				>
 					<v-btn
 						:to="localeRoute('/')"
 						text
@@ -29,10 +33,11 @@
 						color="primary"
 						>{{ $t('header.home') }}</v-btn
 					>
+
 					<v-menu
-						:nudge-left="$i18n.locale === 'en' ? 52 : 95"
 						open-on-hover
-						nudge-bottom="30"
+						offset-y
+						close-delay="300"
 						style="position: relative; z-index: 20"
 					>
 						<template v-slot:activator="{ on, attrs }">
@@ -123,9 +128,9 @@
 						>{{ $t('header.careers') }}</v-btn
 					>
 					<v-menu
-						:nudge-left="$i18n.locale === 'en' ? 36 : 7"
 						open-on-hover
-						nudge-bottom="28"
+						offset-y
+						close-delay="300"
 						style="position: relative; z-index: 20"
 					>
 						<template v-slot:activator="{ on, attrs }">
@@ -190,11 +195,18 @@
 					src="/list.svg"
 					color="primary"
 					alt=""
+					height="25"
 				/>
 			</v-row>
 		</v-app-bar>
 		<!-- Mobile Side-bar -->
-		<v-navigation-drawer v-model="drawer" absolute left temporary>
+		<v-navigation-drawer
+			style="z-index: 30"
+			v-model="drawer"
+			absolute
+			left
+			temporary
+		>
 			<v-list nav dense>
 				<v-list-item-group
 					active-class="primary--text "
@@ -204,45 +216,53 @@
 						<v-list-item-icon>
 							<v-icon>mdi-home-variant-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1 primary--text"
-							>Home</v-list-item-title
-						>
+						<v-list-item-title class="text-subtitle-1 primary--text">{{
+							$t('header.home')
+						}}</v-list-item-title>
 					</v-list-item>
 
 					<v-list-item :to="localeRoute('/products')">
 						<v-list-item-icon>
 							<v-icon>mdi-folder-star-multiple-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1"
-							>Products</v-list-item-title
-						>
+						<v-list-item-title class="text-subtitle-1">{{
+							$t('header.products')
+						}}</v-list-item-title>
+					</v-list-item>
+					<v-list-item :to="localeRoute('/pricing')">
+						<v-list-item-icon>
+							<v-icon>mdi-cash-multiple</v-icon>
+						</v-list-item-icon>
+						<v-list-item-title class="text-subtitle-1">{{
+							$t('header.pricing')
+						}}</v-list-item-title>
 					</v-list-item>
 
 					<v-list-item>
 						<v-list-item-icon>
 							<v-icon>mdi-toolbox-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1"
-							>Solutions</v-list-item-title
-						>
+						<v-list-item-title class="text-subtitle-1">{{
+							$t('header.solutions')
+						}}</v-list-item-title>
 					</v-list-item>
 
 					<v-list-item :to="localeRoute('/careers')">
 						<v-list-item-icon>
 							<v-icon>mdi-clipboard-edit-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1"
-							>Careers</v-list-item-title
-						>
+						<v-list-item-title class="text-subtitle-1">{{
+							$t('header.careers')
+						}}</v-list-item-title>
 					</v-list-item>
 
 					<v-list-item :to="localeRoute('/about-us')">
 						<v-list-item-icon>
 							<v-icon>mdi-information-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1"
-							>About us</v-list-item-title
-						>
+						<v-list-item-title class="text-subtitle-1">{{
+							$t('header.aboutUs')
+						}}</v-list-item-title>
 					</v-list-item>
 				</v-list-item-group>
 			</v-list>
@@ -389,17 +409,16 @@ export default class extends Vue {
 .burger {
 	display: none;
 }
-
+.active {
+	background: #1d4283cc;
+	color: white !important;
+}
 @media (max-width: 825px) {
 	.burger {
 		display: unset !important;
 	}
-	.nav-list {
+	#nav-list {
 		display: none !important;
 	}
-}
-.active {
-	background: #1d4283cc;
-	color: white !important;
 }
 </style>
