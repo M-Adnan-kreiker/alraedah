@@ -10,7 +10,7 @@ export default {
 	head: headConfig,
 
 	generate: {
-		dir: 'public',
+		dir: 'dist',
 	},
 
 	target: 'static',
