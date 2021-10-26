@@ -56,6 +56,7 @@
 									}"
 								>
 									<v-text-field
+										data-openreplay-obscured
 										class="pl-sm-3"
 										:error-messages="errors"
 										v-model="mobile"
@@ -147,19 +148,11 @@
 									<div>
 										{{ $t('contactForm.agree') }}
 
-										<v-tooltip bottom>
-											<template v-slot:activator="{ on }">
-												<a
-													target="_blank"
-													href="https://vuetifyjs.com"
-													@click.stop
-													v-on="on"
-												>
-													{{ $t('contactForm.tos') }}
-												</a>
-											</template>
-											Opens in new window
-										</v-tooltip>
+										<template>
+											<a target="_blank" href="#" @click.stop v-on="on">
+												{{ $t('contactForm.tos') }}
+											</a>
+										</template>
 									</div>
 								</template>
 							</v-checkbox>
@@ -207,21 +200,10 @@
 <script lang="ts">
 import { Component, Emit, Vue } from 'vue-property-decorator';
 import { lead, VeeValidateObserverRef } from '~/types';
-// import { required, digits, email, max, regex } from 'vee-validate/dist/rules';
-// import {
-// 	extend,
-// 	ValidationObserver,
-// 	ValidationProvider,
-// 	setInteractionMode,
-// } from 'vee-validate';
+
 // setInteractionMode('lazy');
 
-@Component({
-	// components: {
-	// 	ValidationProvider,
-	// 	ValidationObserver,
-	// },
-})
+@Component({})
 export default class extends Vue {
 	$refs!: {
 		observer: VeeValidateObserverRef;
@@ -234,14 +216,10 @@ export default class extends Vue {
 	creditCard: boolean = false;
 	tos: boolean = false;
 	contactTime = '';
-	times = [
-		'8 am - 10 am',
-		'10 am - 12 pm',
-		'12 pm - 2 pm',
-		'2 pm - 4 pm',
-		'4 pm - 6 pm',
-		'6 pm - 8 pm',
-	];
+	get times() {
+		return this.$t('times');
+	}
+
 	handleClick() {
 		this.$refs.observer.validate();
 		const leadInfo: lead = {

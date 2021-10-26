@@ -175,7 +175,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
@@ -200,10 +200,6 @@ export default class extends Vue {
 	}
 	get securityDepositStyle() {
 		return this.$i18n.locale === 'en' ? '8.5%' : '68.5%';
-	}
-	@Emit()
-	updateSlider() {
-		return this.slider;
 	}
 
 	get securityDeposit() {

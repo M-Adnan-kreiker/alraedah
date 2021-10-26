@@ -1,5 +1,12 @@
 export default {
-	testMsg: 'Hello World!',
+	times: [
+		'8 am - 10 am',
+		'10 am - 12 pm',
+		'12 pm - 2 pm',
+		'2 pm - 4 pm',
+		'4 pm - 6 pm',
+		'6 pm - 8 pm',
+	],
 	yes: 'Yes',
 	no: 'No',
 	uploadResume: 'Upload your resume',

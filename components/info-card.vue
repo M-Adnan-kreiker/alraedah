@@ -2,14 +2,14 @@
 	<div style="height: 100%; width: 100%">
 		<v-card
 			height="90%"
-			:key="card.title"
+			:key="currentCard.title"
 			:elevation="elevation"
 			min-width="290"
 			min-height="200"
 			class="d-flex rounded-lg cards center-text justify-center py-2 my-6"
 		>
 			<img
-				:src="card.image"
+				:src="currentCard.image"
 				alt="submit a request"
 				class="mx-3 mx-sm-4 img align-self-center"
 			/>
@@ -26,7 +26,7 @@
 					"
 					:class="$i18n.locale === 'en' ? 'pr-4' : 'pl-4'"
 				>
-					{{ card.text }}
+					{{ currentCard.text }}
 				</p>
 			</div>
 		</v-card>
@@ -40,6 +40,9 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class extends Vue {
 	@Prop() elevation!: number;
 	@Prop() card!: {};
+	get currentCard() {
+		return this.card;
+	}
 }
 </script>
 

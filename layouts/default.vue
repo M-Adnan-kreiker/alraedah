@@ -20,7 +20,7 @@
 						:to="localeRoute('/')"
 						text
 						nuxt
-						exact-active-class="active"
+						exact
 						dense
 						small
 						class="
@@ -31,6 +31,7 @@
 							font-weight-bold
 						"
 						color="primary"
+						exact-active-class="active"
 						>{{ $t('header.home') }}</v-btn
 					>
 
@@ -409,10 +410,7 @@ export default class extends Vue {
 .burger {
 	display: none;
 }
-.active {
-	background: #1d4283cc;
-	color: white !important;
-}
+
 @media (max-width: 825px) {
 	.burger {
 		display: unset !important;

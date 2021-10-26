@@ -11,13 +11,14 @@
 				<div class="mx-auto">
 					<v-row>
 						<v-col
-							:order="$vuetify.breakpoint.sm ? 2 : 1"
+							:order="$vuetify.breakpoint.sm ? 3 : 2"
 							cols="12"
 							md="6"
 							class="pa-0"
 						>
 							<v-img
-								class="rounded-l-lg mx-3 mx-md-0"
+								:class="$i18n.locale === 'en' ? 'rounded-r-lg' : 'rounded-l-lg'"
+								class="mx-3 mx-md-0"
 								:src="product.image"
 								max-height="516"
 								min-height="431"

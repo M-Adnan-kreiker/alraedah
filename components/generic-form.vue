@@ -41,6 +41,7 @@
 						<v-col cols="12" class="py-0 ma-0">
 							<v-text-field
 								v-model="mobile"
+								data-openreplay-obscured
 								:label="$t('genericForm.number')"
 								outlined
 								type="number"
