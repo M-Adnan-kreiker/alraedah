@@ -115,12 +115,7 @@
 								</v-card-text>
 							</v-col>
 							<v-col cols="12" sm="4" class="py-0 pl-6 pl-sm-0">
-								<v-radio-group
-									mandatory
-									v-model="commercialRegistration"
-									class="pt-2"
-									row
-								>
+								<v-radio-group mandatory v-model="commercialRegistration" row>
 									<v-radio class="" :label="$t('yes')" value="true"></v-radio>
 									<v-radio :label="$t('no')" value="false"></v-radio>
 								</v-radio-group>
@@ -129,13 +124,13 @@
 						<v-row>
 							<v-col class="d-flex py-0 align-content-center" cols="12" sm="8">
 								<v-card-text
-									class="mb-0 py-1 pl-3 align-self-center text-subtitle-1"
+									class="mb-0 py-0 pl-3 align-self-center text-subtitle-1"
 									name="creditCard"
 									>{{ $t('contactForm.creditCard') }}</v-card-text
 								>
 							</v-col>
 							<v-col cols="12" sm="4" class="py-0 pl-6 pl-sm-0">
-								<v-radio-group mandatory v-model="creditCard" class="pt-2" row>
+								<v-radio-group mandatory v-model="creditCard" class="py-0" row>
 									<v-radio :label="$t('yes')" value="true"></v-radio>
 									<v-radio :label="$t('no')" value="false"></v-radio>
 								</v-radio-group>
@@ -182,6 +177,11 @@
 							</v-col>
 						</v-row>
 					</v-col>
+					<v-divider
+						:class="$i18n.locale === 'en' ? 'ml-n2' : ''"
+						class="mb-8 d-none d-md-block"
+						vertical
+					></v-divider>
 					<v-col class="d-none d-md-inline" cols="4">
 						<h1 class="primary--text text-start text-h3 mb-6 font-weight-bold">
 							{{ $t('contactForm.getStarted') }}
@@ -211,7 +211,7 @@ export default class extends Vue {
 	fullName: string = '';
 	companyName: string = '';
 	email: string = '';
-	mobile: string = '';
+	mobile: number | null = null;
 	commercialRegistration: boolean = false;
 	creditCard: boolean = false;
 	tos: boolean = false;
@@ -219,7 +219,7 @@ export default class extends Vue {
 	get times() {
 		return this.$t('times');
 	}
-
+	on = null;
 	handleClick() {
 		this.$refs.observer.validate();
 		const leadInfo: lead = {
@@ -229,7 +229,8 @@ export default class extends Vue {
 			crAvailability: this.commercialRegistration,
 			posAvailability: this.creditCard,
 			contactTime: this.contactTime,
-			source: this.$route.query.source,
+			companyName: this.companyName,
+			source: this.$store.state.modules.leads.source,
 		};
 		// this.$store.commit('modules/leads/setLead', leadInfo);
 		this.$store.dispatch('modules/leads/postForm', leadInfo);
@@ -242,7 +243,7 @@ export default class extends Vue {
 		this.fullName = '';
 		this.companyName = '';
 		this.email = '';
-		this.mobile = '';
+		this.mobile = null;
 		this.commercialRegistration = false;
 		this.creditCard = false;
 		this.tos = false;

@@ -13,7 +13,8 @@ import { lead } from '~/types';
 })
 export default class Leads extends VuexModule {
 	public lead = {} as lead;
-	public source: string = '';
+	public source: string | null = null;
+	public openreplayInit = false;
 
 	@VuexMutation
 	setLead(payload: lead) {
@@ -23,6 +24,11 @@ export default class Leads extends VuexModule {
 	@VuexMutation
 	setSource(payload: string) {
 		this.source = payload;
+	}
+
+	@VuexMutation
+	setOpenreplay() {
+		this.openreplayInit = true;
 	}
 
 	@VuexAction({ rawError: true })

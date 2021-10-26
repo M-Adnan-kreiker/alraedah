@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="dialog">
+	<v-dialog light v-model="dialog">
 		<template v-slot:activator="{ on, attrs }">
 			<v-btn
 				class="
@@ -11,10 +11,10 @@
 					rounded-lg
 				"
 				v-bind="attrs"
-				active-class="no-active"
 				v-on="on"
 				to="#"
 				:style="cssVars"
+				active-class="no-active"
 			>
 				{{ buttonText }}
 			</v-btn>
@@ -42,7 +42,6 @@ export default class extends Vue {
 		'--fontSize': this.buttonFontSize,
 		'--textColor': this.buttonTextColor,
 	};
-
 	dialog = false;
 	closeForm() {
 		this.dialog = false;

@@ -32,10 +32,11 @@ export interface myProduct {
 export interface lead {
 	name: string;
 	email: string;
-	phone: string;
+	phone: number | null;
 	crAvailability: boolean;
 	posAvailability: boolean;
 	contactTime: string;
+	companyName: string;
 	source: string | (string | null)[];
 }
 

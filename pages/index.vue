@@ -11,8 +11,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-// import { Component, Vue } from 'vue-property-decorator';
-import OpenReplay from '@openreplay/tracker/cjs';
 @Component
 export default class extends Vue {
 	created() {
@@ -20,15 +18,9 @@ export default class extends Vue {
 			path: this.$route.path,
 			query: { source: 'Facebook' },
 		});
-		if (this.$route.query) {
-			this.$store.commit('modules/leads/setSource', this.$route.query);
+		if (this.$route.query.source) {
+			this.$store.commit('modules/leads/setSource', this.$route.query.source);
 		}
-	}
-	mounted() {
-		const tracker = new OpenReplay({
-			projectKey: 'ptApJJm32giY5X4e0tSU',
-		});
-		tracker.start();
 	}
 }
 </script>

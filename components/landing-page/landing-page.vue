@@ -9,7 +9,6 @@
 					:class="$i18n.locale === 'en' ? 'px-l pl-sm-14' : 'px-r pr-sm-14'"
 					class="text-col"
 				>
-					<!-- text-h2 text-md-h1 text-lg-h1 -->
 					<h1
 						class="
 							primary--text
@@ -29,7 +28,7 @@
 							info--text
 							text-wrap text-body-1 text-md-h6
 							mx-0
-							my-6 my-sm-4 my-md-8
+							my-6 my-sm-4 my-md-6
 							center-text
 							px-8 px-sm-0
 							sub-main-text
@@ -77,7 +76,7 @@ p {
 	white-space: nowrap;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 	img {
 		height: 40%;
 	}
