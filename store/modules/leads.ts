@@ -14,7 +14,7 @@ import { lead } from '~/types';
 export default class Leads extends VuexModule {
 	public lead = {} as lead;
 	public source: string | null = null;
-	// public openreplayInit = false;
+	public openreplayInit = false;
 
 	@VuexMutation
 	setLead(payload: lead) {
@@ -26,10 +26,10 @@ export default class Leads extends VuexModule {
 		this.source = payload;
 	}
 
-	// @VuexMutation
-	// setOpenreplay() {
-	// 	this.openreplayInit = true;
-	// }
+	@VuexMutation
+	setOpenreplay() {
+		this.openreplayInit = true;
+	}
 
 	@VuexAction({ rawError: true })
 	async postForm(payload: lead) {
