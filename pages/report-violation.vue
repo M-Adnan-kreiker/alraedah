@@ -30,7 +30,7 @@
 					:class="$i18n.locale === 'en' ? 'rounded-r-lg' : 'rounded-l-lg'"
 					class="py-0"
 					height="100%"
-					src="/report.png"
+					src="/report.webp"
 					alt=""
 				/>
 			</template>

@@ -1,7 +1,7 @@
 <template>
 	<main
 		class="pb-12"
-		style="background: url(/Al-Riyad2.png); background-size: cover"
+		style="background: url(/Al-Riyad2.webp); background-size: cover"
 	>
 		<div class="mb-8 pt-10">
 			<h1

@@ -53,7 +53,7 @@
 								? 'transform: scaleX(-1);float: left'
 								: 'float: right'
 						"
-						src="/banner2.png"
+						src="/banner2.webp"
 						class="mt-4"
 						height="50%"
 					/>

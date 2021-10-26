@@ -33,7 +33,7 @@
 				<v-img
 					:style="$i18n.locale === 'ar' ? 'transform: scaleX(-1)' : ''"
 					height="100%"
-					src="/calculator.png"
+					src="/calculator.webp"
 				></v-img>
 			</v-col>
 		</v-row>

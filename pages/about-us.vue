@@ -18,7 +18,7 @@
 				</p>
 			</v-col>
 			<v-col cols="12" md="6">
-				<v-img class="rounded-lg" src="/mission.png"></v-img>
+				<v-img class="rounded-lg" src="/mission.webp"></v-img>
 			</v-col>
 		</v-row>
 		<v-row>
