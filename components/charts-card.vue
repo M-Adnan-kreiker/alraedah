@@ -20,7 +20,7 @@
 					v-model="slider"
 					:step="step"
 					:max="max"
-					:thumb-size="70"
+					:thumb-size="80"
 					thumb-label="always"
 					ticks="always"
 					tick-size="4"

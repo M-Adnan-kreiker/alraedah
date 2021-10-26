@@ -367,14 +367,14 @@ import OpenReplay from '@openreplay/tracker/cjs';
 @Component
 export default class extends Vue {
 	mounted() {
-		if (!this.$store.state.modules.leads.openreplayInit) {
-			this.$store.commit('modules/leads/setOpenreplay');
-			const tracker = new OpenReplay({
-				projectKey: 'ptApJJm32giY5X4e0tSU',
-			});
-			tracker.start();
-			console.log('openreplay has been initialized');
-		} else console.log('openreplay has already been initialized');
+		const tracker = new OpenReplay({
+			projectKey: 'ptApJJm32giY5X4e0tSU',
+		});
+		tracker.start();
+		// if (!this.$store.state.modules.leads.openreplayInit) {
+		// 	this.$store.commit('modules/leads/setOpenreplay');
+		// 	console.log('openreplay has been initialized');
+		// } else console.log('openreplay has already been initialized');
 	}
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
