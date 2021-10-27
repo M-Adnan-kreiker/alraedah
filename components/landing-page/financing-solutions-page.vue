@@ -50,12 +50,12 @@
 							sm="12"
 							class="d-flex flex-column justify-center align-center"
 						>
-							<v-img
+							<img
 								class="d-block mt-10"
 								max-height="110"
 								max-width="103"
 								:src="card.img"
-							></v-img>
+							/>
 							<v-card-title
 								class="
 									text-body-1 text-md-subtitle-1 text-lg-h6

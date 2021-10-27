@@ -1,26 +1,25 @@
 <template>
-	<v-dialog light v-model="dialog">
-		<template v-slot:activator="{ on, attrs }">
-			<v-btn
-				class="
-					white--text
-					font-weight-bold
-					text-h6
-					apply-btn
-					text-capitalize
-					rounded-lg
-				"
-				v-bind="attrs"
-				v-on="on"
-				to="#"
-				:style="cssVars"
-				active-class="no-active"
-			>
-				{{ buttonText }}
-			</v-btn>
-		</template>
-		<contact-form @close-dialog="closeForm"></contact-form>
-	</v-dialog>
+	<!-- <v-dialog light v-model="dialog"> -->
+	<!-- <template v-slot:activator="{ on, attrs }"> -->
+	<v-btn
+		@click="openDialog"
+		class="
+			white--text
+			font-weight-bold
+			text-h6
+			apply-btn
+			text-capitalize
+			rounded-lg
+		"
+		to="#"
+		:style="cssVars"
+		active-class="no-active"
+	>
+		{{ buttonText }}
+	</v-btn>
+	<!-- </template> -->
+	<!-- <contact-form @close-dialog="closeForm"></contact-form> -->
+	<!-- </v-dialog> -->
 </template>
 
 <script lang="ts">
@@ -45,6 +44,9 @@ export default class extends Vue {
 	dialog = false;
 	closeForm() {
 		this.dialog = false;
+	}
+	openDialog() {
+		this.$nuxt.$emit('trigger-dialog');
 	}
 }
 </script>

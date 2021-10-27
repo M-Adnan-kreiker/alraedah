@@ -6,7 +6,7 @@ import { required, digits, email, max, regex } from 'vee-validate/dist/rules';
 
 extend('digits', {
 	...digits,
-	message: '{_field_} needs to be {length} digits. ({_value_})',
+	message: '{_field_} needs to be {length} digits.',
 });
 
 extend('required', {

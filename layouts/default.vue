@@ -1,7 +1,12 @@
 <template>
 	<v-app>
 		<!-- Header -->
-		<v-app-bar height="80%" class="px-4" color="white">
+		<v-app-bar
+			style="position: absolute; z-index: 10"
+			height="80%"
+			class="px-4"
+			color="white"
+		>
 			<v-row align-content="center" align="center" style="flex-wrap: nowrap">
 				<v-btn :to="localeRoute('/')" text color="white"
 					><img
@@ -34,51 +39,12 @@
 						exact-active-class="active"
 						>{{ $t('header.home') }}</v-btn
 					>
+					<dropdown-menu
+						route="/products"
+						:text="$t('header.products')"
+						:items="products"
+					></dropdown-menu>
 
-					<v-menu
-						open-on-hover
-						offset-y
-						close-delay="300"
-						style="position: relative; z-index: 20"
-					>
-						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								v-bind="attrs"
-								v-on="on"
-								text
-								exact-active-class="active"
-								nuxt
-								small
-								:to="localeRoute('/products')"
-								class="
-									primary--text
-									py-5
-									text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
-									mr-0 mr-md-2
-									font-weight-bold
-								"
-								color="primary"
-								>{{ $t('header.products') }}</v-btn
-							>
-						</template>
-						<v-list>
-							<v-list-item-group>
-								<v-list-item
-									:to="localeRoute(product.link)"
-									v-for="(product, index) in products"
-									:key="index"
-								>
-									<v-list-item-title
-										class="
-											primary--text
-											text-lg-body-1 text-md-body-2 text-sm-caption
-										"
-										>{{ product.name }}</v-list-item-title
-									>
-								</v-list-item>
-							</v-list-item-group>
-						</v-list>
-					</v-menu>
 					<v-btn
 						:to="localeRoute('/pricing')"
 						text
@@ -128,56 +94,32 @@
 						color="primary"
 						>{{ $t('header.careers') }}</v-btn
 					>
-					<v-menu
-						open-on-hover
-						offset-y
-						close-delay="300"
-						style="position: relative; z-index: 20"
-					>
-						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								v-bind="attrs"
-								v-on="on"
-								text
-								nuxt
-								exact-active-class="active"
-								small
-								:to="localeRoute('/about-us')"
-								class="
-									primary--text
-									py-5
-									text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
-									mr-0 mr-md-2
-									font-weight-bold
-								"
-								color="primary"
-								>{{ $t('header.aboutUs') }}</v-btn
-							>
-						</template>
-						<v-list>
-							<v-list-item
-								:to="localeRoute(item.link)"
-								v-for="(item, index) in about"
-								:key="index"
-							>
-								<v-list-item-title
-									class="
-										primary--text
-										text-lg-body-1 text-md-body-2 text-sm-caption
-									"
-									>{{ item.title }}</v-list-item-title
-								>
-							</v-list-item>
-						</v-list>
-					</v-menu>
+					<dropdown-menu
+						route="/about-us"
+						:text="$t('header.aboutUs')"
+						:items="about"
+					></dropdown-menu>
 					<div class="mx-3">
-						<apply-now-button
-							:buttonTextColor="'#1D4283'"
-							:buttonWidth="'10vw'"
-							:buttonColor="'#ffffff'"
-							:buttonText="$i18n.locale === 'ar' ? 'قدّم' : 'Apply'"
-							:buttonFontSize="'16px'"
-						/>
+						<v-btn
+							@click="openDialog"
+							dense
+							class="
+								text-lg-body-1 text-md-body-2
+								font-weight-bold
+								primary--text
+								text-capitalize
+								rounded-lg
+								px-sm-4 px-md-8
+								py-6
+								mx-0
+								apply-btn
+							"
+							to="#"
+							style="color: #ffffff"
+							active-class="no-active"
+						>
+							{{ $t('applyButtonHeader') }}
+						</v-btn>
 					</div>
 					<img
 						@click="setLang($i18n.locale === 'ar' ? 'en' : 'ar')"
@@ -281,7 +223,23 @@
 		>
 			<v-icon>mdi-chevron-up</v-icon>
 		</v-btn>
-		<v-main>
+		<v-main class="mt-14">
+			<div :class="modal ? 'd-block' : 'd-none'" class="overlay">
+				<contact-form
+					style="
+						position: fixed;
+						left: 50%;
+						top: 55%;
+						overflow-y: auto;
+						transform: translate(-50%, -55%);
+						width: 95%;
+						height: 90%;
+						z-index: 100;
+					"
+					@close-dialog="closeForm"
+					v-if="modal"
+				></contact-form>
+			</div>
 			<!-- <v-container> -->
 			<Nuxt />
 			<!-- </v-container> -->
@@ -376,6 +334,11 @@ export default class extends Vue {
 		// 	console.log('openreplay has been initialized');
 		// } else console.log('openreplay has already been initialized');
 	}
+	created() {
+		this.$nuxt.$on('trigger-dialog', () => {
+			this.modal = !this.modal;
+		});
+	}
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
 		// logs an event in analytics, can be seen in the console
@@ -410,6 +373,13 @@ export default class extends Vue {
 	triggerDrawer() {
 		this.drawer = !this.drawer;
 	}
+	openDialog() {
+		this.$nuxt.$emit('trigger-dialog');
+	}
+	modal = false;
+	beforeDestroy() {
+		this.$nuxt.$off('trigger-dialog');
+	}
 }
 </script>
 
@@ -425,5 +395,18 @@ export default class extends Vue {
 	#nav-list {
 		display: none !important;
 	}
+}
+.apply-btn {
+	border: 1px solid #1d4283;
+}
+.overlay {
+	position: fixed; /* Positioning and size */
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 10000;
+	height: 100vh;
+	background-color: rgba(128, 128, 128, 0.5);
+	overflow-y: hidden;
 }
 </style>

@@ -17,6 +17,7 @@ export default {
 	moreInfoButton: 'More Information',
 	detailsButton: 'Details',
 	applyButton: 'Apply Now',
+	applyButtonHeader: 'Apply',
 	howItWorks: 'How it works:',
 	header: {
 		home: 'Home',
@@ -26,17 +27,17 @@ export default {
 		careers: 'Careers',
 		aboutUs: 'About us',
 		productsSubMenu: [
-			{ name: 'Point of Sale Pro', link: '/products/pro' },
+			{ title: 'Point of Sale Pro', link: '/products/pro' },
 			{
-				name: 'Point of Sale Regular',
+				title: 'Point of Sale Regular',
 				link: '/products/regular',
 			},
 			{
-				name: 'Point of Sale Lite',
+				title: 'Point of Sale Lite',
 				link: '/products/lite',
 			},
 			{
-				name: 'E-Commerce Financing',
+				title: 'E-Commerce Financing',
 				link: '/products/e-commerce',
 			},
 		],

@@ -249,6 +249,7 @@ export default class extends Vue {
 		this.tos = false;
 		this.contactTime = '';
 		this.$refs.observer.reset();
+		this.$nuxt.$emit('trigger-dialog');
 	}
 }
 </script>

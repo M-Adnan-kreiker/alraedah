@@ -16,6 +16,7 @@ export default {
 	moreInfoButton: 'مزيد من المعلومات',
 	detailsButton: 'التفاصيل',
 	applyButton: 'قدّم الآن',
+	applyButtonHeader: 'قدّم',
 	howItWorks: 'آلية العمل:',
 	header: {
 		home: 'الصفحة الرئيسية',

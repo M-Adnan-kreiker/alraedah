@@ -10,17 +10,24 @@
 			{{ $t('partners') }}
 		</h1>
 		<v-row justify="center" class="py-16 d-none d-sm-flex">
-			<v-col cols="12" sm="3" v-for="image in images" :key="image.src">
-				<v-img
+			<v-col
+				class="d-flex justify-center"
+				cols="12"
+				sm="4"
+				v-for="image in images"
+				:key="image.src"
+			>
+				<img
 					max-height="250"
 					class="mx-auto"
 					max-width="300"
 					:src="image.src"
-				></v-img>
+					style="max-width: 300px; width: 100%"
+				/>
 			</v-col>
 		</v-row>
 		<v-carousel
-			v-show="$vuetify.breakpoint.xsOnly"
+			class="d-block d-sm-none"
 			:show-arrows="false"
 			cycle
 			interval="2500"
