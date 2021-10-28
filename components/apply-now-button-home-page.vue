@@ -43,9 +43,6 @@ export default class extends Vue {
 	openDialog() {
 		this.$nuxt.$emit('trigger-dialog');
 	}
-	closeForm() {
-		this.$nuxt.$emit('trigger-dialog');
-	}
 }
 </script>
 

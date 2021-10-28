@@ -16,13 +16,13 @@
 					{{ $t('solutions.title') }}
 				</h1>
 			</v-col>
-			<v-col class="mt-sm-10" cols="12" sm="7">
+			<v-col class="mt-sm-10" cols="12" md="6">
 				<p class="accent--text text-body-1 text-sm-h6 text-md-h5 text-wrap">
 					{{ $t('solutions.text') }}
 				</p>
 			</v-col>
-			<v-col class="" cols="12" sm="5">
-				<img class="mt-sm-10" width="100%" src="/bank1.png" alt="" />
+			<v-col class="" cols="12" md="6">
+				<Lazy-video-info></Lazy-video-info>
 			</v-col>
 		</v-row>
 
@@ -36,56 +36,58 @@
 					v-for="card in cards"
 					:key="card.title"
 				>
-					<v-card
-						elevation="8"
-						color="#ffffff"
-						class="rounded-lg cards mx-auto mx-sm-2"
-						hover
-						min-height="370px"
-						min-width="260"
-						max-width="370"
-						max-height="400"
-					>
-						<v-col
-							sm="12"
-							class="d-flex flex-column justify-center align-center"
+					<transition name="slide-fade">
+						<v-card
+							elevation="8"
+							color="#ffffff"
+							class="rounded-lg cards mx-auto mx-sm-2"
+							hover
+							min-height="370px"
+							min-width="260"
+							max-width="370"
+							max-height="400"
 						>
-							<img
-								class="d-block mt-10"
-								max-height="110"
-								max-width="103"
-								:src="card.img"
-							/>
-							<v-card-title
-								class="
-									text-body-1 text-md-subtitle-1 text-lg-h6
-									main-text
-									px-0
-									font-weight-bold
-									text-no-wrap
-								"
-								primary-title
+							<v-col
+								sm="12"
+								class="d-flex flex-column justify-center align-center"
 							>
-								{{ card.title }}
-							</v-card-title>
-							<v-card-text
-								class="
-									text-body-1
-									font-weight-bold
-									px-4 px-md-6
-									sub-text
-									text-center
-									info--text
-								"
-							>
-								{{ card.text }}
-							</v-card-text>
-						</v-col>
-					</v-card>
+								<img
+									class="d-block mt-10"
+									max-height="110"
+									max-width="103"
+									:src="card.img"
+								/>
+								<v-card-title
+									class="
+										text-body-1 text-md-subtitle-1 text-lg-h6
+										main-text
+										px-0
+										font-weight-bold
+										text-no-wrap
+									"
+									primary-title
+								>
+									{{ card.title }}
+								</v-card-title>
+								<v-card-text
+									class="
+										text-body-1
+										font-weight-bold
+										px-4 px-md-6
+										sub-text
+										text-center
+										info--text
+									"
+								>
+									{{ card.text }}
+								</v-card-text>
+							</v-col>
+						</v-card>
+					</transition>
 				</v-col>
 			</v-row>
 		</section>
-		<!-- v-if="$vuetify.breakpoint.xsOnly" -->
+
 		<section class="d-block d-sm-none mt-10">
 			<v-card flat tile>
 				<v-window class="pa-4" v-model="onboarding">

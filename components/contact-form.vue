@@ -138,7 +138,7 @@
 						</v-row>
 
 						<v-col cols="12" class="py-0">
-							<v-checkbox v-model="tos">
+							<v-checkbox required v-model="tos">
 								<template v-slot:label>
 									<div>
 										{{ $t('contactForm.agree') }}

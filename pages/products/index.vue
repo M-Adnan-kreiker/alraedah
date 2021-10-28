@@ -31,7 +31,7 @@
 					<div class="apply-button"></div>
 				</v-col>
 				<v-col cols="12" sm="5" class="d-none mt-8 px-0 d-sm-block">
-					<v-img contain src="/pos-bg.png" alt=""> </v-img>
+					<v-img contain src="/pos-bg.webp" alt=""> </v-img>
 				</v-col>
 			</v-row>
 			<section class="mx-auto" style="width: 90%">

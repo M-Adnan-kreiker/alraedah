@@ -2,13 +2,14 @@
 	<div style="height: 100%; width: 100%">
 		<v-card
 			height="90%"
-			:key="currentCard.title"
 			:elevation="elevation"
 			min-width="290"
 			min-height="200"
 			class="d-flex rounded-lg cards center-text justify-center py-2 my-6"
 		>
 			<img
+				max-height="91"
+				max-width="91"
 				:src="currentCard.image"
 				alt="submit a request"
 				class="mx-3 mx-sm-4 img align-self-center"

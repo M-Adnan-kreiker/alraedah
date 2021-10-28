@@ -229,14 +229,13 @@
 					style="
 						position: fixed;
 						left: 50%;
-						top: 55%;
+						top: 58%;
 						overflow-y: auto;
 						transform: translate(-50%, -55%);
-						width: 95%;
-						height: 90%;
+						width: 95vw;
+						height: 95vh;
 						z-index: 100;
 					"
-					@close-dialog="closeForm"
 					v-if="modal"
 				></contact-form>
 			</div>
@@ -404,9 +403,9 @@ export default class extends Vue {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	z-index: 10000;
+	z-index: 100;
 	height: 100vh;
-	background-color: rgba(128, 128, 128, 0.5);
 	overflow-y: hidden;
+	background-color: rgba(128, 128, 128, 0.822);
 }
 </style>

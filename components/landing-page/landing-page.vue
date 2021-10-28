@@ -47,9 +47,9 @@
 							:buttonPadding="'clamp(26px, 8vw, 32px )'"
 							:buttonText="$i18n.locale === 'ar' ? 'قدّم الآن' : 'Apply Now'"
 						></apply-now-button> -->
-						<apply-now-button-2
+						<apply-now-button-home-page
 							:buttonText="$t('applyButton')"
-						></apply-now-button-2>
+						></apply-now-button-home-page>
 					</div>
 				</v-col>
 				<v-col cols="3" class="d-none px-0 d-sm-block">

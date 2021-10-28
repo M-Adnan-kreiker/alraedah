@@ -37,61 +37,72 @@
 				></v-img>
 			</v-col>
 		</v-row>
-		<div v-if="myProduct[0]">
-			<fees-info
-				:fees="myProduct[0].fees"
-				:moreInfo="myProduct[0].moreInfo"
-			></fees-info>
-		</div>
-		<v-row justify="center" v-if="selected">
-			<v-col cols="12" md="7">
-				<charts-card
-					:min="min"
-					:max="max"
-					:slider="slider"
-					:step="step"
-					:key="componentKey"
-				></charts-card>
-			</v-col>
-			<v-col cols="12" class="mt-4" md="5">
-				<pricing-card :card="myProduct[0].card">
-					<template v-slot:header>
-						{{ myProduct[0].type }}
-					</template>
-					<template class="mt-n6" v-slot:content>
-						<div class="d-flex flex-column">
-							<div
-								class="my-2 d-flex"
-								v-for="(item, i) in myProduct[0].card.info"
-								:key="i"
-							>
-								<img
-									class="mx-2 align-self-start pt-1 mr-sm-4"
-									src="/checkMark.svg"
-									alt=""
-								/>
-								<span class="text-body-1 text-wrap">{{ item }}</span>
-							</div>
-						</div>
-					</template>
-					<template v-slot:button>
-						<apply-now-button
-							:buttonTextColor="'#1D4283'"
-							:buttonColor="'#ffffff'"
-							:buttonText="$i18n.locale === 'ar' ? 'قدّم الآن' : 'Apply Now'"
-							:buttonPadding="'28px 80px'"
-						></apply-now-button>
-					</template>
-				</pricing-card>
-			</v-col>
-		</v-row>
-		<v-row class="" v-if="selected">
-			<v-col cols="12" md="6">
-				<p class="black--text font-weight-bold ml-sm-8 mb-16">
-					{{ myProduct[0].caveat }}
-				</p>
-			</v-col>
-		</v-row>
+		<transition name="slide-fade" mode="out-in">
+			<div v-if="myProduct[0]">
+				<transition name="slide-fade" mode="out-in">
+					<fees-info
+						:key="feesKey"
+						:fees="myProduct[0].fees"
+						:moreInfo="myProduct[0].moreInfo"
+					></fees-info>
+				</transition>
+				<v-row justify="center">
+					<v-col cols="12" md="7">
+						<transition name="slide-fade" mode="out-in">
+							<charts-card
+								:min="min"
+								:max="max"
+								:slider="slider"
+								:step="step"
+								:key="componentKey"
+							></charts-card>
+						</transition>
+					</v-col>
+					<v-col cols="12" class="mt-4" md="5">
+						<transition name="slide-fade" mode="out-in">
+							<pricing-card :key="pricingKey" :card="myProduct[0].card">
+								<template v-slot:header>
+									{{ myProduct[0].type }}
+								</template>
+								<template class="mt-n6" v-slot:content>
+									<div class="d-flex flex-column">
+										<div
+											class="my-2 d-flex"
+											v-for="(item, i) in myProduct[0].card.info"
+											:key="i"
+										>
+											<img
+												class="mx-2 align-self-start pt-1 mr-sm-4"
+												src="/checkMark.svg"
+												alt=""
+											/>
+											<span class="text-body-1 text-wrap">{{ item }}</span>
+										</div>
+									</div>
+								</template>
+								<template v-slot:button>
+									<apply-now-button
+										:buttonTextColor="'#1D4283'"
+										:buttonColor="'#ffffff'"
+										:buttonText="
+											$i18n.locale === 'ar' ? 'قدّم الآن' : 'Apply Now'
+										"
+										:buttonPadding="'28px 80px'"
+									></apply-now-button>
+								</template>
+							</pricing-card>
+						</transition>
+					</v-col>
+				</v-row>
+				<v-row>
+					<v-col cols="12" md="6">
+						<p class="black--text font-weight-bold ml-sm-8 mb-16">
+							{{ myProduct[0].caveat }}
+						</p>
+					</v-col>
+				</v-row>
+			</div>
+		</transition>
 	</div>
 </template>
 
@@ -114,6 +125,8 @@ export default class extends Vue {
 	min!: number;
 	slider!: number;
 	componentKey: number = 0;
+	pricingKey: number = 0;
+	feesKey: number = 0;
 	select_value(e: string) {
 		this.slider = 0;
 		this.selected = e;
@@ -121,6 +134,8 @@ export default class extends Vue {
 			(el: any) => el.type === this.selected!.toLowerCase()
 		);
 		this.componentKey += 1;
+		this.pricingKey += 1;
+		this.feesKey += 1;
 		this.step = this.myProduct[0].step;
 		this.min = this.myProduct[0].step;
 		this.max = this.myProduct[0].max;

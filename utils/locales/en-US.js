@@ -51,7 +51,7 @@ export default {
 	},
 	landingPage: {
 		title: 'Get the Financing\nYour Business\nNeeds',
-		img: '/banner2.png',
+		img: '/banner2.webp',
 		text: 'AlRaedah Finance offers comprehensive Islamic finance solutions to small and medium sized enterprises in the Kingdom of Saudi Arabia.		',
 	},
 	achievements: {
@@ -133,7 +133,7 @@ export default {
 			type: 'pro',
 			upTo: '5,000,000 SAR',
 			link: '/products/pro',
-			image: '/products/product-pro.png',
+			image: '/products/product-pro.webp',
 			name: 'Point of Sale Financing (Pro)',
 			info: 'POS Pro financing is one of the most important forms of financing that we provide for SMEs that started and worked in the local market for a short period, which seeks to expand and achieve a significant jump in the size of its business and its position in the markets, with flexibility in repayment.',
 			step: 500000,
@@ -168,7 +168,7 @@ export default {
 			type: 'regular',
 			upTo: '1,000,000 SAR',
 			link: '/products/regular',
-			image: '/products/product-regular.png',
+			image: '/products/product-regular.webp',
 			name: 'Point of Sale Financing',
 			info: 'Alraedah works to provide unique financing solutions for entrepreneurs and SMEs that have been launched for at least 6 months, who aspire to promote and expand their businesses and provide them with appropriate financing in a flexible and easy way to help them achieve their ambitions.',
 			step: 100000,
@@ -203,7 +203,7 @@ export default {
 			type: 'lite',
 			upTo: '500,000 SAR',
 			link: '/products/lite',
-			image: '/products/product-lite.png',
+			image: '/products/product-lite.webp',
 			name: 'Point of Sale (POS) Lite',
 			info: 'Many companies and establishments may need shortly after the launch of urgent and uncomplicated financing solutions to resolve transactions, speed up operations and strengthen their position in the markets, and because we are aware of the need of these facilities for these quick solutions we have created the financing of (immediate) point of sale for SMEs in 7 working days.',
 			step: 50000,
@@ -454,5 +454,23 @@ export default {
 		text: 'Get detailed information about our products using the pricing calculator. Select a product to see its informaiton.',
 		selectProduct: 'Select a product',
 		products: ['Pro', 'Regular', 'Lite', 'E-commerce'],
+	},
+	contactUs: {
+		title: 'Get in touch',
+		text: "Want to get in touch? We'd love to hear from you. Here's how you can reach us...",
+		contact: [
+			{
+				title:
+					"Interested in alraedah's services? Just pick up\n the phone to chat with a member of our team ",
+				image: '/phone.svg',
+				text: '8001249000',
+			},
+			{
+				title: 'Send us an email and we will get to you as soon as possible',
+				image: '/email.svg',
+				text: 'info@alraedah.finance',
+			},
+		],
+		location: 'Visit our main office',
 	},
 };

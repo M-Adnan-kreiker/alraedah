@@ -59,13 +59,13 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class extends Vue {
 	images = [
 		{
-			src: '/geidea.png',
+			src: '/geidea.webp',
 		},
 		{
-			src: '/noon.png',
+			src: '/noon.webp',
 		},
 		{
-			src: '/sure.png',
+			src: '/sure.webp',
 		},
 	];
 }

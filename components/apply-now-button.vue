@@ -17,9 +17,6 @@
 	>
 		{{ buttonText }}
 	</v-btn>
-	<!-- </template> -->
-	<!-- <contact-form @close-dialog="closeForm"></contact-form> -->
-	<!-- </v-dialog> -->
 </template>
 
 <script lang="ts">
@@ -42,9 +39,7 @@ export default class extends Vue {
 		'--textColor': this.buttonTextColor,
 	};
 	dialog = false;
-	closeForm() {
-		this.dialog = false;
-	}
+
 	openDialog() {
 		this.$nuxt.$emit('trigger-dialog');
 	}

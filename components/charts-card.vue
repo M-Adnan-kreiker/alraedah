@@ -12,7 +12,6 @@
 			>
 				{{ $t('chartCard.facilityAmount') }}
 			</v-card-title>
-
 			<v-card-text class="px-0 ml-0">
 				<v-slider
 					class="ml-0"
@@ -111,7 +110,6 @@
 					</div>
 				</v-col>
 			</v-row>
-
 			<div class="d-flex">
 				<div
 					style="
