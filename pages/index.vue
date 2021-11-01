@@ -2,10 +2,12 @@
 	<main class="mt-10">
 		<landing-page class="mb-8 mb-sm-0"></landing-page>
 		<achievements></achievements>
-		<financing-solutions-page class="my-sm-8"></financing-solutions-page>
-		<pricing-table class="mt-sm-16"></pricing-table>
-		<partners class="mb-sm-16"></partners>
-		<kick-start class="my-sm-16"></kick-start>
+		<Lazy-financing-solutions-page
+			class="my-sm-8"
+		></Lazy-financing-solutions-page>
+		<Lazy-pricing-table class="mt-sm-16"></Lazy-pricing-table>
+		<Lazy-partners class="mb-sm-16"></Lazy-partners>
+		<Lazy-kick-start class="my-sm-16"></Lazy-kick-start>
 	</main>
 </template>
 

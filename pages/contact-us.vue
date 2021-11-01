@@ -10,25 +10,39 @@
 						font-weight-bold
 					"
 				>{{ $t('contactUs.title') }}</h1>
-				<p class="info--text text-body-1 text-pre-line text-md-h6 text-h6">
+				<p class="info--text text-pre-line text-md-h5 text-h6">
 					{{ $t('contactUs.text') }}
 				</p>
 			</v-col>
 		</v-row>
-		<v-row>
-			<img width="100%" src="/contact-us2.webp" />
-		</v-row>
 		<v-row align="center" justify="center">
 			<v-col v-for="info in infos" :key="info.title">
-				<info-card class="mx-auto" :card="info">
-					<template v-slot:title>
-						<div>
-							<span :class="$i18n.locale === 'en' ? 'pr-4' : 'pl-4'">{{
-								info.title
-							}}</span>
-						</div>
-					</template>
-				</info-card>
+				<v-card
+					elevation="12"
+					min-height="380"
+					min-width="280"
+					max-width="450"
+					class="py-4 mx-auto px-sm-4 px-md-8 d-flex flex-column align-center"
+				>
+					<div>
+						<v-img height="120" contain width="140" :src="info.image"></v-img>
+					</div>
+					<v-card-title class="text-sm-h6 text-center text-md-h5 flex-grow-1">
+						{{ info.title }}
+					</v-card-title>
+					<v-card-title
+						class="
+							text-sm-h6
+							primary--text
+							font-weight-bold
+							text-md-h5
+							flex-grow-1
+						"
+					>
+						<v-icon class="mx-2" color="primary">{{ info.icon }}</v-icon>
+						{{ info.text }}
+					</v-card-title>
+				</v-card>
 			</v-col>
 		</v-row>
 		<v-row>
@@ -58,21 +72,31 @@
 			</v-col>
 		</v-row>
 
+		<h1
+			class="
+				primary--text
+				mb-8
+				text-sm-h4 text-pre-line text-md-h3
+				font-weight-bold
+			"
+		>
+			{{ $t('contactUs.message') }}
+		</h1>
+		<!-- <v-row> -->
 		<generic-form>
-			<template v-slot:title>
-				{{ $t('careers.info') }}
-			</template>
-
+			<!-- prettier-ignore -->
+			<template v-slot:title>{{ $t('careers.info') }}</template>
 			<template v-slot:image>
 				<v-img
 					:class="$i18n.locale === 'en' ? 'rounded-r-lg' : 'rounded-l-lg'"
 					class="py-0"
-					height="100%"
+					height="750"
 					src="/contact-us-form.webp"
 					alt=""
 				/>
 			</template>
 		</generic-form>
+		<!-- </v-row> -->
 	</div>
 </template>
 

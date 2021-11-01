@@ -22,10 +22,9 @@ export default (ctx: Context): Framework => {
 				},
 				light: {
 					primary: '#1D4283',
-					accent: '#75787B',
-
+					accent: '#333333',
 					secondary: '#4B82BC',
-					info: '#75787B',
+					info: '#333333',
 					warning: colors.amber.base,
 					error: colors.deepOrange.accent4,
 					success: colors.green.accent3,

@@ -1,7 +1,6 @@
 <template>
 	<v-card
 		elevation="8"
-		color="primary"
 		style=""
 		class="
 			card
@@ -43,4 +42,27 @@ export default class extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.card {
+	background: linear-gradient(
+		-45deg,
+		#3c6796,
+		rgb(50, 90, 163),
+		#1d4283,
+		#163364f8
+	);
+	background-size: 100% 100%;
+	/* animation: gradient 0.5s ease infinite; */
+}
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 50% 75%;
+	}
+	100% {
+		background-position: 75% 100%;
+	}
+} */
+</style>

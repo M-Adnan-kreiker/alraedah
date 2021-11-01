@@ -99,10 +99,11 @@
 						:text="$t('header.aboutUs')"
 						:items="about"
 					></dropdown-menu>
-					<div class="mx-3">
+					<div>
 						<v-btn
 							@click="openDialog"
 							dense
+							:class="$i18n.locale === 'en' ? 'mr-4 ml-5' : 'ml-1 mr-4'"
 							class="
 								text-lg-body-1 text-md-body-2
 								font-weight-bold
@@ -225,19 +226,21 @@
 		</v-btn>
 		<v-main class="mt-14">
 			<div :class="modal ? 'd-block' : 'd-none'" class="overlay">
-				<contact-form
-					style="
-						position: fixed;
-						left: 50%;
-						top: 58%;
-						overflow-y: auto;
-						transform: translate(-50%, -55%);
-						width: 95vw;
-						height: 95vh;
-						z-index: 100;
-					"
-					v-if="modal"
-				></contact-form>
+				<transition name="fade" mode="out-in">
+					<contact-form
+						style="
+							position: fixed;
+							left: 50%;
+							top: 50%;
+							overflow-y: auto;
+							transform: translate(-50%, -50%);
+							width: 95vw;
+							z-index: 100;
+						"
+						class="contact-form"
+						v-if="modal"
+					></contact-form>
+				</transition>
 			</div>
 			<!-- <v-container> -->
 			<Nuxt />
@@ -283,7 +286,7 @@
 						<p class="text-subtitle-2 mb-1">{{ location['2'] }}</p>
 						<p class="text-subtitle-2 mb-1">{{ location['3'] }}</p>
 						<p class="text-subtitle-2 mb-1">{{ location['4'] }}</p>
-						<p
+						<div
 							class="
 								text-subtitle-2
 								mb-1
@@ -291,13 +294,43 @@
 								text-decoration-underline
 							"
 						>
-							{{ location['5'] }}
-						</p>
+							<v-btn
+								class="text-capitalize"
+								text
+								color="primary"
+								dark
+								@click.stop="[(dialog = true), (map = location['6'])]"
+							>
+								{{ location['5'] }}
+							</v-btn>
+						</div>
 					</v-col>
+					<v-dialog v-model="dialog" max-width="600">
+						<v-card>
+							<iframe :src="map" width="600" height="450"></iframe>
+							<v-card-actions>
+								<v-spacer></v-spacer>
+
+								<v-btn color="primary" text @click="closeMap">
+									{{ $t('closeButton') }}
+								</v-btn>
+							</v-card-actions>
+						</v-card>
+					</v-dialog>
 					<v-col class="text-center" cols="6" sm="3">
-						<img class="mx-1" src="/facebook.svg" alt="" />
-						<img class="mx-1" src="/instagram.svg" alt="" />
-						<img class="mx-1" src="/twitter.svg" alt="" />
+						<a
+							href="https://www.linkedin.com/company/alraedah-finance/"
+							target="_"
+							><img class="mx-1" src="/linkedin.svg" alt=""
+						/></a>
+						<a
+							href="https://www.instagram.com/alraedah.finance.sa/?hl=en"
+							target="_"
+							><img class="mx-1" src="/instagram.svg" alt=""
+						/></a>
+						<a href="https://twitter.com/alraedahfinance" target="_"
+							><img class="mx-1" src="/twitter.svg" alt=""
+						/></a>
 						<p class="text-subtitle-2 mt-3 mb-1">
 							{{ $t('footer.contactCol.saudi') }}
 						</p>
@@ -338,6 +371,7 @@ export default class extends Vue {
 			this.modal = !this.modal;
 		});
 	}
+	map = '';
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
 		// logs an event in analytics, can be seen in the console
@@ -376,6 +410,10 @@ export default class extends Vue {
 		this.$nuxt.$emit('trigger-dialog');
 	}
 	modal = false;
+	dialog = false;
+	closeMap() {
+		this.dialog = false;
+	}
 	beforeDestroy() {
 		this.$nuxt.$off('trigger-dialog');
 	}
@@ -407,5 +445,11 @@ export default class extends Vue {
 	height: 100vh;
 	overflow-y: hidden;
 	background-color: rgba(128, 128, 128, 0.822);
+}
+@media (max-width: 600px) {
+	.contact-form {
+		height: 90%;
+		width: 80%;
+	}
 }
 </style>

@@ -1,19 +1,18 @@
 <template>
 	<div class="mx-4 mx-sm-16 my-16">
-		<v-row>
+		<h1
+			class="
+				primary--text primary--text
+				text-sm-h4 text-start text-md-h3
+				font-weight-bold
+				mt-4 mt-sm-8
+			"
+		>
+			{{ $t('aboutUs.title') }}
+		</h1>
+		<v-row class="mt-12">
 			<v-col cols="12" class="mt-n10" md="6">
-				<h1
-					class="
-						primary--text primary--text
-						text-sm-h4 text-start text-md-h3
-						font-weight-bold
-						mb-sm-6
-						mt-4 mt-sm-8
-					"
-				>
-					{{ $t('aboutUs.title') }}
-				</h1>
-				<p class="info--text text-body-1 text-pre-line text-md-h6 text-h6">
+				<p class="info--text text-h6 text-pre-line">
 					{{ $t('aboutUs.text') }}
 				</p>
 			</v-col>
@@ -49,7 +48,7 @@
 						v-for="pillar in pillars"
 						:key="pillar.title"
 					>
-						<info-card :card="pillar">
+						<info-card elevation="12" :card="pillar">
 							<template v-slot:title>
 								<h1
 									:class="$i18n.locale === 'en' ? 'pr-4' : 'pl-4'"

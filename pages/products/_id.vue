@@ -1,8 +1,8 @@
 <template>
 	<div v-if="myProduct" class="mx-4 mx-sm-8 mx-md-10 mx-lg-16 mt-16">
-		<h1 class="primary--text mb-12 text-h3 font-weight-bold">
+		<!-- <h1 class="primary--text mb-12 text-h3 font-weight-bold">
 			{{ myProduct[0].name }}
-		</h1>
+		</h1> -->
 		<v-sheet elevation="8" class="rounded-lg my-16">
 			<product-card :products="myProduct"></product-card>
 		</v-sheet>

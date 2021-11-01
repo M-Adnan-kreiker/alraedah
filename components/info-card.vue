@@ -12,7 +12,7 @@
 				max-width="91"
 				:src="currentCard.image"
 				alt="submit a request"
-				class="mx-3 mx-sm-4 img align-self-center"
+				class="mx-3 mx-sm-4 img align-self-center flex-grow-1"
 			/>
 			<div class="align-self-center">
 				<slot name="title"></slot>
@@ -24,6 +24,7 @@
 						font-weight-regular
 						text-md-h6
 						mb-0
+						flex-grow-1
 					"
 					:class="$i18n.locale === 'en' ? 'pr-4' : 'pl-4'"
 				>

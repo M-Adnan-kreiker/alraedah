@@ -164,7 +164,8 @@
 			</div>
 			<p
 				class="accent--text text-subtitle-2 caveat"
-				style="position: absolute; bottom: 2%; left: 8%"
+				style="position: absolute; bottom: 2%"
+				:style="$i18n.locale === 'en' ? 'left: 8%' : 'right: 8%'"
 			>
 				{{ $t('chartCard.ps') }}
 			</p>

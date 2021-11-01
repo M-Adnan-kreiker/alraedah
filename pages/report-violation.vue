@@ -2,6 +2,7 @@
 	<div class="mx-4 mx-sm-8 mx-md-16 mt-16">
 		<v-row>
 			<v-col cols="12" sm="9">
+				<!-- prettier-ignore -->
 				<h1
 					class="
 						primary--text
@@ -9,8 +10,7 @@
 						font-weight-bold
 						center-text
 					"
-				>
-					{{ $t('report.title') }}
+				>{{ $t('report.title') }}
 				</h1>
 				<p
 					class="
@@ -29,7 +29,7 @@
 				<v-img
 					:class="$i18n.locale === 'en' ? 'rounded-r-lg' : 'rounded-l-lg'"
 					class="py-0"
-					height="100%"
+					height="750"
 					src="/report.webp"
 					alt=""
 				/>

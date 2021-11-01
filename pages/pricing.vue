@@ -1,14 +1,13 @@
 <template>
 	<div class="mx-4 mx-sm-8 mx-md-16">
 		<v-row
-			class="my-16"
+			class="mt-3"
 			:class="$i18n.locale === 'ar' ? 'ml-sm-n16' : 'mr-sm-n16'"
 		>
 			<v-col class="" cols="12" sm="5">
 				<div class="">
-					<h1 class="primary--text text-sm-h4 text-md-h3 font-weight-bold">
-						{{ $t('pricing.title') }}
-					</h1>
+					<!-- prettier-ignore -->
+					<h1 class="primary--text text-start text-sm-h4 text-md-h3 pt-10 font-weight-bold">{{ $t('pricing.title')}}</h1>
 					<h2
 						class="info--text text-body-1 text-sm-h6 font-weight-regular mb-8"
 					>
@@ -107,7 +106,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { Product } from '~/store/modules/products';
 
 @Component

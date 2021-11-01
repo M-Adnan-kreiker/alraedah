@@ -1,4 +1,6 @@
 export default {
+	ourProducts: 'Our products',
+	features: 'Features',
 	times: [
 		'8 am - 10 am',
 		'10 am - 12 pm',
@@ -154,9 +156,9 @@ export default {
 					minAmount: 'Starting from 1,000,000 SAR',
 					repayment: 'Daily repayment',
 					securityDeposit: 'No Security deposit',
-					feesRefund:
-						'Facility processing fess will be collected from the financing amount',
 					conditions: 'Must have POS terminal for 12 months',
+					feesRefund:
+						'Processing fess will be collected from the financing amount',
 				},
 			},
 			caveat:
@@ -189,9 +191,9 @@ export default {
 					minAmount: 'Starting from 100,000 SAR',
 					repayment: 'Daily repayment',
 					securityDeposit: 'No Security deposit',
-					feesRefund:
-						'Facility processing fess will be collected from the financing amount',
 					conditions: 'Must have POS terminal for 12 months',
+					feesRefund:
+						'Processing fess will be collected from the financing amount',
 				},
 			},
 			caveat:
@@ -224,9 +226,9 @@ export default {
 					minAmount: 'Starting from 125,000 SAR',
 					repayment: 'Daily repayment',
 					securityDeposit: 'No Security deposit',
-					feesRefund:
-						'Facility processing fess will be collected from the financing amount',
 					conditions: 'Must have POS machines for 3 Months',
+					feesRefund:
+						'Processing fess will be collected from the financing amount',
 				},
 			},
 			caveat:
@@ -261,8 +263,8 @@ export default {
 					minAmount: 'Starting from 500,000 SAR',
 					repayment: 'Daily, Weekly, Monthly repayment',
 					securityDeposit: 'No Security deposit',
-					feesRefund: 'Will be refunded if cancelled by AlRaedah**',
 					conditions: 'No Pre-settlement fees',
+					feesRefund: 'Will be refunded if cancelled by AlRaedah**',
 				},
 			},
 			caveat:
@@ -281,9 +283,10 @@ export default {
 			{
 				1: 'Main Office',
 				2: '3rd floor - town b',
-				3: 'Olaya Towers, Olaya Main St.',
+				3: 'Olaya Towers - Main St.',
 				4: '12213',
 				5: 'Get Directions',
+				6: 'https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d115995.90431042519!2d46.612038047079956!3d24.69692614932947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d24.697027!2d46.68226!5e0!3m2!1sen!2s!4v1635686202429!5m2!1sen!2s',
 			},
 			{
 				1: 'Khobar Branch',
@@ -291,6 +294,7 @@ export default {
 				3: 'King Abdul Aziz Street',
 				4: 'Khobar 31952',
 				5: 'Get Directions',
+				6: 'https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d114455.88098343302!2d50.13903298145048!3d26.30232389455625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d26.302547999999998!2d50.20908!5e0!3m2!1sen!2s!4v1635687024400!5m2!1sen!2s',
 			},
 			{
 				1: 'Buraydah Branch',
@@ -298,6 +302,7 @@ export default {
 				3: 'An Naziyah',
 				4: 'Buraydah 52366',
 				5: 'Get Directions',
+				6: 'https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d114406.06742453568!2d43.892623682561975!3d26.352728671711116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d26.352843999999997!2d43.962565999999995!5e0!3m2!1sen!2s!4v1635686354334!5m2!1sen!2s',
 			},
 		],
 		contactCol: {
@@ -464,13 +469,16 @@ export default {
 					"Interested in alraedah's services? Just pick up\n the phone to chat with a member of our team ",
 				image: '/phone.svg',
 				text: '8001249000',
+				icon: 'mdi-phone',
 			},
 			{
 				title: 'Send us an email and we will get to you as soon as possible',
 				image: '/email.svg',
 				text: 'info@alraedah.finance',
+				icon: 'mdi-email',
 			},
 		],
 		location: 'Visit our main office',
+		message: 'Send us a message',
 	},
 };

@@ -1,9 +1,13 @@
 import Vue from 'vue';
-import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
+import {
+	ValidationProvider,
+	ValidationObserver,
+	extend,
+	setInteractionMode,
+} from 'vee-validate';
 import { required, digits, email, max, regex } from 'vee-validate/dist/rules';
 
-// 全てのルールを利用
-
+setInteractionMode('eager');
 extend('digits', {
 	...digits,
 	message: '{_field_} needs to be {length} digits.',
@@ -28,7 +32,6 @@ extend('email', {
 	...email,
 	message: 'Email must be valid',
 });
-// setInteractionMode('lazy');
 
 Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
