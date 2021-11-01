@@ -103,7 +103,7 @@
 						<v-btn
 							@click="openDialog"
 							dense
-							:class="$i18n.locale === 'en' ? 'mr-4 ml-5' : 'ml-1 mr-4'"
+							:class="$i18n.locale === 'en' ? 'mr-4 ml-2' : 'ml-1 mr-2'"
 							class="
 								text-lg-body-1 text-md-body-2
 								font-weight-bold

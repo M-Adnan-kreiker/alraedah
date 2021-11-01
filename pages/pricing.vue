@@ -39,11 +39,7 @@
 		<transition name="slide-fade" mode="out-in">
 			<div v-if="myProduct[0]">
 				<transition name="slide-fade" mode="out-in">
-					<fees-info
-						:key="feesKey"
-						:fees="myProduct[0].fees"
-						:moreInfo="myProduct[0].moreInfo"
-					></fees-info>
+					<fees-info :key="feesKey" :fees="myProduct[0].fees"></fees-info>
 				</transition>
 				<v-row justify="center">
 					<v-col cols="12" md="7">

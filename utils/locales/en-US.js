@@ -140,8 +140,7 @@ export default {
 			info: 'POS Pro financing is one of the most important forms of financing that we provide for SMEs that started and worked in the local market for a short period, which seeks to expand and achieve a significant jump in the size of its business and its position in the markets, with flexibility in repayment.',
 			step: 500000,
 			max: 5000000,
-			fees: ['12.5% Annually'],
-			moreInfo: ['1.5% Processing fee annually'],
+			fees: ['12.5% Annually + 1.5% Processing fee annually'],
 			guides: [
 				'From SAR 500,000 to SAR 5,000,000',
 				'Financing amount up to 50% of annual POS sales',
@@ -175,8 +174,7 @@ export default {
 			info: 'Alraedah works to provide unique financing solutions for entrepreneurs and SMEs that have been launched for at least 6 months, who aspire to promote and expand their businesses and provide them with appropriate financing in a flexible and easy way to help them achieve their ambitions.',
 			step: 100000,
 			max: 1000000,
-			fees: ['16.5% + Processing fee'],
-			moreInfo: ['1.5% Processing fee'],
+			fees: ['16.5% + Processing fee + 1.5% Processing fee'],
 			guides: [
 				'The amount of funding starts from SAR 100,000 to SAR 1,000,000.',
 				'Financing amount up to 30% of annual POS sales.',
@@ -210,8 +208,10 @@ export default {
 			info: 'Many companies and establishments may need shortly after the launch of urgent and uncomplicated financing solutions to resolve transactions, speed up operations and strengthen their position in the markets, and because we are aware of the need of these facilities for these quick solutions we have created the financing of (immediate) point of sale for SMEs in 7 working days.',
 			step: 50000,
 			max: 500000,
-			fees: ['16.5% + Processing Fee', '10% + Processing Fee'],
-			moreInfo: ['Up to Without Guarantor', 'With Guarantor'],
+			fees: [
+				'16.5% + Processing Fee Without Guarantor',
+				'10% + Processing Fee With Guarantor',
+			],
 			guides: [
 				'Funding starts from SAR 50,000 to SAR 125,000.',
 				'The value of the financing will be delivered within 7 business days from the moment of request. ',
@@ -246,11 +246,10 @@ export default {
 			step: 50000,
 			max: 500000,
 			fees: [
-				'20% + 1.5% Processing Fee',
-				'10% + 1% Processing',
-				'15% + 1% Processing',
+				'20% + 1.5% Processing Fee Up to 12 months',
+				'10% + 1% Processing Up to 6 months',
+				'15% + 1% Processing Up to 9 months',
 			],
-			moreInfo: ['Up to 12 months', 'Up to 6 months', 'Up to 9 months'],
 			guides: [
 				'You can choose the appropriate financing from two packages spread over 6 or 9 months.',
 				'Payment is a weekly or monthly transfer.',
