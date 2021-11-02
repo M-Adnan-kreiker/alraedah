@@ -305,7 +305,7 @@
 					>
 						<p class="font-weight-bold">{{ location['1'] }}</p>
 						<p class="text-subtitle-2 mb-1">{{ location['2'] }}</p>
-						<p class="text-subtitle-2 mb-1">{{ location['2'] }}</p>
+						<p class="text-subtitle-2 mb-1">{{ location['3'] }}</p>
 						<p class="text-subtitle-2 mb-1">{{ location['4'] }}</p>
 						<div
 							class="
