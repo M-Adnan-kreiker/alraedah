@@ -1,12 +1,12 @@
 <template>
 	<v-card
-		elevation="8"
+		elevation="4"
 		style=""
 		class="
 			card
 			d-flex
 			flex-column
-			rounded-lg
+			rounded-xl
 			white--text
 			mx-auto
 			my-4

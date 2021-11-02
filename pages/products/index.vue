@@ -70,8 +70,8 @@
 		<v-row class="px-2 px-sm-4 mb-16">
 			<v-col cols="12" md="6" v-for="product in products" :key="product.title">
 				<v-card
-					elevation="12"
-					class="mx-auto my-12 d-flex flex-column"
+					elevation="4"
+					class="mx-auto rounded-xl my-12 d-flex flex-column"
 					max-width="600"
 					height="100%"
 				>

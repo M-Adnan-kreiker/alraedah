@@ -19,11 +19,19 @@
 			<v-row align="center" justify="center">
 				<v-col v-for="info in infos" :key="info.title">
 					<v-card
-						elevation="12"
+						elevation="4"
 						min-height="380"
 						min-width="280"
 						max-width="450"
-						class="py-4 mx-auto px-sm-4 px-md-8 d-flex flex-column align-center"
+						class="
+							py-4
+							rounded-xl
+							mx-auto
+							px-sm-4 px-md-8
+							d-flex
+							flex-column
+							align-center
+						"
 					>
 						<div>
 							<v-img height="120" contain width="140" :src="info.image"></v-img>
@@ -52,6 +60,7 @@
 						primary--text
 						mb-8
 						text-sm-h4 text-pre-line text-md-h3
+						mx-4
 						font-weight-bold
 					"
 				>
@@ -60,7 +69,7 @@
 			</v-row>
 			<v-row>
 				<v-col>
-					<v-card height="420">
+					<v-card class="rounded-xl" height="420">
 						<iframe
 							src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d115995.90431042519!2d46.612038047079956!3d24.69692614932947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d24.697027!2d46.68226!5e0!3m2!1sen!2s!4v1635424139985!5m2!1sen!2s"
 							width="100%"
@@ -75,7 +84,6 @@
 			<h1
 				class="
 					primary--text
-					mb-8
 					text-sm-h4 text-pre-line text-md-h3
 					font-weight-bold
 				"
@@ -88,9 +96,9 @@
 				<template v-slot:title>{{ $t('careers.info') }}</template>
 				<template v-slot:image>
 					<v-img
-						:class="$i18n.locale === 'en' ? 'rounded-r-lg' : 'rounded-l-lg'"
+						:class="$i18n.locale === 'en' ? 'rounded-r-xl' : 'rounded-l-xl'"
 						class="py-0"
-						height="750"
+						height="100%"
 						src="/contact-us-form.webp"
 						alt=""
 					/>

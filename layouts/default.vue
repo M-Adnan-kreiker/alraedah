@@ -6,6 +6,7 @@
 			height="80%"
 			class="px-4"
 			color="white"
+			elevation="2"
 		>
 			<v-row align-content="center" align="center" style="flex-wrap: nowrap">
 				<v-btn :to="localeRoute('/')" text color="white"
@@ -31,6 +32,7 @@
 						class="
 							primary--text
 							py-5
+							rounded-0
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
 							mr-0 mr-md-2
 							font-weight-bold
@@ -55,6 +57,7 @@
 						class="
 							primary--text
 							py-5
+							rounded-0
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
 							mr-0 mr-md-2
 							font-weight-bold
@@ -70,6 +73,7 @@
 						class="
 							primary--text
 							py-5
+							rounded-0
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
 							mr-0 mr-md-2
 							font-weight-bold
@@ -87,6 +91,7 @@
 						class="
 							primary--text
 							py-5
+							rounded-0
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
 							mr-0 mr-md-2
 							font-weight-bold
@@ -107,7 +112,7 @@
 							class="
 								text-lg-body-1 text-md-body-2
 								font-weight-bold
-								primary--text
+								white--text
 								text-capitalize
 								rounded-lg
 								px-sm-4 px-md-8
@@ -116,7 +121,7 @@
 								apply-btn
 							"
 							to="#"
-							style="color: #ffffff"
+							color="primary"
 							active-class="no-active"
 						>
 							{{ $t('applyButtonHeader') }}
@@ -131,7 +136,7 @@
 						alt=""
 					/>
 
-					<img height="20" src="/search.svg" alt="alraedah logo" class="mx-3" />
+					<img height="20" src="/search.svg" alt="alraedah logo" class="mx-2" />
 				</v-list>
 				<img
 					@click.stop="triggerDrawer"
@@ -153,19 +158,26 @@
 		>
 			<v-list nav dense>
 				<v-list-item-group
-					active-class="primary--text "
+					active-class="no"
+					exact-active-class="primary lighten-2 white--text"
 					class="text-subtitle-1"
 				>
-					<v-list-item :to="localeRoute('/')">
+					<v-list-item
+						exact-active-class="primary lighten-2 white--text"
+						:to="localeRoute('/')"
+					>
 						<v-list-item-icon>
 							<v-icon>mdi-home-variant-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1 primary--text">{{
+						<v-list-item-title class="text-subtitle-1">{{
 							$t('header.home')
 						}}</v-list-item-title>
 					</v-list-item>
 
-					<v-list-item :to="localeRoute('/products')">
+					<v-list-item
+						exact-active-class="primary lighten-2 white--text"
+						:to="localeRoute('/products')"
+					>
 						<v-list-item-icon>
 							<v-icon>mdi-folder-star-multiple-outline</v-icon>
 						</v-list-item-icon>
@@ -173,7 +185,10 @@
 							$t('header.products')
 						}}</v-list-item-title>
 					</v-list-item>
-					<v-list-item :to="localeRoute('/pricing')">
+					<v-list-item
+						exact-active-class="primary lighten-2 white--text"
+						:to="localeRoute('/pricing')"
+					>
 						<v-list-item-icon>
 							<v-icon>mdi-cash-multiple</v-icon>
 						</v-list-item-icon>
@@ -182,7 +197,7 @@
 						}}</v-list-item-title>
 					</v-list-item>
 
-					<v-list-item>
+					<v-list-item exact-active-class="primary lighten-2 white--text">
 						<v-list-item-icon>
 							<v-icon>mdi-toolbox-outline</v-icon>
 						</v-list-item-icon>
@@ -191,7 +206,10 @@
 						}}</v-list-item-title>
 					</v-list-item>
 
-					<v-list-item :to="localeRoute('/careers')">
+					<v-list-item
+						exact-active-class="primary lighten-2 white--text"
+						:to="localeRoute('/careers')"
+					>
 						<v-list-item-icon>
 							<v-icon>mdi-clipboard-edit-outline</v-icon>
 						</v-list-item-icon>
@@ -200,7 +218,10 @@
 						}}</v-list-item-title>
 					</v-list-item>
 
-					<v-list-item :to="localeRoute('/about-us')">
+					<v-list-item
+						exact-active-class="primary lighten-2 white--text"
+						:to="localeRoute('/about-us')"
+					>
 						<v-list-item-icon>
 							<v-icon>mdi-information-outline</v-icon>
 						</v-list-item-icon>
@@ -249,10 +270,10 @@
 		<footer>
 			<v-container>
 				<v-row
-					class="d-flex flex-column flex-sm-row"
+					class="d-flex flex-column flex-sm-row mb-4"
 					style="align-items: center; text-align: center"
 				>
-					<v-col cols="6" sm="3">
+					<v-col cols="6" sm="2">
 						<v-img src="/alraedah-logo.svg"></v-img>
 						<p class="text-subtitle-2 accent--text">{{ $t('footer.moto') }}</p>
 					</v-col>
@@ -278,13 +299,13 @@
 					<v-col
 						class="text-center"
 						cols="6"
-						sm="3"
+						sm="2"
 						v-for="location in locations"
 						:key="location['1']"
 					>
 						<p class="font-weight-bold">{{ location['1'] }}</p>
 						<p class="text-subtitle-2 mb-1">{{ location['2'] }}</p>
-						<p class="text-subtitle-2 mb-1">{{ location['3'] }}</p>
+						<p class="text-subtitle-2 mb-1">{{ location['2'] }}</p>
 						<p class="text-subtitle-2 mb-1">{{ location['4'] }}</p>
 						<div
 							class="
@@ -306,8 +327,8 @@
 						</div>
 					</v-col>
 					<v-dialog v-model="dialog" max-width="600">
-						<v-card>
-							<iframe :src="map" width="600" height="450"></iframe>
+						<v-card class="rounded-lg">
+							<iframe :src="map" width="100%" height="450"></iframe>
 							<v-card-actions>
 								<v-spacer></v-spacer>
 
@@ -317,7 +338,7 @@
 							</v-card-actions>
 						</v-card>
 					</v-dialog>
-					<v-col class="text-center" cols="6" sm="3">
+					<v-col class="text-center" cols="6" sm="2">
 						<a
 							href="https://www.linkedin.com/company/alraedah-finance/"
 							target="_"
@@ -331,7 +352,7 @@
 						<a href="https://twitter.com/alraedahfinance" target="_"
 							><img class="mx-1" src="/twitter.svg" alt=""
 						/></a>
-						<p class="text-subtitle-2 mt-3 mb-1">
+						<p class="text-subtitle-2 mt-2 mb-1">
 							{{ $t('footer.contactCol.saudi') }}
 						</p>
 						<p class="text-subtitle-2 mb-1">
@@ -414,9 +435,9 @@ export default class extends Vue {
 	closeMap() {
 		this.dialog = false;
 	}
-	beforeDestroy() {
-		this.$nuxt.$off('trigger-dialog');
-	}
+	// befoprimary lighten-2 white--textestroy() {
+	// 	this.$nuxt.$off('trigger-dialog');
+	// }
 }
 </script>
 
@@ -437,7 +458,7 @@ export default class extends Vue {
 	border: 1px solid #1d4283;
 }
 .overlay {
-	position: fixed; /* Positioning and size */
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;

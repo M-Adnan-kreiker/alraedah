@@ -1,13 +1,13 @@
 <template>
-	<main class="mt-10">
+	<main class="mt-10 hero">
 		<landing-page class="mb-8 mb-sm-0"></landing-page>
 		<achievements></achievements>
 		<Lazy-financing-solutions-page
 			class="my-sm-8"
 		></Lazy-financing-solutions-page>
 		<Lazy-pricing-table class="mt-sm-16"></Lazy-pricing-table>
-		<Lazy-partners class="mb-sm-16"></Lazy-partners>
-		<Lazy-kick-start class="my-sm-16"></Lazy-kick-start>
+		<Lazy-partners></Lazy-partners>
+		<Lazy-kick-start class="pb-sm-16"></Lazy-kick-start>
 	</main>
 </template>
 
@@ -35,5 +35,8 @@ export default class extends Vue {
 	border-radius: 50%;
 	color: white;
 	padding: 3px;
+}
+.hero {
+	background: url(/raedah-bg.svg) no-repeat left bottom;
 }
 </style>

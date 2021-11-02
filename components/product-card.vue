@@ -2,7 +2,6 @@
 	<div>
 		<v-row justify="center">
 			<v-col
-				:style="styles"
 				class="columns"
 				cols="12"
 				v-for="product in products"
@@ -17,7 +16,11 @@
 							class="pa-0"
 						>
 							<v-img
-								:class="$i18n.locale === 'en' ? 'rounded-r-lg' : 'rounded-l-lg'"
+								:class="
+									$i18n.locale === 'en'
+										? 'rounded-r-xl rounded-l-none'
+										: 'rounded-l-xl rounded-r-none'
+								"
 								class="mx-3 mx-md-0"
 								:src="product.image"
 								max-height="516"
@@ -104,14 +107,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class extends Vue {
 	@Prop(Array) products!: [];
-	@Prop(String) marginColumn!: string;
-	get margin() {
-		return this.marginColumn;
-	}
 
-	styles = {
-		'--margin': this.marginColumn,
-	};
 	get showButton() {
 		if (
 			this.$route.name === 'products___ar' ||

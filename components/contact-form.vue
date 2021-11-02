@@ -1,7 +1,7 @@
 <template>
 	<validation-observer ref="observer" v-slot="{ invalid }">
 		<transition name="slide-fade" mode="out-in">
-			<v-card rounded="" class="pa-md-4 pa-4 mx-auto">
+			<v-card class="pa-md-4 pa-4 mx-auto rounded-lg">
 				<v-form @submit.prevent="handleClick" class="mx-auto">
 					<div class="text-start mb-12">
 						<h1 class="primary--text text-h5 text-sm-h4 font-weight-bold">

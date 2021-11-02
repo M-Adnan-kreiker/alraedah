@@ -31,13 +31,28 @@ $heading-font-family: 'Tajawal', sans-serif;
 		opacity: 0 !important;
 	}
 }
-
+.theme--light.v-list-item--active:hover::before,
+.theme--light.v-list-item--active::before {
+	opacity: 0;
+}
+.v-list-item--link:before {
+	background-color: #ffffff;
+}
+.v-application {
+	.v-list-item--active {
+		background-color: #ffffff !important;
+	}
+}
+.no a {
+	background: #ffffff !important;
+	color: black !important;
+}
 .active {
-	background: #1d4283cc;
+	border-bottom: 4px solid #1e4383;
 }
-.active span {
-	color: #ffffff !important;
-}
+// .active span {
+// 	// color: #ffffff !important;
+// }
 
 .apply-now span {
 	color: #ffffff;

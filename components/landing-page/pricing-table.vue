@@ -1,28 +1,36 @@
 <template>
-	<div class="my-sm-16">
-		<div class="mb-sm-16">
+	<div class="my-sm-8">
+		<div>
 			<h1
 				class="
 					text-center text-h5 text-sm-h4 text-md-h3
 					font-weight-bold
 					primary--text
+					pt-2
 				"
 			>
 				{{ $t('productsTable.title') }}
 			</h1>
 			<h2
-				class="text-center text-h6 text-sm-h5 mb-4 text-md-h4 pt-8 info--text"
+				class="
+					text-center text-h6 text-sm-h5
+					mb-6
+					text-md-h4
+					pt-2 pt-sm-8
+					info--text
+					px-2
+				"
 			>
 				{{ $t('productsTable.text') }}
 			</h2>
 		</div>
 		<v-sheet class="mx-n6">
-			<v-slide-group
-				class="py-sm-16 mx-2 px-4"
-				mobile-breakpoint="100"
-				center-active
-			>
-				<v-slide-item v-for="card in productCards" :key="card.id">
+			<v-slide-group class="py-sm-6 mx-2 px-4" mobile-breakpoint="100">
+				<v-slide-item
+					class="mx-2 mx-sm-4"
+					v-for="card in productCards"
+					:key="card.id"
+				>
 					<div>
 						<pricing-card :card="card">
 							<template v-slot:header>
@@ -112,7 +120,6 @@ export default class extends Vue {
 }
 .card {
 	width: 350px !important;
-	margin: 0 20px !important;
 }
 @media (max-width: 800px) {
 	.main-row {

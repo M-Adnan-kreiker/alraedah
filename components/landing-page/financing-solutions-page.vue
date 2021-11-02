@@ -1,6 +1,6 @@
 <template>
 	<main
-		class="bg py-sm-6"
+		class="bg py-6"
 		:style="{ background: 'url(/raedah-bg.svg) no-repeat left center' }"
 	>
 		<v-row class="mx-4 mx-sm-8">
@@ -11,12 +11,12 @@
 						font-weight-bold
 						text-h5 text-sm-h4 text-md-h3 text-wrap
 						primary--text
-						text-pre-line
+						text-start
 					"
 				>{{ $t('solutions.title') }}
 				</h1>
 			</v-col>
-			<v-col class="mt-sm-10" cols="12" md="6">
+			<v-col class="" cols="12" md="6">
 				<p class="accent--text text-body-1 text-sm-h6 text-md-h5 text-wrap">
 					{{ $t('solutions.text') }}
 				</p>
@@ -37,68 +37,68 @@
 					:key="card.title"
 				>
 					<v-card
-						elevation="8"
+						elevation="4"
 						color="#ffffff"
-						class="rounded-lg cards mx-auto mx-sm-2"
-						hover
+						class="rounded-xl cards mx-auto mx-sm-2"
 						min-height="370px"
 						min-width="260"
 						max-width="370"
 						max-height="400"
 					>
-						<v-col
-							sm="12"
-							class="d-flex flex-column justify-center align-center"
-						>
-							<img
-								class="d-block mt-10"
-								max-height="110"
-								max-width="103"
-								:src="card.img"
-							/>
-							<v-card-title
-								class="
-									text-body-1 text-md-subtitle-1 text-lg-h6
-									main-text
-									px-0
-									font-weight-bold
-									text-no-wrap
-								"
-								primary-title
+						<v-row>
+							<v-col
+								sm="12"
+								class="d-flex flex-column justify-center align-center"
 							>
-								{{ card.title }}
-							</v-card-title>
-							<v-card-text
-								class="
-									text-body-1
-									font-weight-bold
-									px-4 px-md-6
-									sub-text
-									text-center
-									info--text
-								"
-							>
-								{{ card.text }}
-							</v-card-text>
-						</v-col>
+								<img
+									class="d-block mt-10"
+									max-height="110"
+									max-width="103"
+									:src="card.img"
+								/>
+								<v-card-title
+									class="
+										text-body-1 text-sm-subtitle-1 text-lg-h6
+										main-text
+										px-0
+										font-weight-bold
+										text-no-wrap
+									"
+									primary-title
+								>
+									{{ card.title }}
+								</v-card-title>
+								<v-card-text
+									class="
+										text-body-1
+										font-weight-regular
+										px-4 px-md-6
+										sub-text
+										text-center
+										info--text
+									"
+								>
+									{{ card.text }}
+								</v-card-text>
+							</v-col>
+						</v-row>
 					</v-card>
 				</v-col>
 			</v-row>
 		</section>
 
 		<section class="d-block d-sm-none mt-10">
-			<v-card flat tile>
+			<v-card color="transparent" flat class="pt-8">
 				<v-window class="pa-4" v-model="onboarding">
 					<v-window-item v-for="card in cards" :key="card.id">
 						<v-card
-							elevation="8"
-							color="#ffffff"
-							class="rounded-lg cards mx-auto mx-sm-2"
-							hover
+							elevation="4"
+							color="transparent"
+							class="rounded-xl cards mx-auto mx-sm-2"
 							min-height="370px"
 							min-width="280"
 							max-width="370"
-							max-height="400"
+							max-height="350"
 						>
 							<v-col
 								sm="12"
@@ -139,8 +139,14 @@
 				</v-window>
 
 				<v-card-actions class="justify-center">
-					<v-item-group v-model="onboarding" class="text-center" mandatory>
+					<v-item-group
+						active-class="secondary"
+						v-model="onboarding"
+						class="text-center"
+						mandatory
+					>
 						<v-item
+							active-class="secondary"
 							v-for="n in length"
 							:key="`btn-${n}`"
 							v-slot="{ active, toggle }"

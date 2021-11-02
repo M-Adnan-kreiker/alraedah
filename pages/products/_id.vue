@@ -3,7 +3,7 @@
 		<!-- <h1 class="primary--text mb-12 text-h3 font-weight-bold">
 			{{ myProduct[0].name }}
 		</h1> -->
-		<v-sheet elevation="8" class="rounded-lg my-16">
+		<v-sheet elevation="4" class="rounded-xl my-16">
 			<product-card :products="myProduct"></product-card>
 		</v-sheet>
 		<h2 class="primary--text text-h4 font-weight-bold mb-8">

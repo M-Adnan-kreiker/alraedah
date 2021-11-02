@@ -2,9 +2,9 @@
 	<div>
 		<v-card
 			max-width="1200"
-			max-height="820"
-			elevation="12"
-			class="my-8 my-sm-16 rounded-lg py-3 mx-auto"
+			max-height="890"
+			elevation="4"
+			class="my-8 my-sm-16 rounded-xl py-3 mx-auto"
 		>
 			<validation-observer ref="observer">
 				<v-form class="mx-auto px-2 py-2 pa-sm-0">

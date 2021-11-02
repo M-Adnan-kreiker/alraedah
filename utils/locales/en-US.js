@@ -67,7 +67,7 @@ export default {
 	},
 	solutions: {
 		title:
-			'Tired of getting turned down by traditional banks?\nDon’t worry Alraedah has got your back',
+			'Tired of getting turned down by traditional banks?\n\nDon’t worry Alraedah has got your back',
 		text: 'AlRaedah Finance offers comprehensive Islamic finance solutions to small and medium sized enterprises in the Kingdom of Saudi Arabia. We continue to maintain our market leadership by offering the following:',
 		cards: [
 			{
@@ -118,7 +118,7 @@ export default {
 			},
 			{
 				title: 'Wait for our representative to call',
-				text: 'After completing the application, one of our representatives will contact you within 48 hours to provide you with the best financingsolutions to suit your project.',
+				text: 'After completing the application, one of our representatives will contact you within 48 hours to provide you with the best financing solutions to suit your project.',
 				image: '/wait.svg',
 			},
 			{

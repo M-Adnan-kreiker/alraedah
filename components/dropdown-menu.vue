@@ -9,6 +9,7 @@
 			class="
 				primary--text
 				py-5
+				rounded-0
 				text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
 				mr-0 mr-md-2
 				font-weight-bold

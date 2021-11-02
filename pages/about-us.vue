@@ -12,12 +12,12 @@
 		</h1>
 		<v-row class="mt-12">
 			<v-col cols="12" class="mt-n10" md="6">
-				<p class="info--text text-h6 text-pre-line">
+				<p class="info--text text-h6 text-start">
 					{{ $t('aboutUs.text') }}
 				</p>
 			</v-col>
 			<v-col cols="12" md="6">
-				<v-img class="rounded-lg" src="/mission.webp"></v-img>
+				<v-img class="rounded-lg mt-md-n8" src="/mission.webp"></v-img>
 			</v-col>
 		</v-row>
 		<v-row>

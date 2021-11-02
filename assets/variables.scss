@@ -1,21 +1,18 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
 //
 // The variables you want to modify
+@import url('https://db.onlinewebfonts.com/t/6cd98f92c03c09152517c4b1042bf3e1.eot');
 $font-size-root: 16px;
+$line-height: 120%;
 // styles/variables.scss
 $slide-group-prev-basis: 35px !default;
 $select-selections-padding-top: 80px !default;
-$grid-breakpoints: (
-	'xxs': 400px,
-	// 	'sm': 600px,
-	// 	'md': 1042px,
-	// 	'lg': 1366px,
-	// 	'xl': 1440px,,,,,,,,,,,,,,,,,,,,,,
-);
 $headings: (
 	'h1': (
 		'size': 4.8125rem,
 		'line-height': 1.15em,
 	),
 );
-// @import '~vuetify/src/styles/styles.sass';
+
+$font-family: aktiv-grotesk, sans-serif !important;
+$font-style: normal;

@@ -3,8 +3,8 @@
 		<v-card
 			style="position: relative"
 			height="680"
-			elevation="8"
-			class="mt-8 px-12 rounded-lg"
+			elevation="4"
+			class="mt-8 px-12 rounded-xl"
 		>
 			<v-card-title
 				style="margin-bottom: 80px"

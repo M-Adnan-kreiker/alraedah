@@ -27,7 +27,7 @@
 			<template v-slot:title> {{ $t('report.title') }} </template>
 			<template v-slot:image>
 				<v-img
-					:class="$i18n.locale === 'en' ? 'rounded-r-lg' : 'rounded-l-lg'"
+					:class="$i18n.locale === 'en' ? 'rounded-r-xl' : 'rounded-l-xl'"
 					class="py-0"
 					height="750"
 					src="/report.webp"

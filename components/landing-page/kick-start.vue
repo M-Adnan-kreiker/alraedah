@@ -1,5 +1,5 @@
 <template>
-	<main class="mx-12">
+	<main class="pt-16 px-8">
 		<h1
 			class="
 				text-center text-h5 text-sm-h4 text-md-h3
@@ -9,7 +9,9 @@
 		>
 			{{ $t('kickStart.title') }}
 		</h1>
-		<h2 class="text-center text-h6 text-sm-h5 mb-4 text-md-h4 info--text">
+		<h2
+			class="text-center text-h6 text-sm-h5 mb-4 text-md-h4 info--text mt-sm-4"
+		>
 			{{ $t('kickStart.text') }}
 		</h2>
 		<section
@@ -21,7 +23,7 @@
 			</div>
 			<div class="mt-4">
 				<apply-now-button
-					:buttonWidth="'250px'"
+					:buttonWidth="'200px'"
 					:buttonColor="'#1D4283'"
 					:buttonPadding="'36px 30px'"
 					:buttonText="$i18n.locale === 'ar' ? 'قدّم الآن' : 'Apply Now'"
@@ -52,4 +54,7 @@ export default class extends Vue {
 		margin-bottom: 10px;
 	}
 }
+/* .hero {
+	background: url(/raedah-bg.svg) no-repeat left center;
+} */
 </style>

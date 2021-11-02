@@ -3,7 +3,7 @@
 		<v-row class="my-12 my-md-16" justify="center">
 			<v-col
 				style="background: #1d4283"
-				class="text-center rounded-t-lg py-16"
+				class="text-center rounded-t-xl py-16"
 				cols="11"
 				md="8"
 				elevation="12"
@@ -12,8 +12,8 @@
 					{{ $t('financialReports.title') }}
 				</h1>
 			</v-col>
-			<v-col class="pt-0 px-0" cols="11" md="8" elevation="12">
-				<v-card>
+			<v-col class="pt-0 px-0" cols="11" md="8" elevation="4">
+				<v-card class="rounded-b-xl">
 					<v-tabs
 						v-model="tab"
 						centered
@@ -34,7 +34,7 @@
 					<v-divider class="my-4"></v-divider>
 					<v-tabs-items v-model="tab">
 						<v-tab-item v-for="item in items" :key="item.name">
-							<v-card flat>
+							<v-card>
 								<v-row class="text-center">
 									<v-col
 										v-for="report in item"

@@ -5,11 +5,12 @@
 				text-center text-h5 text-sm-h4 text-md-h3
 				font-weight-bold
 				primary--text
+				mb-sm-12
 			"
 		>
 			{{ $t('partners') }}
 		</h1>
-		<v-row justify="center" class="py-16 d-none d-sm-flex">
+		<v-row justify="center" class="d-none d-sm-flex">
 			<v-col
 				class="d-flex justify-center"
 				cols="12"
@@ -31,7 +32,7 @@
 			:show-arrows="false"
 			cycle
 			interval="2500"
-			height="400"
+			height="250"
 			hide-delimiter-background
 		>
 			<v-carousel-item v-for="image in images" :key="image.src">
@@ -40,7 +41,7 @@
 						<div class="text-h2">
 							<v-img
 								max-height="250"
-								class="mx-auto"
+								class="mx-auto rounded-xl"
 								max-width="300"
 								:src="image.src"
 							></v-img>
@@ -72,12 +73,12 @@ export default class extends Vue {
 </script>
 
 <style scoped>
-main {
+/* main {
 	background: linear-gradient(
 		179.59deg,
 		rgba(255, 255, 255, 0.72) 3.17%,
 		rgba(140, 181, 225, 0.6) 50.93%,
 		rgba(255, 255, 255, 0.72) 99.97%
 	);
-}
+} */
 </style>
