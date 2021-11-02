@@ -382,10 +382,6 @@ export default class extends Vue {
 			projectKey: 'ptApJJm32giY5X4e0tSU',
 		});
 		tracker.start();
-		// if (!this.$store.state.modules.leads.openreplayInit) {
-		// 	this.$store.commit('modules/leads/setOpenreplay');
-		// 	console.log('openreplay has been initialized');
-		// } else console.log('openreplay has already been initialized');
 	}
 	created() {
 		this.$nuxt.$on('trigger-dialog', () => {
