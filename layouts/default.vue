@@ -295,11 +295,11 @@
 					</v-col>
 				</v-row>
 				<v-divider></v-divider>
-				<v-row class="mt-6">
+				<v-row align="center" justify="center" class="mt-6">
 					<v-col
-						class="text-center"
+						class="text-center px-0"
 						cols="6"
-						sm="2"
+						sm="3"
 						v-for="location in locations"
 						:key="location['1']"
 					>
@@ -338,7 +338,7 @@
 							</v-card-actions>
 						</v-card>
 					</v-dialog>
-					<v-col class="text-center" cols="6" sm="2">
+					<v-col class="text-center" cols="6" sm="3">
 						<a
 							href="https://www.linkedin.com/company/alraedah-finance/"
 							target="_"
