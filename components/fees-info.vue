@@ -10,7 +10,7 @@
 					src="/info.svg"
 					alt=""
 				></v-img>
-				<span class="mr-4 my-2">{{ fee }}</span>
+				<span class="mx-2 my-2">{{ fee }}</span>
 			</div>
 		</div>
 	</div>
