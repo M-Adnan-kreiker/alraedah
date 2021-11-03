@@ -1,8 +1,5 @@
 <template>
-	<main
-		class="bg py-6"
-		:style="{ background: 'url(/raedah-bg.svg) no-repeat left center' }"
-	>
+	<main :class="$vuetify.breakpoint.smAndUp ? 'bg' : ''" class="py-6">
 		<v-row class="mx-4 mx-sm-8">
 			<v-col cols="12">
 				<!-- prettier-ignore -->
@@ -93,7 +90,7 @@
 					<v-window-item v-for="card in cards" :key="card.id">
 						<v-card
 							elevation="4"
-							color="transparent"
+							color="#ffffff"
 							class="rounded-xl cards mx-auto mx-sm-2"
 							min-height="370px"
 							min-width="280"
@@ -203,5 +200,9 @@ export default class extends Vue {
 	.cards {
 		max-width: 85vw !important;
 	}
+}
+
+.bg {
+	background: url(/raedah-bg.svg) no-repeat left center;
 }
 </style>

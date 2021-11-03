@@ -41,7 +41,6 @@
 					<v-img class="mt-8" contain src="/POS.webp" alt=""> </v-img>
 				</v-col>
 			</v-row>
-			<v-divider class="mx-16"></v-divider>
 			<!-- <section class="mx-auto" style="width: 90%">
 				<div>
 					<product-card

@@ -24,7 +24,7 @@
 				{{ $t('productsTable.text') }}
 			</h2>
 		</div>
-		<v-sheet class="mx-n6">
+		<v-sheet color="transparent" class="mx-n6">
 			<v-slide-group class="py-sm-6 mx-2 px-4" mobile-breakpoint="100">
 				<v-slide-item
 					class="mx-2 mx-sm-4"
@@ -143,4 +143,8 @@ export default class extends Vue {
 		height: 580px !important;
 	}
 }
+/* .bg {
+	background: url(/watermark.jpg);
+	background-size: 100%;
+} */
 </style>

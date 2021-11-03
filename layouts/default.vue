@@ -217,7 +217,27 @@
 							$t('header.careers')
 						}}</v-list-item-title>
 					</v-list-item>
-
+					<v-list-group :value="false" prepend-icon="mdi-web">
+						<template v-slot:activator>
+							<v-list-item-title class="text-subtitle-1">{{
+								$t('language')
+							}}</v-list-item-title>
+						</template>
+						<v-list-item exact-active-class="primary lighten-2 white--text">
+							<v-list-item-title
+								@click="setLang('ar')"
+								class="text-subtitle-2 mx-14"
+								>العربية
+							</v-list-item-title>
+						</v-list-item>
+						<v-list-item exact-active-class="primary lighten-2 white--text">
+							<v-list-item-title
+								@click="setLang('en')"
+								class="text-subtitle-2 mx-14"
+								>English</v-list-item-title
+							>
+						</v-list-item>
+					</v-list-group>
 					<v-list-item
 						exact-active-class="primary lighten-2 white--text"
 						:to="localeRoute('/about-us')"
@@ -245,7 +265,13 @@
 		>
 			<v-icon>mdi-chevron-up</v-icon>
 		</v-btn>
-		<v-main class="mt-14">
+		<v-main
+			:class="[
+				$vuetify.breakpoint.xs ? 'hero' : '',
+				$vuetify.breakpoint.smAndUp ? 'bg' : '',
+			]"
+			class="mt-14"
+		>
 			<div :class="modal ? 'd-block' : 'd-none'" class="overlay">
 				<transition name="fade" mode="out-in">
 					<contact-form
@@ -288,6 +314,7 @@
 									text-capitalize text-sm-caption text-md-body-1
 									font-weight-bold
 									px-2
+									rounded-0
 								"
 								>{{ link.name }}</v-btn
 							>
@@ -392,9 +419,9 @@ export default class extends Vue {
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
 		// logs an event in analytics, can be seen in the console
-		this.$fire.analytics.logEvent('select_content', {
-			content_type: 'changeing locale',
-		});
+		// this.$fire.analytics.logEvent('select_content', {
+		// 	content_type: 'changeing locale',
+		// });
 	}
 	fab: boolean = false;
 	onScroll(e: any) {
@@ -468,5 +495,13 @@ export default class extends Vue {
 		height: 90%;
 		width: 80%;
 	}
+}
+.hero {
+	background: url(/watermark.jpg);
+	background-size: 140%;
+}
+.bg {
+	background: url(/watermark2.jpg) no-repeat right bottom;
+	background-size: fit;
 }
 </style>

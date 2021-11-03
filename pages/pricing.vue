@@ -4,7 +4,7 @@
 			class="mt-3"
 			:class="$i18n.locale === 'ar' ? 'ml-sm-n16' : 'mr-sm-n16'"
 		>
-			<v-col class="" cols="12" sm="5">
+			<v-col class="pb-0" cols="12" sm="5">
 				<div class="">
 					<!-- prettier-ignore -->
 					<h1 class="primary--text text-start text-sm-h4 text-md-h3 pt-10 font-weight-bold">{{ $t('pricing.title')}}</h1>
@@ -28,7 +28,7 @@
 					@change="select_value"
 				></v-select>
 			</v-col>
-			<v-col class="px-0" cols="12" sm="7">
+			<v-col class="px-0 py-0" cols="12" sm="7">
 				<v-img
 					:style="$i18n.locale === 'ar' ? 'transform: scaleX(-1)' : ''"
 					height="100%"
@@ -39,7 +39,11 @@
 		<transition name="slide-fade" mode="out-in">
 			<div v-if="myProduct[0]">
 				<transition name="slide-fade" mode="out-in">
-					<fees-info :key="feesKey" :fees="myProduct[0].fees"></fees-info>
+					<fees-info
+						class="mt-8"
+						:key="feesKey"
+						:fees="myProduct[0].fees"
+					></fees-info>
 				</transition>
 				<v-row justify="center">
 					<v-col cols="12" md="7">

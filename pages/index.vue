@@ -1,5 +1,5 @@
 <template>
-	<main class="mt-10 hero">
+	<main class="pt-10">
 		<landing-page class="mb-8 mb-sm-0"></landing-page>
 		<achievements></achievements>
 		<Lazy-financing-solutions-page
@@ -7,7 +7,7 @@
 		></Lazy-financing-solutions-page>
 		<Lazy-pricing-table class="mt-sm-16"></Lazy-pricing-table>
 		<Lazy-partners></Lazy-partners>
-		<Lazy-kick-start class="pb-sm-16"></Lazy-kick-start>
+		<Lazy-kick-start class="pb-8 pb-sm-16"></Lazy-kick-start>
 	</main>
 </template>
 
@@ -36,7 +36,12 @@ export default class extends Vue {
 	color: white;
 	padding: 3px;
 }
-.hero {
-	background: url(/raedah-bg.svg) no-repeat left bottom;
+/* .hero {
+	background: url(/watermark.jpg);
+	background-size: 140%;
 }
+.bg {
+	background: url(/watermark2.jpg) no-repeat right bottom;
+	background-size: fit;
+} */
 </style>

@@ -1,5 +1,6 @@
 export default {
 	ourProducts: 'منتجاتنا',
+	language: 'اللغة',
 	features: 'الميزات',
 	times: [
 		' من ٨  صباحاً حتى ١٠  صباحاً',

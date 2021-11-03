@@ -41,7 +41,7 @@
 					:class="$i18n.locale === 'en' ? 'rounded-r-xl' : 'rounded-l-xl'"
 					class="py-0"
 					height="100%"
-					src="/apply.webp"
+					src="/careers.jpg"
 					alt=""
 				/>
 			</template>

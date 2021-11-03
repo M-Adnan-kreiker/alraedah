@@ -28,7 +28,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class extends Vue {
 	@Prop(String) buttonWidth!: string;
 	@Prop({ default: 'min(26px, 2vw)' }) buttonPadding!: string;
-	@Prop({ default: '#1D4283' }) buttonColor!: string;
+	@Prop({ default: '#1e4383' }) buttonColor!: string;
 	@Prop({ default: '#ffffff' }) buttonTextColor!: string;
 	@Prop({ default: 'Apply Now' }) buttonText!: string;
 	@Prop({ default: '24px' }) buttonFontSize!: string;

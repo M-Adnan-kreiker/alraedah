@@ -1,5 +1,6 @@
 export default {
 	ourProducts: 'Our products',
+	language: 'Language',
 	features: 'Features',
 	times: [
 		'8 am - 10 am',
