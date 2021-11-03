@@ -3,7 +3,7 @@
 		<v-row class="my-12 my-md-16" justify="center">
 			<v-col
 				style="background: #1d4283"
-				class="text-center rounded-xl py-16"
+				class="text-center rounded-t-xl py-16"
 				cols="11"
 				sm="10"
 				md="8"

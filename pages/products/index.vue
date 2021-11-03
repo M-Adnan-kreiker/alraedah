@@ -66,7 +66,7 @@
 				</h1>
 			</v-col>
 		</v-row>
-		<v-row class="px-2 px-sm-4 mb-16">
+		<v-row class="px-2 mt-n8 mt-sm-0 px-sm-4 mb-16">
 			<v-col cols="12" md="6" v-for="product in products" :key="product.title">
 				<v-card
 					elevation="4"

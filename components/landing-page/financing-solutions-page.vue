@@ -85,7 +85,7 @@
 		</section>
 
 		<section class="d-block d-sm-none mt-10">
-			<v-card color="transparent" flat class="pt-8">
+			<v-card color="transparent" flat>
 				<v-window class="pa-4" v-model="onboarding">
 					<v-window-item v-for="card in cards" :key="card.id">
 						<v-card
