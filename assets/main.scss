@@ -79,39 +79,48 @@ $heading-font-family: 'Tajawal', sans-serif;
 	opacity: 0;
 }
 
-// @font-face {
-// 	font-family: 'aktiv_grotesk_bold';
-// 	src: url('~assets/fonts/Aktiv-Grostek-Bold.otf') format('otf');
-// 	font-weight: bold;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: 'Aktiv Grotesk';
+	src: url('~assets/fonts/Aktiv-Grotesk-Bold.otf') format('otf');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
 
-// @font-face {
-// 	font-family: 'aktiv_grotesk_medium';
-// 	src: url('~assets/fonts/Aktiv-Grostek-Light.otf')
-// 			format('otf');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: 'Aktiv Grotesk';
+	src: url('~assets/fonts/Aktiv-Grotesk-Medium.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
 
-// @font-face {
-// 	font-family: 'aktiv_grotesk_xbold';
-// 	src: url('~assets/fonts/Aktiv-Grostek-XBold.otf')
-// 			format('otf');
-// 	font-weight: bolder;
-// 	font-style: normal;
-// }
-// @font-face {
-// 	font-family: 'aktiv_grotesk_light';
-// 	src: url('~assets/fonts/Aktiv-Grostek-Light.otf')
-// 			format('otf');
-// 	font-weight: lighter;
-// 	font-style: normal;
-// }
-// @font-face {
-// 	font-family: 'aktiv_grotesk_regular';
-// 	src: url('~assets/fonts/Aktiv-Grostek-Regular.otf')
-// 			format('otf');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: 'Aktiv Grotesk';
+	src: url('~assets/fonts/Aktiv-Grotesk-XBold.otf') format('otf');
+	font-weight: bolder;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Aktiv Grotesk';
+	src: url('~assets/fonts/Aktiv-Grotesk-Light.otf') format('otf');
+	font-weight: lighter;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Aktiv Grotesk';
+	src: url('~assets/fonts/Aktiv-Grotesk-Regular.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'AlexBrush-Regular';
+	src: url('~assets/fonts/AlexBrush-Regular.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

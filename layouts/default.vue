@@ -4,9 +4,9 @@
 		<v-app-bar
 			style="position: absolute; z-index: 10"
 			height="80%"
-			class="px-4"
 			color="white"
 			elevation="2"
+			class="px-4"
 		>
 			<v-row align-content="center" align="center" style="flex-wrap: nowrap">
 				<v-btn :to="localeRoute('/')" text color="white"
@@ -19,8 +19,8 @@
 				<v-spacer></v-spacer>
 				<v-list
 					id="nav-list"
-					class="d-flex flex-nowrap"
-					style="align-items: center"
+					class="d-flex flex-row flex-nowrap"
+					style="align-items: center; width: 70%; justify-content: space-evenly"
 				>
 					<v-btn
 						:to="localeRoute('/')"
@@ -31,10 +31,10 @@
 						small
 						class="
 							primary--text
-							py-5
 							rounded-0
+							px-0
+							py-5
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
-							mr-0 mr-md-2
 							font-weight-bold
 						"
 						color="primary"
@@ -58,8 +58,8 @@
 							primary--text
 							py-5
 							rounded-0
+							px-0
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
-							mr-0 mr-md-2
 							font-weight-bold
 						"
 						color="primary"
@@ -73,9 +73,9 @@
 						class="
 							primary--text
 							py-5
+							px-0
 							rounded-0
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
-							mr-0 mr-md-2
 							font-weight-bold
 						"
 						color="primary"
@@ -91,9 +91,9 @@
 						class="
 							primary--text
 							py-5
+							px-0
 							rounded-0
 							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
-							mr-0 mr-md-2
 							font-weight-bold
 						"
 						color="primary"
@@ -104,11 +104,10 @@
 						:text="$t('header.aboutUs')"
 						:items="about"
 					></dropdown-menu>
-					<div>
+					<div class="d-flex justify-center">
 						<v-btn
 							@click="openDialog"
 							dense
-							:class="$i18n.locale === 'en' ? 'mr-4 ml-2' : 'ml-1 mr-2'"
 							class="
 								text-lg-body-1 text-md-body-2
 								font-weight-bold
@@ -117,8 +116,7 @@
 								rounded-lg
 								px-sm-4 px-md-8
 								py-6
-								mx-0
-								apply-btn
+								px-0
 							"
 							to="#"
 							color="primary"
@@ -127,16 +125,25 @@
 							{{ $t('applyButtonHeader') }}
 						</v-btn>
 					</div>
-					<img
-						@click="setLang($i18n.locale === 'ar' ? 'en' : 'ar')"
-						height="20"
-						style="cursor: pointer"
-						class="d-inline-block mx-md-4"
-						src="/language.svg"
-						alt=""
-					/>
+					<div class="">
+						<img
+							@click="setLang($i18n.locale === 'ar' ? 'en' : 'ar')"
+							height="20"
+							style="cursor: pointer"
+							class="d-block mx-auto"
+							src="/language.svg"
+							alt=""
+						/>
+					</div>
 
-					<img height="20" src="/search.svg" alt="alraedah logo" class="mx-2" />
+					<div class="">
+						<img
+							height="20"
+							src="/search.svg"
+							class="d-block mx-auto"
+							alt="alraedah logo"
+						/>
+					</div>
 				</v-list>
 				<img
 					@click.stop="triggerDrawer"
@@ -477,9 +484,7 @@ export default class extends Vue {
 		display: none !important;
 	}
 }
-.apply-btn {
-	border: 1px solid #1d4283;
-}
+
 .overlay {
 	position: fixed;
 	top: 0;

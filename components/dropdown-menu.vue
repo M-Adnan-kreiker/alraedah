@@ -1,17 +1,18 @@
 <template>
-	<div class="dropdown">
+	<div class="dropdown d-flex justify-center">
 		<v-btn
 			text
 			nuxt
 			exact-active-class="active"
 			small
+			dense
 			:to="localeRoute(route)"
 			class="
 				primary--text
 				py-5
 				rounded-0
+				px-0
 				text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
-				mr-0 mr-md-2
 				font-weight-bold
 			"
 			color="primary"
@@ -52,17 +53,20 @@ export default class extends Vue {
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1000;
 	border-radius: 5px;
+	margin-top: 40px;
 }
 
 .dropdown-content a {
-	color: #1d4283;
+	color: #1e4382;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
+	border-radius: 5px;
 }
 
 .dropdown-content a:hover {
 	background-color: rgb(252, 248, 248);
+	border-radius: 5px;
 }
 
 .dropdown:hover .dropdown-content {
