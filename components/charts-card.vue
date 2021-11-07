@@ -37,7 +37,7 @@
 							background:
 								'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
 							height: securityDepositColumn,
-							width: '20%',
+							width: '23%',
 							position: 'absolute',
 							left: securityDepositStyle,
 							bottom: '20%',
@@ -63,7 +63,7 @@
 							background:
 								'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
 							height: netFinancingAmountColumn,
-							width: '20%',
+							width: '23%',
 							position: 'absolute',
 							left: '38.5%',
 							bottom: '20%',
@@ -89,7 +89,7 @@
 							background:
 								'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
 							height: totalPaybackAmountColumn,
-							width: '20%',
+							width: '23%',
 							position: 'absolute',
 							bottom: '20%',
 							left: paybackStyle,
@@ -228,18 +228,18 @@ export default class extends Vue {
 	height: 560px !important;
 }
 
-@media (max-width: 390px) {
+/* @media (max-width: 390px) {
 	.graph {
 		width: 100px;
 		position: relative;
 		right: 25%;
 	}
-}
-@media (max-width: 350px) {
+} */
+/* @media (max-width: 350px) {
 	.graph {
 		right: 35%;
 	}
-}
+} */
 @media (max-width: 472px) {
 	.legend {
 		bottom: 12% !important;

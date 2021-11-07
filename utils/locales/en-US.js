@@ -248,8 +248,8 @@ export default {
 			max: 500000,
 			fees: [
 				'20% + 1.5% Processing Fee Up to 12 months',
-				'10% + 1% Processing Up to 6 months',
 				'15% + 1% Processing Up to 9 months',
+				'10% + 1% Processing Up to 6 months',
 			],
 			guides: [
 				'You can choose the appropriate financing from two packages spread over 6 or 9 months.',

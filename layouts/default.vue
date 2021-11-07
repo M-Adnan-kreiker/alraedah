@@ -6,7 +6,6 @@
 			height="80%"
 			color="white"
 			elevation="2"
-			class="px-4"
 		>
 			<v-row align-content="center" align="center" style="flex-wrap: nowrap">
 				<v-btn :to="localeRoute('/')" text color="white"
@@ -20,7 +19,7 @@
 				<v-list
 					id="nav-list"
 					class="d-flex flex-row flex-nowrap"
-					style="align-items: center; width: 70%; justify-content: space-evenly"
+					style="align-items: center; width: 80%; justify-content: space-evenly"
 				>
 					<v-btn
 						:to="localeRoute('/')"
@@ -34,7 +33,9 @@
 							rounded-0
 							px-0
 							py-5
-							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
+							text-body-2 text-lg-body-1
+							px-2
+							text-capitalize
 							font-weight-bold
 						"
 						color="primary"
@@ -59,7 +60,9 @@
 							py-5
 							rounded-0
 							px-0
-							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
+							text-body-2 text-lg-body-1
+							px-2
+							text-capitalize
 							font-weight-bold
 						"
 						color="primary"
@@ -75,7 +78,9 @@
 							py-5
 							px-0
 							rounded-0
-							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
+							text-body-2 text-lg-body-1
+							px-2
+							text-capitalize
 							font-weight-bold
 						"
 						color="primary"
@@ -93,7 +98,9 @@
 							py-5
 							px-0
 							rounded-0
-							text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
+							text-body-2 text-lg-body-1
+							px-2
+							text-capitalize
 							font-weight-bold
 						"
 						color="primary"
@@ -104,7 +111,7 @@
 						:text="$t('header.aboutUs')"
 						:items="about"
 					></dropdown-menu>
-					<div class="d-flex justify-center">
+					<div class="d-flex px-2 justify-center">
 						<v-btn
 							@click="openDialog"
 							dense
@@ -116,7 +123,6 @@
 								rounded-lg
 								px-sm-4 px-md-8
 								py-6
-								px-0
 							"
 							to="#"
 							color="primary"
@@ -130,7 +136,7 @@
 							@click="setLang($i18n.locale === 'ar' ? 'en' : 'ar')"
 							height="20"
 							style="cursor: pointer"
-							class="d-block mx-auto"
+							class="d-block px-2 mx-auto"
 							src="/language.svg"
 							alt=""
 						/>
@@ -140,7 +146,7 @@
 						<img
 							height="20"
 							src="/search.svg"
-							class="d-block mx-auto"
+							class="d-block px-2 mx-auto"
 							alt="alraedah logo"
 						/>
 					</div>
@@ -162,6 +168,7 @@
 			absolute
 			left
 			temporary
+			width="280px"
 		>
 			<v-list nav dense>
 				<v-list-item-group
@@ -176,22 +183,33 @@
 						<v-list-item-icon>
 							<v-icon>mdi-home-variant-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1">{{
+						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.home')
 						}}</v-list-item-title>
 					</v-list-item>
-
-					<v-list-item
-						exact-active-class="primary lighten-2 white--text"
-						:to="localeRoute('/products')"
+					<v-list-group
+						:value="false"
+						prepend-icon="mdi-folder-star-multiple-outline"
 					>
-						<v-list-item-icon>
-							<v-icon>mdi-folder-star-multiple-outline</v-icon>
-						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1">{{
-							$t('header.products')
-						}}</v-list-item-title>
-					</v-list-item>
+						<template v-slot:activator>
+							<v-list-item-title
+								class="text-subtitle-1 py-4"
+								exact-active-class="primary lighten-2 white--text"
+							>
+								{{ $t('header.products') }}
+							</v-list-item-title>
+						</template>
+						<v-list-item
+							v-for="product in products"
+							:key="product.title"
+							:to="localeRoute(product.link)"
+							exact-active-class="primary lighten-2 white--text"
+						>
+							<v-list-item-title class="text-subtitle-2 mx-14">
+								{{ product.title }}
+							</v-list-item-title>
+						</v-list-item>
+					</v-list-group>
 					<v-list-item
 						exact-active-class="primary lighten-2 white--text"
 						:to="localeRoute('/pricing')"
@@ -199,7 +217,7 @@
 						<v-list-item-icon>
 							<v-icon>mdi-cash-multiple</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1">{{
+						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.pricing')
 						}}</v-list-item-title>
 					</v-list-item>
@@ -208,7 +226,7 @@
 						<v-list-item-icon>
 							<v-icon>mdi-toolbox-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1">{{
+						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.solutions')
 						}}</v-list-item-title>
 					</v-list-item>
@@ -220,13 +238,13 @@
 						<v-list-item-icon>
 							<v-icon>mdi-clipboard-edit-outline</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1">{{
+						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.careers')
 						}}</v-list-item-title>
 					</v-list-item>
 					<v-list-group :value="false" prepend-icon="mdi-web">
 						<template v-slot:activator>
-							<v-list-item-title class="text-subtitle-1">{{
+							<v-list-item-title class="text-subtitle-1 py-4">{{
 								$t('language')
 							}}</v-list-item-title>
 						</template>
@@ -245,17 +263,32 @@
 							>
 						</v-list-item>
 					</v-list-group>
-					<v-list-item
-						exact-active-class="primary lighten-2 white--text"
-						:to="localeRoute('/about-us')"
-					>
-						<v-list-item-icon>
-							<v-icon>mdi-information-outline</v-icon>
-						</v-list-item-icon>
-						<v-list-item-title class="text-subtitle-1">{{
-							$t('header.aboutUs')
-						}}</v-list-item-title>
-					</v-list-item>
+					<v-list-group :value="false" prepend-icon="mdi-information-outline">
+						<template v-slot:activator>
+							<v-list-item-title
+								class="text-subtitle-1 py-4"
+								exact-active-class="primary lighten-2 white--text"
+							>
+								{{ $t('header.aboutUs') }}
+							</v-list-item-title>
+						</template>
+						<v-list-item
+							:to="localeRoute('/about-us')"
+							exact-active-class="primary lighten-2 white--text"
+						>
+							<v-list-item-title class="text-subtitle-2 mx-14">
+								{{ $t('header.aboutUs') }}
+							</v-list-item-title>
+						</v-list-item>
+						<v-list-item
+							:to="localeRoute('/financial-reports')"
+							exact-active-class="primary lighten-2 white--text"
+						>
+							<v-list-item-title class="text-subtitle-2 mx-14">
+								{{ $t('financialReports.title') }}
+							</v-list-item-title>
+						</v-list-item>
+					</v-list-group>
 				</v-list-item-group>
 			</v-list>
 		</v-navigation-drawer>
@@ -476,7 +509,7 @@ export default class extends Vue {
 	display: none;
 }
 
-@media (max-width: 825px) {
+@media (max-width: 1040px) {
 	.burger {
 		display: unset !important;
 	}

@@ -21,7 +21,7 @@
 	>
 		<v-card-title
 			id="header"
-			class="text-lg-h4 text-h4 my-auto text-capitalize text-center px-0"
+			class="text-lg-h4 text-h5 my-auto text-capitalize text-center px-0"
 			><slot name="header"></slot
 		></v-card-title>
 		<slot name="amount"></slot>

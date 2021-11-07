@@ -12,7 +12,7 @@
 				py-5
 				rounded-0
 				px-0
-				text-lg-body-1 text-md-body-2 text-sm-caption text-capitalize
+				text-body-2 text-lg-body-1 text-capitalize
 				font-weight-bold
 			"
 			color="primary"

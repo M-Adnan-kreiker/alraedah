@@ -1,8 +1,5 @@
 <template>
 	<div v-if="myProduct" class="mx-4 mx-sm-8 mx-md-10 mx-lg-16 mt-16">
-		<!-- <h1 class="primary--text mb-12 text-h3 font-weight-bold">
-			{{ myProduct[0].name }}
-		</h1> -->
 		<v-sheet elevation="4" class="rounded-xl my-16">
 			<product-card :products="myProduct"></product-card>
 		</v-sheet>
@@ -15,7 +12,7 @@
 				:moreInfo="myProduct[0].moreInfo"
 			></fees-info>
 		</div>
-		<v-row class="mb-16">
+		<v-row class="mb-16 mx-n5 mx-sm-2">
 			<v-col cols="12" md="7">
 				<charts-card
 					:min="min"
@@ -41,9 +38,15 @@
 									src="/checkMark.svg"
 									alt=""
 								/>
-								<span class="text-h6 d-block font-weight-regular text-wrap">{{
-									item
-								}}</span>
+								<span
+									class="
+										text-sm-h6 text-body-1
+										d-block
+										font-weight-regular
+										text-wrap
+									"
+									>{{ item }}</span
+								>
 							</div>
 						</div>
 					</template>
@@ -53,6 +56,7 @@
 							:buttonColor="'#ffffff'"
 							:buttonText="$i18n.locale === 'ar' ? 'قدّم' : 'Apply'"
 							:buttonPadding="'28px 80px'"
+							class="my-3"
 						></apply-now-button>
 					</template>
 				</pricing-card>
@@ -73,9 +77,6 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
-	mounted() {
-		console.log(this.$route.params);
-	}
 	products: any = this.$t('products');
 	myProduct = this.products.filter(
 		(el: any) => el.category === this.$route.params.id
