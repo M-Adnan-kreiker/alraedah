@@ -45,7 +45,7 @@
 					v-model="slider"
 					:step="step"
 					:max="max"
-					:thumb-size="84"
+					:thumb-size="72"
 					thumb-label="always"
 					ticks="always"
 					tick-size="4"
