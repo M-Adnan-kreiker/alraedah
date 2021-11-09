@@ -200,6 +200,14 @@
 							</v-list-item-title>
 						</template>
 						<v-list-item
+							:to="localeRoute('/products')"
+							exact-active-class="primary lighten-2 white--text"
+						>
+							<v-list-item-title class="text-subtitle-2 mx-14">
+								{{ $t('allProducts') }}
+							</v-list-item-title>
+						</v-list-item>
+						<v-list-item
 							v-for="product in products"
 							:key="product.title"
 							:to="localeRoute(product.link)"

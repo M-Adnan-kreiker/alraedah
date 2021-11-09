@@ -1,25 +1,51 @@
 <template>
 	<div>
+		<v-row align="center" v-if="category === 'e-commerce'">
+			<div class="d-flex align-center">
+				<p
+					class="
+						mt-6
+						px-4
+						text-body-1 text-sm-h6 text-md-h5
+						primary--text
+						font-weight-bold
+						text-h6
+					"
+				>
+					{{ $t('paybackPeriod') }}
+				</p>
+				<v-select
+					class="pt-4 mx-4"
+					:items="items"
+					label="Payback period"
+					dense
+					solo
+					v-model="selectedPeriod"
+					style="width: 120px"
+				></v-select>
+			</div>
+		</v-row>
 		<v-card
 			style="position: relative"
-			height="680"
+			height="640"
 			elevation="4"
-			class="mt-8 px-12 rounded-xl"
+			class="mt-8 px-4 px-md-12 rounded-xl"
 		>
-			<v-card-title
-				style="margin-bottom: 80px"
-				class="info--text font-weight-bold text-body-1 text-sm-h5"
-			>
-				{{ $t('chartCard.facilityAmount') }}
-			</v-card-title>
-			<v-card-text class="px-0 ml-0">
+			<v-row>
+				<v-card-title
+					class="info--text font-weight-bold mb-6 text-body-1 text-sm-h5"
+				>
+					{{ $t('chartCard.facilityAmount') }}
+				</v-card-title>
+			</v-row>
+			<v-card-text class="px-0 mt-14 ml-0">
 				<v-slider
-					class="ml-0"
+					class="ml-0 px-4"
 					:min="min"
 					v-model="slider"
 					:step="step"
 					:max="max"
-					:thumb-size="80"
+					:thumb-size="84"
 					thumb-label="always"
 					ticks="always"
 					tick-size="4"
@@ -36,11 +62,11 @@
 						:style="{
 							background:
 								'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
-							height: securityDepositColumn,
+							height: firstColHeight,
 							width: '23%',
 							position: 'absolute',
 							left: securityDepositStyle,
-							bottom: '20%',
+							bottom: '22%',
 						}"
 					>
 						<p
@@ -53,7 +79,7 @@
 								mt-n8
 							"
 						>
-							{{ moneyFormatter(securityDeposit) }}
+							{{ moneyFormatter(firstCol) }}
 						</p>
 					</div>
 				</v-col>
@@ -62,11 +88,11 @@
 						:style="{
 							background:
 								'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
-							height: netFinancingAmountColumn,
+							height: secondColHeight,
 							width: '23%',
 							position: 'absolute',
 							left: '38.5%',
-							bottom: '20%',
+							bottom: '22%',
 						}"
 					>
 						<p
@@ -79,7 +105,7 @@
 								mt-n8
 							"
 						>
-							{{ moneyFormatter(netFinancingAmount) }}
+							{{ moneyFormatter(secondCol) }}
 						</p>
 					</div>
 				</v-col>
@@ -87,11 +113,11 @@
 					<div
 						:style="{
 							background:
-								'linear-gradient(180deg, #1D4283 0%, rgba(46, 92, 253, 0.69) 100%)',
-							height: totalPaybackAmountColumn,
+								'linear-gradient(180deg, #1e4382 0%, rgba(46, 92, 253, 0.69) 100%)',
+							height: thirdColHeight,
 							width: '23%',
 							position: 'absolute',
-							bottom: '20%',
+							bottom: '22%',
 							left: paybackStyle,
 						}"
 					>
@@ -105,7 +131,7 @@
 								mt-n8
 							"
 						>
-							{{ moneyFormatter(totalPaybackAmount) }}
+							{{ moneyFormatter(thirdCol) }}
 						</p>
 					</div>
 				</v-col>
@@ -115,7 +141,7 @@
 					style="
 						position: absolute;
 						relative: 15%;
-						left: 2.5%;
+						left: 4.2%;
 						bottom: 13.5%;
 						width: 91.5%;
 					"
@@ -132,7 +158,7 @@
 							mb-0
 						"
 					>
-						{{ $t('chartCard.securityDeposit') }}
+						{{ firstColumn }}
 					</p>
 					<p
 						style="flex-basis: 100%"
@@ -145,7 +171,7 @@
 							mb-0
 						"
 					>
-						{{ $t('chartCard.netFinancingAmount') }}
+						{{ secondColumn }}
 					</p>
 					<p
 						style="flex-basis: 100%"
@@ -158,12 +184,14 @@
 							mb-0
 						"
 					>
-						{{ $t('chartCard.totalPaybackAmount') }}
+						{{ thirdColumn }}
+						<span v-if="category === 'e-commerce'">{{ selectedPeriod }}</span>
 					</p>
 				</div>
 			</div>
 			<p
-				class="accent--text text-subtitle-2 caveat"
+				:class="$i18n.locale === 'en' ? 'mr-5' : 'ml-5'"
+				class="accent--text text-subtitle-2 mb-1 mb-sm-4 text-sm-body-1 caveat"
 				style="position: absolute; bottom: 2%"
 				:style="$i18n.locale === 'en' ? 'left: 8%' : 'right: 8%'"
 			>
@@ -181,7 +209,24 @@ export default class extends Vue {
 	@Prop({ required: true }) min!: number;
 	@Prop({ required: true }) max!: number;
 	@Prop({ required: true }) step!: number;
+	@Prop({ required: true }) category!: string;
+	@Prop({ required: true }) firstColumn!: string;
+	@Prop({ required: true }) secondColumn!: string;
+	@Prop({ required: true }) thirdColumn!: string;
+	@Prop() fourthColumn!: string;
+	@Prop() fifthColumn!: string;
+	@Prop({ required: true }) feesRatio1!: number;
+	@Prop() feesRatio2!: number;
+	@Prop() feesRatio3!: number;
+	@Prop() feesRatio4!: number;
+	@Prop() options!: string[];
+	items = this.options;
 	slider: number = this.step;
+	ratio = this.feesRatio1;
+	ratio2 = this.feesRatio2;
+	ratio3 = this.feesRatio3;
+	ratio4 = this.feesRatio4;
+	selectedPeriod = this.options[0];
 	moneyFormatter(num: number) {
 		const formatted = new Intl.NumberFormat(
 			this.$i18n.locale === 'ar' ? 'ar-SA' : 'en-US',
@@ -201,23 +246,53 @@ export default class extends Vue {
 		return this.$i18n.locale === 'en' ? '8.5%' : '68.5%';
 	}
 
-	get securityDeposit() {
-		return this.slider / 10;
+	get firstCol() {
+		if (this.category === 'lite') {
+			return this.slider;
+		} else {
+			return this.slider / 10;
+		}
 	}
-	get securityDepositColumn() {
-		return `${(this.securityDeposit / this.min) * 4}%`;
+	get firstColHeight() {
+		return `${(this.firstCol / this.min) * 3.5}%`;
 	}
-	get netFinancingAmount() {
-		return this.slider - this.slider / 10;
+	get secondCol() {
+		if (this.category === 'lite') {
+			return this.slider * this.ratio;
+		} else {
+			return this.slider - this.slider / 10;
+		}
 	}
-	get netFinancingAmountColumn() {
-		return `${(this.netFinancingAmount / this.min) * 4}%`;
+	get secondColHeight() {
+		return `${(this.secondCol / this.min) * 3.5}%`;
 	}
-	get totalPaybackAmount() {
-		return this.slider * 1.25;
+	get thirdCol() {
+		if (this.category === 'lite') {
+			return this.slider * this.ratio2;
+		}
+		if (
+			(this.category === 'e-commerce' && this.selectedPeriod === '26 Weeks') ||
+			this.selectedPeriod === '٢٦ أسبوع'
+		) {
+			return this.slider * this.ratio2;
+		}
+		if (
+			(this.category === 'e-commerce' && this.selectedPeriod === '39 Weeks') ||
+			this.selectedPeriod === '٣٩ أسبوع'
+		) {
+			return this.slider * this.ratio3;
+		}
+		if (
+			(this.category === 'e-commerce' && this.selectedPeriod === '52 Weeks') ||
+			this.selectedPeriod === '٥٢ أسبوع'
+		) {
+			return this.slider * this.ratio4;
+		} else {
+			return this.slider * this.ratio;
+		}
 	}
-	get totalPaybackAmountColumn() {
-		return `${(this.totalPaybackAmount / this.min) * 4}%`;
+	get thirdColHeight() {
+		return `${(this.thirdCol / this.min) * 3.5}%`;
 	}
 }
 </script>
@@ -228,21 +303,23 @@ export default class extends Vue {
 	height: 560px !important;
 }
 
-/* @media (max-width: 390px) {
+@media (max-width: 420px) {
 	.graph {
 		width: 100px;
-		position: relative;
-		right: 25%;
+		position: absolute;
+		/* right: 50%; */
+		left: 50%;
+		transform: translate(-50%, -10%);
 	}
-} */
+}
 /* @media (max-width: 350px) {
 	.graph {
 		right: 35%;
 	}
 } */
-@media (max-width: 472px) {
+@media (max-width: 475px) {
 	.legend {
-		bottom: 12% !important;
+		bottom: 11% !important;
 	}
 }
 @media (max-width: 328px) {
@@ -250,7 +327,7 @@ export default class extends Vue {
 		bottom: 10% !important;
 	}
 	.caveat {
-		bottom: 0.5% !important;
+		bottom: 2% !important;
 	}
 }
 </style>

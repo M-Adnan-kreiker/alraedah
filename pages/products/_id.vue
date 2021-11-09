@@ -6,7 +6,7 @@
 		<h2 class="primary--text text-h4 font-weight-bold mb-8">
 			{{ $t('chargesCalc') }}
 		</h2>
-		<div>
+		<div class="mb-8">
 			<fees-info
 				:fees="myProduct[0].fees"
 				:moreInfo="myProduct[0].moreInfo"
@@ -14,15 +14,10 @@
 		</div>
 		<v-row class="mb-16 mx-n5 mx-sm-2">
 			<v-col cols="12" md="7">
-				<charts-card
-					:min="min"
-					:max="max"
-					:slider="slider"
-					:step="step"
-				></charts-card>
+				<charts-card v-bind="props"></charts-card>
 			</v-col>
-			<v-col cols="12" md="5" class="mt-4">
-				<pricing-card class="mx-auto" :card="myProduct[0].card">
+			<v-col cols="12" md="5" class="mt-6">
+				<pricing-card class="mx-auto mt-16" :card="myProduct[0].card">
 					<template v-slot:header>
 						{{ myProduct[0].card.title }}
 					</template>
@@ -84,8 +79,36 @@ export default class extends Vue {
 	step: number = this.myProduct[0].step;
 	max: number = this.myProduct[0].max;
 	min: number = this.myProduct[0].step;
+	category = this.myProduct[0].category;
 	slider = this.myProduct[0].step;
+	firstColumn = this.myProduct[0].firstColumn;
+	secondColumn = this.myProduct[0].secondColumn;
+	thirdColumn = this.myProduct[0].thirdColumn;
+	fourthColumn = this.myProduct[0].fourthColumn;
+	fifthColumn = this.myProduct[0].fifthColumn;
+	feesRatio1 = this.myProduct[0].feesRatio1;
+	feesRatio2 = this.myProduct[0].feesRatio2;
+	feesRatio3 = this.myProduct[0].feesRatio3;
+	feesRatio4 = this.myProduct[0].feesRatio4;
+	options = this.myProduct[0].options;
 	local: string = this.$i18n.locale;
+	props = {
+		step: this.step,
+		max: this.max,
+		min: this.min,
+		category: this.category,
+		slider: this.slider,
+		firstColumn: this.firstColumn,
+		secondColumn: this.secondColumn,
+		thirdColumn: this.thirdColumn,
+		fourthColumn: this.fourthColumn,
+		fifthColumn: this.fifthColumn,
+		feesRatio1: this.feesRatio1,
+		feesRatio2: this.feesRatio2,
+		feesRatio3: this.feesRatio3,
+		feesRatio4: this.feesRatio4,
+		options: this.options,
+	};
 	moneyFormatter(num: number) {
 		const formatted = new Intl.NumberFormat('en-US', {
 			style: 'currency',

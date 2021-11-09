@@ -11,6 +11,16 @@ export interface myProduct {
 	info: string;
 	step: number;
 	max: number;
+	firstColumn: string;
+	secondColumn: string;
+	thirdColumn: string;
+	fourthColumn: string;
+	fifthColumn: string;
+	feesRatio1: number;
+	feesRatio2: number;
+	feesRatio3: number;
+	feesRatio4: number;
+	options: string[] | '';
 	fees: string[];
 	moreInfo: string[];
 	guides: string[];

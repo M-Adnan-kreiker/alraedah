@@ -48,13 +48,7 @@
 				<v-row justify="center">
 					<v-col cols="12" md="7">
 						<transition name="slide-fade" mode="out-in">
-							<charts-card
-								:min="min"
-								:max="max"
-								:slider="slider"
-								:step="step"
-								:key="componentKey"
-							></charts-card>
+							<charts-card v-bind="props" :key="componentKey"></charts-card>
 						</transition>
 					</v-col>
 					<v-col cols="12" class="mt-4" md="5">
@@ -107,7 +101,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Product } from '~/store/modules/products';
+import { myProduct } from '~/types';
 
 @Component
 export default class extends Vue {
@@ -117,17 +111,29 @@ export default class extends Vue {
 	get products(): any {
 		return this.$t('products');
 	}
-	myProduct = [] as Product[];
+	myProduct = [] as myProduct[];
 	selected: string = '';
 	step!: number;
 	max!: number;
 	min!: number;
 	slider!: number;
+	category!: string;
+	firstColumn!: string;
+	secondColumn!: string;
+	thirdColumn!: string;
+	fourthColumn!: string;
+	fifthColumn!: string;
+	feesRatio1!: number;
+	feesRatio2!: number;
+	feesRatio3!: number;
+	feesRatio4!: number;
+	options!: string[] | '';
+	props = {};
 	componentKey: number = 0;
 	pricingKey: number = 0;
 	feesKey: number = 0;
 	select_value(e: string) {
-		this.slider = 0;
+		// this.slider = 0;
 		this.selected = e;
 		this.myProduct = this.products.filter(
 			(el: any) => el.type === this.selected!.toLowerCase()
@@ -139,6 +145,34 @@ export default class extends Vue {
 		this.min = this.myProduct[0].step;
 		this.max = this.myProduct[0].max;
 		this.slider = this.myProduct[0].step;
+		this.category = this.myProduct[0].category;
+		this.firstColumn = this.myProduct[0].firstColumn;
+		this.secondColumn = this.myProduct[0].secondColumn;
+		this.thirdColumn = this.myProduct[0].thirdColumn;
+		this.fourthColumn = this.myProduct[0].fourthColumn;
+		this.fifthColumn = this.myProduct[0].fifthColumn;
+		this.feesRatio1 = this.myProduct[0].feesRatio1;
+		this.feesRatio2 = this.myProduct[0].feesRatio2;
+		this.feesRatio3 = this.myProduct[0].feesRatio3;
+		this.feesRatio4 = this.myProduct[0].feesRatio4;
+		this.options = this.myProduct[0].options;
+		this.props = {
+			step: this.step,
+			max: this.max,
+			min: this.min,
+			category: this.category,
+			slider: this.slider,
+			firstColumn: this.firstColumn,
+			secondColumn: this.secondColumn,
+			thirdColumn: this.thirdColumn,
+			fourthColumn: this.fourthColumn,
+			fifthColumn: this.fifthColumn,
+			feesRatio1: this.feesRatio1,
+			feesRatio2: this.feesRatio2,
+			feesRatio3: this.feesRatio3,
+			feesRatio4: this.feesRatio4,
+			options: this.options,
+		};
 	}
 }
 </script>

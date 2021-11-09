@@ -41,14 +41,6 @@
 					<v-img class="mt-8" contain src="/POS.webp" alt=""> </v-img>
 				</v-col>
 			</v-row>
-			<!-- <section class="mx-auto" style="width: 90%">
-				<div>
-					<product-card
-						:marginColumn="'40px 20px'"
-						:products="products"
-					></product-card>
-				</div>
-			</section> -->
 		</main>
 		<v-row>
 			<v-col>
