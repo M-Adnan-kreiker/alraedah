@@ -97,7 +97,9 @@ export default class extends Vue {
 	reports = [[], [], [], [], [], []] as FinancialReport[][];
 	async fetch() {
 		try {
-			const res = await this.$axios.$get(`${process.env.REPORTS_ENDPOINT}`);
+			const res = await this.$axios.$get(`${process.env.REPORTS_ENDPOINT}`, {
+				params: { locale: this.$i18n.locale },
+			});
 			const reports = res.data;
 			reports.forEach((report: FinancialReport) => {
 				if (report.attributes.year == 2016) {

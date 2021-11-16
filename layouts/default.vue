@@ -2,6 +2,7 @@
 	<v-app>
 		<!-- Header -->
 		<v-app-bar
+			v-if="!loaded"
 			style="position: absolute; z-index: 10"
 			height="80%"
 			color="white"
@@ -337,6 +338,7 @@
 					></contact-form>
 				</transition>
 			</div>
+			<loading-spinner v-if="loaded"></loading-spinner>
 			<!-- <v-container> -->
 			<Nuxt />
 			<!-- </v-container> -->
@@ -452,11 +454,16 @@ import OpenReplay from '@openreplay/tracker/cjs';
 
 @Component
 export default class extends Vue {
+	loaded = true;
+	beforeCreate() {
+		this.loaded = true;
+	}
 	mounted() {
 		const tracker = new OpenReplay({
 			projectKey: 'ptApJJm32giY5X4e0tSU',
 		});
 		tracker.start();
+		this.loaded = false;
 	}
 	created() {
 		this.$nuxt.$on('trigger-dialog', () => {
