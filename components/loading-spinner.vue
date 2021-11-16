@@ -1,8 +1,11 @@
 <template>
 	<div class="splash-screen">
-		<div class="spinner-wrapper d-flex">
+		<div class="spinner-wrapper d-flex flex-column">
 			<!-- <div class="spinner"></div> -->
-			<div id="floatingBarsG">
+			<div style="">
+				<img height="150" src="/alraedah-logo.svg" alt="Alraedah's logo" />
+			</div>
+			<!-- <div id="floatingBarsG">
 				<div class="blockG" id="rotateG_01"></div>
 				<div class="blockG" id="rotateG_02"></div>
 				<div class="blockG" id="rotateG_03"></div>
@@ -11,10 +14,7 @@
 				<div class="blockG" id="rotateG_06"></div>
 				<div class="blockG" id="rotateG_07"></div>
 				<div class="blockG" id="rotateG_08"></div>
-				<div style="position: relative; left: 200px; bottom: 20px">
-					<img height="150" src="/alraedah-logo.svg" alt="Alraedah's logo" />
-				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </template>
@@ -36,7 +36,7 @@
 
 	transform: translate(-50%, -50%);
 }
-.spinner {
+/* .spinner {
 	width: 80px;
 	height: 80px;
 	margin: 100px auto;
@@ -72,6 +72,7 @@
 	position: relative;
 	width: 76px;
 	height: 94px;
+	left: 35%;
 }
 .blockG {
 	position: absolute;
@@ -135,10 +136,37 @@
 }
 @keyframes fadeG {
 	0% {
-		background-color: #000000;
+		background-color: #1e4382;
 	}
 	100% {
-		background-color: #c4c4c4;
+		background-color: #4c83bd;
 	}
+} */
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	12.5% {
+		opacity: 0.8;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 0.3;
+	}
+	62.5% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+img {
+	animation: blink 2s;
+	animation-iteration-count: infinite ease-in-out;
 }
 </style>
