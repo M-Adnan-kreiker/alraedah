@@ -338,7 +338,7 @@
 					></contact-form>
 				</transition>
 			</div>
-			<loading-spinner v-if="loaded"></loading-spinner>
+			<!-- <loading-spinner v-if="loaded"></loading-spinner> -->
 			<!-- <v-container> -->
 			<Nuxt />
 			<!-- </v-container> -->
