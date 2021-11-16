@@ -2,7 +2,7 @@
 	<v-app>
 		<!-- Header -->
 		<v-app-bar
-			v-if="!loaded"
+			
 			style="position: absolute; z-index: 10"
 			height="80%"
 			color="white"
