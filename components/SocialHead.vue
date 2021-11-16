@@ -25,6 +25,11 @@ export default class extends Vue {
 			title: this.title,
 			meta: [
 				{
+					hid: 'description',
+					name: 'description',
+					content: this.description,
+				},
+				{
 					hid: 'twitter:title',
 					name: 'twitter:title',
 					content: this.title,
