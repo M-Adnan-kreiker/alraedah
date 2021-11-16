@@ -1,5 +1,9 @@
 <template>
 	<div :style="{ background: 'url(/raedah-bg.svg) no-repeat left top' }">
+		<social-head
+			:title="$t('seo.contact.title')"
+			:description="$t('seo.contact.description')"
+		></social-head>
 		<div class="mx-4 mx-sm-8 mx-md-16 mt-16">
 			<v-row>
 				<v-col cols="12" class="center-text" sm="9">

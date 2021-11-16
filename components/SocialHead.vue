@@ -19,6 +19,10 @@ export default class extends Vue {
 
 	head() {
 		return {
+			htmlAttrs: {
+				lang: this.$i18n.locale,
+			},
+			title: this.title,
 			meta: [
 				{
 					hid: 'twitter:title',

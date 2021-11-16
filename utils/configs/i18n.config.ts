@@ -25,8 +25,8 @@ export default {
 	/**
 	 * All options are valid from vuei18n
 	 */
-	vueI18n: { fallbackLocale: 'en' },
-
+	vueI18n: { fallbackLocale: ['en', 'ar'] },
+	detectBrowserLanguage: false,
 	lazy: true,
 
 	// it conflicts with vuex-module-decorators, hence disabled.

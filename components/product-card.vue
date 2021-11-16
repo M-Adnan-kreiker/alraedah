@@ -42,15 +42,7 @@
 							>
 								{{ product.name }}
 							</v-card-title>
-							<v-card-text
-								class="
-									info--text
-									py-md-0
-									mx-2
-									mt-auto
-									text-body-1 text-md-body-2 text-lg-body-1
-								"
-							>
+							<v-card-text class="info--text py-md-0 mx-2 mt-auto text-body-1">
 								{{ product.info }}
 							</v-card-text>
 							<v-card-text
@@ -59,7 +51,7 @@
 									pb-md-2
 									mt-auto
 									mx-2
-									text-h6 text-lg-h5
+									text-h5 text-lg-h4
 									font-weight-bold
 								"
 								>{{ $t('howItWorks') }}</v-card-text
@@ -70,7 +62,7 @@
 									:key="i"
 									class="info--text px-4"
 								>
-									<li class="text-md-body-2 text-lg-body-1 pt-lg-1">
+									<li class="text-body-1 pt-lg-1">
 										{{ guide }}
 									</li>
 								</ul>

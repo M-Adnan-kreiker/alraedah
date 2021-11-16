@@ -1,5 +1,9 @@
 <template>
 	<main class="pt-10">
+		<social-head
+			:title="$t('seo.home.title')"
+			:description="$t('seo.home.description')"
+		></social-head>
 		<landing-page class="mb-8 mb-sm-0"></landing-page>
 		<achievements></achievements>
 		<Lazy-financing-solutions-page
@@ -36,12 +40,4 @@ export default class extends Vue {
 	color: white;
 	padding: 3px;
 }
-/* .hero {
-	background: url(/watermark.jpg);
-	background-size: 140%;
-}
-.bg {
-	background: url(/watermark2.jpg) no-repeat right bottom;
-	background-size: fit;
-} */
 </style>

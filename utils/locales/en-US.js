@@ -1,10 +1,46 @@
 export default {
+	seo: {
+		home: {
+			title: 'Alraedah Finance',
+			description: 'Alraedah Home Page',
+		},
+		products: {
+			title: 'Alraedah products',
+			description: "Discover Alraedah's Products",
+		},
+		faq: {
+			title: 'Frequently Asked Questions',
+			description:
+				'A list of questions and answers for frequently asked questions about Alraedah and its products',
+		},
+		contact: {
+			title: 'Contact us',
+			description: "Contact Alraedah's team",
+		},
+		reportAMisconduct: {
+			title: 'Report a Violation',
+			description: 'Send us a message to report any suspicious activity',
+		},
+		financialReports: {
+			title: 'Financial Reports',
+			description: "Alraedah's Financial Reports",
+		},
+		aboutUs: {
+			title: 'About us',
+			description: 'Information about Alraedah',
+		},
+		pricing: {
+			title: 'Pricing',
+			description:
+				"Get information about Alraedah's products and their pricing",
+		},
+	},
 	ourProducts: 'Our products',
 	paybackPeriod: 'Select Payback Period',
 	currentOpenings: 'Current Job Openings',
 	mainRequirements: 'Main Requirements',
 	benefits: 'Benefits and Perks',
-	OurValues: "Our Company's values",
+	ourvalues: "Our Company's values",
 	allProducts: 'All Our Products',
 	language: 'Language',
 	features: 'Features',
@@ -158,6 +194,10 @@ export default {
 			feesRatio4: '',
 			options: '',
 			fees: ['12.5% Annually + 1.5% Processing fee annually'],
+			seo: {
+				title: 'Point of Sale Financing - Pro',
+				description: "Alraedah's Products - Point of Sale Financing - Pro",
+			},
 			guides: [
 				'From SAR 500,000 to SAR 5,000,000',
 				'Financing amount up to 50% of annual POS sales',
@@ -202,6 +242,10 @@ export default {
 			feesRatio4: '',
 			options: '',
 			fees: ['16.5% + Processing fee + 1.5% Processing fee'],
+			seo: {
+				title: 'Point of Sale Financing - Regular',
+				description: "Alraedah's Products - Point of Sale Financing - Regular",
+			},
 			guides: [
 				'The amount of funding starts from SAR 100,000 to SAR 1,000,000.',
 				'Financing amount up to 30% of annual POS sales.',
@@ -249,6 +293,10 @@ export default {
 				'16.5% + Processing Fee Without Guarantor',
 				'10% + Processing Fee With Guarantor',
 			],
+			seo: {
+				title: 'Point of Sale Financing - Lite',
+				description: "Alraedah's Products - Point of Sale Financing - Lite",
+			},
 			guides: [
 				'Funding starts from SAR 50,000 to SAR 125,000.',
 				'The value of the financing will be delivered within 7 business days from the moment of request. ',
@@ -297,6 +345,11 @@ export default {
 				'15% + 1% Processing Up to 9 months',
 				'10% + 1% Processing Up to 6 months',
 			],
+			seo: {
+				title: 'E-Commerce Financing Program with our partners',
+				description:
+					"Alraedah's Products - E-Commerce Financing Program with our partners",
+			},
 			guides: [
 				'You can choose the appropriate financing from two packages spread over 6 or 9 months.',
 				'Payment is a weekly or monthly transfer.',
@@ -335,10 +388,10 @@ export default {
 				6: 'https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d115995.90431042519!2d46.612038047079956!3d24.69692614932947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d24.697027!2d46.68226!5e0!3m2!1sen!2s!4v1635686202429!5m2!1sen!2s',
 			},
 			{
-				1: 'Khobar Branch',
-				2: 'Silver Tower',
-				3: 'King Abdul Aziz Street',
-				4: 'Khobar 31952',
+				1: 'Dammam Branch',
+				2: 'Ash Shati Al Gharbi. Bldg. No:7824',
+				3: 'Prince Mohammed Bin Fahd St.',
+				4: 'Dammam 32413',
 				5: 'Get Directions',
 				6: 'https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d114455.88098343302!2d50.13903298145048!3d26.30232389455625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d26.302547999999998!2d50.20908!5e0!3m2!1sen!2s!4v1635687024400!5m2!1sen!2s',
 			},

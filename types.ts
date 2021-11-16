@@ -69,3 +69,33 @@ export interface VeeValidateObserverRef extends Vue {
 	removeProvider(id: string): void;
 	setErrors(errors: Record<string, string[]>): void;
 }
+
+export type Job = {
+	id: number;
+	attributes: {
+		position: string;
+		location: string;
+		description: string;
+		requirements: string;
+		benefits: string;
+		values: string;
+		createdAt: string;
+		updatedAt: string;
+		publishedAt: string;
+		locale: string;
+	};
+};
+
+export type FinancialReport = {
+	id: number;
+	attributes: {
+		name: string;
+		year: number;
+		type: string;
+		file: string;
+		createdAt: string;
+		updatedAt: string;
+		publishedAt: string;
+		locale: string;
+	};
+};

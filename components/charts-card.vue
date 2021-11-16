@@ -1,10 +1,10 @@
 <template>
 	<div>
 		<v-row align="center" v-if="category === 'e-commerce'">
-			<div class="d-flex align-center">
+			<div class="d-flex align-center mt-n8 pt-2">
 				<p
 					class="
-						mt-6
+						mt-4
 						px-4
 						text-body-1 text-sm-h6 text-md-h5
 						primary--text

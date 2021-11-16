@@ -1,10 +1,9 @@
 import { NuxtOptionsHead } from '@nuxt/types/config/head';
-
 // Global page headers: https://go.nuxtjs.dev/config-head
 
 export default {
-	titleTemplate: '%s - Nuxt TS Starter',
-	title: 'Nuxt TS Starter',
+	titleTemplate: '',
+	title: 'Alraedah',
 	htmlAttrs: {
 		lang: 'en',
 	},
@@ -15,7 +14,7 @@ export default {
 		{
 			hid: 'description',
 			name: 'description',
-			content: 'A configured Nuxt-Typescript template.',
+			content: 'Get the Financing Your Business Needs with Alraedah',
 		},
 		{ name: 'format-detection', content: 'telephone=no' },
 
@@ -26,7 +25,7 @@ export default {
 			name: 'twitter:card',
 			content: 'summary_large_image',
 		},
-		{ hid: 'twitter:site', name: 'twitter:site', content: 'nuxt-ts-starter' },
+		{ hid: 'twitter:site', name: 'twitter:site', content: 'Alraedah Finance' },
 		{
 			hid: 'twitter:url',
 			name: 'twitter:url',
@@ -35,12 +34,12 @@ export default {
 		{
 			hid: 'twitter:title',
 			name: 'twitter:title',
-			content: 'Nuxt TS Starter',
+			content: 'Alraedah',
 		},
 		{
 			hid: 'twitter:description',
 			name: 'twitter:description',
-			content: 'A configured Nuxt-Typescript template.',
+			content: 'Get the Financing Your Business Needs with Alraedah',
 		},
 		{
 			hid: 'twitter:image',
@@ -53,7 +52,7 @@ export default {
 		{
 			hid: 'og:site_name',
 			property: 'og:site_name',
-			content: 'Nuxt TS Starter',
+			content: 'Alraedah',
 		},
 		{ hid: 'og:type', property: 'og:type', content: 'website' },
 		{
@@ -64,12 +63,12 @@ export default {
 		{
 			hid: 'og:title',
 			property: 'og:title',
-			content: 'Nuxt TS Starter',
+			content: 'Alraedah',
 		},
 		{
 			hid: 'og:description',
 			property: 'og:description',
-			content: 'A configured Nuxt-Typescript template.',
+			content: 'Get the Financing Your Business Needs with Alraedah',
 		},
 		{
 			hid: 'og:image',
@@ -84,7 +83,7 @@ export default {
 		{
 			hid: 'og:image:alt',
 			property: 'og:image:alt',
-			content: 'Nuxt TS Starter',
+			content: 'Alraedah',
 		},
 	],
 } as NuxtOptionsHead;

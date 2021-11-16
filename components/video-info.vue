@@ -1,6 +1,7 @@
 <template>
 	<video class="rounded-xl" width="100%" height="100%" controls autoplay muted>
 		<source
+			defer
 			src="https://nyc3.digitaloceanspaces.com/alreadahfinance/uploads/homepage_detail/video/1/attachment-3-mca_1min.mp4"
 			type="video/mp4"
 		/>

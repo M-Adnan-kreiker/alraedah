@@ -4,6 +4,8 @@ import firebaseConfig from './utils/configs/firebase.config';
 import headConfig from './utils/configs/head.config';
 import i18nConfig from './utils/configs/i18n.config';
 import robotsConfig from './utils/configs/robots.config';
+require('dotenv').config();
+
 // import sitemapConfig from './utils/configs/sitemap.config';
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
@@ -73,6 +75,7 @@ export default {
 		// '@nuxtjs/sitemap',
 		// https://github.com/nuxt-community/robots-module
 		'@nuxtjs/robots',
+		'@nuxtjs/dotenv',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -93,7 +96,8 @@ export default {
 
 	env: {
 		EP: process.env.EP,
-		BASE_URL: process.env.BASE_URL,
+		// BASE_URL: process.env.BASE_URL,
+		// CAREERS_ENDPOINT: process.env.CARRERS_ENDPOINT,
 	},
 
 	firebase: firebaseConfig,

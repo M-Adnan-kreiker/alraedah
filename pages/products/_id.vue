@@ -1,23 +1,32 @@
 <template>
 	<div v-if="myProduct" class="mx-4 mx-sm-8 mx-md-10 mx-lg-16 mt-16">
+		<social-head
+			:title="myProduct[0].seo.title"
+			:description="myProduct[0].seo.description"
+		></social-head>
 		<v-sheet elevation="4" class="rounded-xl my-16">
 			<product-card :products="myProduct"></product-card>
 		</v-sheet>
 		<h2 class="primary--text text-h4 font-weight-bold mb-8">
 			{{ $t('chargesCalc') }}
 		</h2>
-		<div class="mb-8">
+		<div class="mb-12">
 			<fees-info
 				:fees="myProduct[0].fees"
 				:moreInfo="myProduct[0].moreInfo"
 			></fees-info>
 		</div>
 		<v-row class="mb-16 mx-n5 mx-sm-2">
-			<v-col cols="12" md="7">
-				<charts-card v-bind="props"></charts-card>
+			<v-col class="mb-4" cols="12" md="7">
+				<charts-card class="" v-bind="props"></charts-card>
 			</v-col>
-			<v-col cols="12" md="5" class="mt-6">
-				<pricing-card class="mx-auto mt-16" :card="myProduct[0].card">
+			<v-col
+				:class="route === 'e-commerce' ? 'mt-sm-16' : ''"
+				cols="12"
+				md="5"
+				class="mt-6"
+			>
+				<pricing-card class="mx-auto mt-sm-n2" :card="myProduct[0].card">
 					<template v-slot:header>
 						{{ myProduct[0].card.title }}
 					</template>
@@ -59,7 +68,7 @@
 		</v-row>
 		<v-row>
 			<v-col cols="12" md="6">
-				<p class="black--text font-weight-bold mt-n8 ml-sm-8 mb-16">
+				<p class="black--text font-weight-bold mt-n8 mx-sm-8 mb-16">
 					{{ myProduct[0].caveat }}
 				</p>
 			</v-col>
@@ -72,6 +81,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
+	route = this.$route.params.id;
 	products: any = this.$t('products');
 	myProduct = this.products.filter(
 		(el: any) => el.category === this.$route.params.id

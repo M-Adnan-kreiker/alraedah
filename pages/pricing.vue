@@ -1,7 +1,11 @@
 <template>
 	<div class="mx-4 mx-sm-8 mx-md-16">
+		<social-head
+			:title="$t('seo.pricing.title')"
+			:description="$t('seo.pricing.description')"
+		></social-head>
 		<v-row
-			class="mt-3"
+			class="my-3"
 			:class="$i18n.locale === 'ar' ? 'ml-sm-n16' : 'mr-sm-n16'"
 		>
 			<v-col class="pb-0" cols="12" sm="5">
@@ -40,18 +44,32 @@
 			<div v-if="myProduct[0]">
 				<transition name="slide-fade" mode="out-in">
 					<fees-info
-						class="mt-8"
+						class="my-8"
+						:class="
+							selected === 'E-commerce' || selected == 'تجارة إلكترونية'
+								? 'mb-sm-11'
+								: ''
+						"
 						:key="feesKey"
 						:fees="myProduct[0].fees"
 					></fees-info>
 				</transition>
 				<v-row justify="center">
-					<v-col cols="12" md="7">
+					<v-col class="mt-2" cols="12" md="7">
 						<transition name="slide-fade" mode="out-in">
 							<charts-card v-bind="props" :key="componentKey"></charts-card>
 						</transition>
 					</v-col>
-					<v-col cols="12" class="mt-4" md="5">
+					<v-col
+						class="mt-4"
+						:class="
+							selected === 'E-commerce' || selected == 'تجارة إلكترونية'
+								? 'mt-sm-13'
+								: ''
+						"
+						cols="12"
+						md="5"
+					>
 						<transition name="slide-fade" mode="out-in">
 							<pricing-card :key="pricingKey" :card="myProduct[0].card">
 								<template v-slot:header>

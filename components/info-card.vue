@@ -5,28 +5,36 @@
 			elevation="4"
 			min-width="290"
 			min-height="170"
-			class="d-flex rounded-xl cards center-text justify-center py-2 my-6"
+			class="d-flex rounded-xl cards center-text justify-center py-2 my-6 px-4"
 		>
 			<img
 				max-height="94"
 				max-width="95"
 				:src="currentCard.image"
-				alt="submit a request"
-				class="mx-3 mx-sm-4 img align-self-center flex-grow-1"
+				class="mx-3 mx-sm-4 align-self-center big-img flex-grow-1"
 			/>
 			<div class="align-self-center">
-				<slot name="title"></slot>
+				<v-row
+					justify="start"
+					class="my-3 align-sm-center d-inline-flex px-4 px-sm-0 card-row"
+				>
+					<slot name="title"></slot>
+					<img
+						max-height="94"
+						max-width="95"
+						:src="currentCard.image"
+						class="mx-auto mt-4 mx-sm-4 d-none sm-img"
+					/>
+				</v-row>
 				<p
 					class="
 						text-body-2 text-sm-body-1
-						px-sm-4
 						pt-2
 						font-weight-regular
 						text-md-h6
 						mb-0
 						flex-grow-1
 					"
-					:class="$i18n.locale === 'en' ? 'pr-4' : 'pl-4'"
 				>
 					{{ currentCard.text }}
 				</p>
@@ -47,4 +55,24 @@ export default class extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.line-height {
+	line-height: 180% !important;
+}
+
+@media (max-width: 470px) {
+	.big-img {
+		display: none;
+	}
+	.sm-img {
+		display: inline-block !important;
+	}
+}
+
+@media (max-width: 600px) {
+	.card-row {
+		flex-direction: column;
+		justify-content: center !important;
+	}
+}
+</style>

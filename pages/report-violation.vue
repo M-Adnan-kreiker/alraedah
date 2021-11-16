@@ -1,5 +1,9 @@
 <template>
 	<div class="mx-4 mx-sm-8 mx-md-16 mt-16">
+		<social-head
+			:title="$t('seo.reportAMisconduct.title')"
+			:description="$t('seo.reportAMisconduct.description')"
+		></social-head>
 		<v-row>
 			<v-col cols="12" sm="9">
 				<!-- prettier-ignore -->

@@ -1,6 +1,10 @@
 <template>
 	<div>
 		<main class="mt-4 pb-8">
+			<social-head
+				:title="$t('seo.products.title')"
+				:description="$t('seo.products.description')"
+			></social-head>
 			<v-row class="mb-0 mb-md-8">
 				<v-col
 					:class="$i18n.locale === 'en' ? 'px-6 pl-sm-14' : 'px-6 pr-sm-14'"

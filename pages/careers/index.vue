@@ -30,46 +30,16 @@
 				</h1>
 			</v-col>
 		</v-row>
-		<v-row class="mb-8">
-			<v-col cols="12" sm="6">
-				<nuxt-link to="/careers/12">
+		<v-row v-if="jobs" class="mb-8">
+			<v-col v-for="job in jobs" :key="job.id" cols="12" sm="6">
+				<nuxt-link :to="localeRoute(`/careers/${job.id}`)">
 					<v-card hover max-width="400px" class="rounded-xl mx-auto">
 						<v-card-title class="secondary--text">
-							Marketing Manager
+							{{ job.attributes.position }}
 						</v-card-title>
-						<v-card-text> Main Branch </v-card-text>
+						<v-card-text> {{ job.attributes.location }} </v-card-text>
 					</v-card>
 				</nuxt-link>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card hover max-width="400px" class="rounded-xl mx-auto">
-					<v-card-title class="secondary--text"> Sales Manager </v-card-title>
-					<v-card-text> Main Branch </v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card hover max-width="400px" class="rounded-xl mx-auto">
-					<v-card-title class="secondary--text"> Sales Manager </v-card-title>
-					<v-card-text> Main Branch </v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card hover max-width="400px" class="rounded-xl mx-auto">
-					<v-card-title class="secondary--text"> Sales Manager </v-card-title>
-					<v-card-text> Main Branch </v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card hover max-width="400px" class="rounded-xl mx-auto">
-					<v-card-title class="secondary--text"> Sales Manager </v-card-title>
-					<v-card-text> Main Branch </v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card hover max-width="400px" class="rounded-xl mx-auto">
-					<v-card-title class="secondary--text"> Sales Manager </v-card-title>
-					<v-card-text> Main Branch </v-card-text>
-				</v-card>
 			</v-col>
 		</v-row>
 	</div>
@@ -77,9 +47,23 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Job } from '~/types';
 
 @Component
-export default class extends Vue {}
+export default class extends Vue {
+	jobs = [] as Job[];
+	async fetch() {
+		try {
+			const res = await this.$axios.$get(`${process.env.CAREERS_ENDPOINT}`, {
+				params: { locale: this.$i18n.locale },
+			});
+
+			this.jobs = res.data;
+		} catch (error) {
+			console.log(error);
+		}
+	}
+}
 </script>
 
 <style scoped>

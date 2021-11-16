@@ -1,5 +1,10 @@
 <template>
 	<div class="mx-4 mx-sm-16 my-16">
+		<social-head
+			:title="$t('seo.aboutUs.title')"
+			:description="$t('seo.aboutUs.description')"
+		></social-head>
+
 		<h1
 			class="
 				primary--text primary--text
@@ -12,7 +17,10 @@
 		</h1>
 		<v-row class="mt-12">
 			<v-col cols="12" class="mt-n10" md="6">
-				<p class="info--text text-h6 text-start">
+				<p
+					:class="$i18n.locale === 'ar' ? 'line-height' : ''"
+					class="info--text text-body-1 text-sm-h6 text-start"
+				>
 					{{ $t('aboutUs.text') }}
 				</p>
 			</v-col>
@@ -24,10 +32,7 @@
 			<v-col v-for="card in cards" :key="card.id" cols="12" lg="6">
 				<info-card :elevation="10" :card="card">
 					<template v-slot:title>
-						<h1
-							:class="$i18n.locale === 'en' ? 'pr-4' : 'pl-4'"
-							class="mb-sm-2 primary--text"
-						>
+						<h1 class="mx-3 primary--text">
 							{{ card.title }}
 						</h1>
 					</template>
@@ -50,10 +55,7 @@
 					>
 						<info-card elevation="12" :card="pillar">
 							<template v-slot:title>
-								<h1
-									:class="$i18n.locale === 'en' ? 'pr-4' : 'pl-4'"
-									class="mb-sm-2 primary--text text-h5 font-weight-bold"
-								>
+								<h1 class="mb-sm-2 px-4 primary--text text-h5 font-weight-bold">
 									{{ pillar.title }}
 								</h1>
 							</template>
@@ -80,4 +82,8 @@ export default class extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.line-height {
+	line-height: 240% !important;
+}
+</style>

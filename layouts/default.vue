@@ -466,6 +466,7 @@ export default class extends Vue {
 	map = '';
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
+
 		// logs an event in analytics, can be seen in the console
 		// this.$fire.analytics.logEvent('select_content', {
 		// 	content_type: 'changeing locale',

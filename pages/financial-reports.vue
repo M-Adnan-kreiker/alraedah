@@ -1,5 +1,10 @@
 <template>
 	<div class="mx-4 mx-sm-16">
+		<social-head
+			:title="$t('seo.financialReports.title')"
+			:description="$t('seo.financialReports.description')"
+		></social-head>
+
 		<v-row class="my-12 my-md-16" justify="center">
 			<v-col
 				style="background: #1d4283"
@@ -25,7 +30,7 @@
 						<v-tabs-slider color="primary"></v-tabs-slider>
 						<v-tab
 							v-for="year in years"
-							class="info--text font-weight-bold text-h6 text-sm-h5"
+							class="info--text font-weight-bold text-h6 pt-5 text-sm-h5"
 							:key="year"
 							>{{ year }}</v-tab
 						>
@@ -33,11 +38,11 @@
 
 					<v-divider class="my-4"></v-divider>
 					<v-tabs-items v-model="tab">
-						<v-tab-item v-for="item in items" :key="item.name">
+						<v-tab-item v-for="(reportYear, i) in reports" :key="reportYear[i]">
 							<v-card>
 								<v-row class="text-center">
 									<v-col
-										v-for="report in item"
+										v-for="report in reportYear"
 										:key="report.name"
 										cols="12"
 										sm="6"
@@ -45,7 +50,7 @@
 									>
 										<p
 											class="
-												pt-4
+												pt-2
 												d-inline
 												text-body-1 text-md-h6
 												align-self-center
@@ -54,11 +59,17 @@
 												flex-grow-1
 											"
 										>
-											{{ report.name }}
+											{{ report.attributes.name }}
 										</p>
-										<v-icon class="px-2" large color="primary"
-											>mdi-download-box-outline</v-icon
+										<a
+											:href="report.attributes.file"
+											target="#"
+											:download="report.attributes.name"
 										>
+											<v-icon class="px-2 mb-3" large color="primary"
+												>mdi-download-box-outline</v-icon
+											>
+										</a>
 									</v-col>
 								</v-row>
 							</v-card>
@@ -72,6 +83,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { FinancialReport } from '~/types';
 
 @Component
 export default class extends Vue {
@@ -82,6 +94,30 @@ export default class extends Vue {
 		return this.$t('financialReports.items');
 	}
 	tab = null;
+	reports = [[], [], [], [], [], []] as FinancialReport[][];
+	async fetch() {
+		try {
+			const res = await this.$axios.$get(`${process.env.REPORTS_ENDPOINT}`);
+			const reports = res.data;
+			reports.forEach((report: FinancialReport) => {
+				if (report.attributes.year == 2016) {
+					this.reports[0].push(report);
+				} else if (report.attributes.year == 2017) {
+					this.reports[1].push(report);
+				} else if (report.attributes.year == 2018) {
+					this.reports[2].push(report);
+				} else if (report.attributes.year == 2019) {
+					this.reports[3].push(report);
+				} else if (report.attributes.year == 2020) {
+					this.reports[4].push(report);
+				} else if (report.attributes.year == 2021) {
+					this.reports[5].push(report);
+				}
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	}
 }
 </script>
 
