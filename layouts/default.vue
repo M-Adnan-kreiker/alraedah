@@ -488,11 +488,13 @@ export default class extends Vue {
 		this.loaded = true;
 	}
 	mounted() {
+		this.$nextTick(() => {
 		const tracker = new OpenReplay({
 			projectKey: 'ptApJJm32giY5X4e0tSU',
 		});
 		tracker.start();
 		this.loaded = false;
+		})
 	}
 	created() {
 		this.$nuxt.$on('trigger-dialog', () => {
