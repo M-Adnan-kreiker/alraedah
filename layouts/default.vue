@@ -2,7 +2,6 @@
 	<v-app>
 		<!-- Header -->
 		<v-app-bar
-			
 			style="position: absolute; z-index: 10"
 			height="80%"
 			color="white"
@@ -12,6 +11,7 @@
 				<v-btn :to="localeRoute('/')" text color="white"
 					><img
 						height="80"
+						width="160"
 						class="d-inline-block"
 						src="/alraedah-logo.svg"
 						alt="alraedah logo"
@@ -136,6 +136,7 @@
 						<img
 							@click="setLang($i18n.locale === 'ar' ? 'en' : 'ar')"
 							height="20"
+							width="35"
 							style="cursor: pointer"
 							class="d-block px-2 mx-auto"
 							src="/language.svg"
@@ -146,6 +147,7 @@
 					<div class="">
 						<img
 							height="20"
+							width="35"
 							src="/search.svg"
 							class="d-block px-2 mx-auto"
 							alt="alraedah logo"
@@ -451,9 +453,26 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import OpenReplay from '@openreplay/tracker/cjs';
+import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
 export default class extends Vue {
+	head(): NuxtOptionsHead {
+		return {
+			link: [
+				{
+					rel: 'preload',
+					as: 'image',
+					href: '/language.svg',
+				},
+				{
+					rel: 'preload',
+					as: 'image',
+					href: '/search.svg',
+				},
+			],
+		};
+	}
 	loaded = true;
 	beforeCreate() {
 		this.loaded = true;
@@ -469,6 +488,9 @@ export default class extends Vue {
 		this.$nuxt.$on('trigger-dialog', () => {
 			this.modal = !this.modal;
 		});
+	}
+	beforeDestroy() {
+		this.$nuxt.$off('trigger-dialog');
 	}
 	map = '';
 	setLang(lang: 'ar' | 'en') {

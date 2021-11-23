@@ -40,6 +40,8 @@
 					<v-row class="fill-height" align="center" justify="center">
 						<div class="text-h2">
 							<v-img
+								height="171"
+								width="300"
 								max-height="250"
 								class="mx-auto rounded-xl"
 								max-width="300"

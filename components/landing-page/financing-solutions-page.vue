@@ -49,8 +49,8 @@
 							>
 								<img
 									class="d-block mt-10"
-									max-height="110"
-									max-width="103"
+									height="100"
+									width="103"
 									:src="card.img"
 								/>
 								<v-card-title

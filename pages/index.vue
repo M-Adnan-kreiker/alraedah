@@ -17,13 +17,26 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { NuxtOptionsHead } from '@nuxt/types/config/head';
 @Component
 export default class extends Vue {
+	head(): NuxtOptionsHead {
+		return {
+			link: [
+				{
+					rel: 'preload',
+					as: 'image',
+					href: 'banner2.webp',
+				},
+				{
+					rel: 'preload',
+					as: 'image',
+					href: 'alraedah-logo.svg',
+				},
+			],
+		};
+	}
 	created() {
-		this.$router.push({
-			path: this.$route.path,
-			query: { source: 'Facebook' },
-		});
 		if (this.$route.query.source) {
 			this.$store.commit('modules/leads/setSource', this.$route.query.source);
 		}

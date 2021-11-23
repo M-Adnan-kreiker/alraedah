@@ -51,27 +51,17 @@
 				</v-col>
 				<v-col cols="3" class="d-none px-0 d-sm-inline">
 					<img
+						height="600"
+						width="422"
 						:style="
 							$i18n.locale === 'ar'
 								? 'transform: scaleX(-1);float: left'
 								: 'float: right'
 						"
-						style="position: relative; z-index: 0; height: 600px"
 						src="/banner2.webp"
 						class="mt-4 row"
 						:class="$i18n.locale === 'ar' ? 'ml-n12' : ''"
 					/>
-					<!-- <img
-						:style="
-							$i18n.locale === 'ar'
-								? 'transform: scaleX(-1);float: left'
-								: 'float: right'
-						"
-						style="position: relative; z-index: 0; max-height: 570px"
-						src="/banner2.webp"
-						class="mt-4 row"
-						height="100%"
-					/> -->
 				</v-col>
 			</v-row>
 		</v-container>
@@ -95,9 +85,9 @@ p {
 	.row {
 		max-height: 530px !important;
 	}
-	img {
+	/* img {
 		height: 50vmax !important;
-	}
+	} */
 }
 
 @media (max-width: 599px) {
@@ -124,5 +114,13 @@ p {
 }
 .line-height-h1 {
 	line-height: 150% !important;
+}
+img {
+	width: 110%;
+	height: 110%;
+	min-height: 470px;
+	min-width: 330px;
+	position: relative;
+	z-index: 0;
 }
 </style>

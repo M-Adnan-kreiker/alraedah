@@ -8,8 +8,8 @@
 			class="d-flex rounded-xl cards center-text justify-center py-2 my-6 px-4"
 		>
 			<img
-				max-height="94"
-				max-width="95"
+				height="94"
+				width="95"
 				:src="currentCard.image"
 				class="mx-3 mx-sm-4 align-self-center big-img flex-grow-1"
 			/>
@@ -20,8 +20,8 @@
 				>
 					<slot name="title"></slot>
 					<img
-						max-height="94"
-						max-width="95"
+						height="94"
+						width="95"
 						:src="currentCard.image"
 						class="mx-auto mt-4 mx-sm-4 d-none sm-img"
 					/>

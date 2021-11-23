@@ -4,9 +4,10 @@ import firebaseConfig from './utils/configs/firebase.config';
 import headConfig from './utils/configs/head.config';
 import i18nConfig from './utils/configs/i18n.config';
 import robotsConfig from './utils/configs/robots.config';
+// const MAIN_URL = 'https://alraedah-livid.vercel.app/'
+import sitemapConfig from './utils/configs/sitemap.config';
 require('dotenv').config();
 
-// import sitemapConfig from './utils/configs/sitemap.config';
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: headConfig,
@@ -72,10 +73,43 @@ export default {
 		// https://firebase.nuxtjs.org/
 		'@nuxtjs/firebase',
 		// https://sitemap.nuxtjs.org/
-		// '@nuxtjs/sitemap',
+		'@nuxtjs/sitemap',
 		// https://github.com/nuxt-community/robots-module
 		'@nuxtjs/robots',
 		'@nuxtjs/dotenv',
+		[
+			'nuxt-font-loader-strategy',
+			{
+				ignoreLighthouse: true,
+				ignoredEffectiveTypes: ['2g', 'slow-2g'],
+				fonts: [
+					// Font
+					{
+						fileExtensions: ['woff'],
+						fontFamily: 'Aktiv Grotesk',
+						fontFaces: [
+							// Font-Face
+							{
+								preload: true,
+								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Medium'],
+								src: '@/assets/fonts/AktivGrotesk-Medium',
+								fontWeight: 400,
+								fontStyle: 'normal',
+							},
+							// Font-Face
+							{
+								preload: true,
+								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Bold'],
+								src: '@/assets/fonts/AktivGrotesk-Bold',
+								fontWeight: 700,
+								fontStyle: 'normal',
+							},
+							// Font-Face
+						],
+					},
+				],
+			},
+		],
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -96,13 +130,11 @@ export default {
 
 	env: {
 		EP: process.env.EP,
-		// BASE_URL: process.env.BASE_URL,
-		// CAREERS_ENDPOINT: process.env.CARRERS_ENDPOINT,
 	},
 
-	firebase: firebaseConfig,
+	sitemap: sitemapConfig,
 
-	// sitemap: sitemapConfig,
+	firebase: firebaseConfig,
 
 	robots: robotsConfig,
 

@@ -9,7 +9,7 @@ body {
 
 .page-enter-active,
 .page-leave-active {
-	transition: opacity 0.3s;
+	transition: opacity 0.4s;
 }
 .page-enter,
 .page-leave-to {
@@ -94,9 +94,7 @@ body {
 
 @font-face {
 	font-family: 'Aktiv Grotesk';
-	src: url('~assets/fonts/AktivGrotesk-Bold.eot') format('eot'),
-		url('~assets/fonts/AktivGrotesk-Bold.ttf') format('ttf'),
-		url('~assets/fonts/AktivGrotesk-Bold.woff') format('woff');
+	src: url('~assets/fonts/AktivGrotesk-Bold.woff') format('woff');
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
@@ -104,9 +102,7 @@ body {
 
 @font-face {
 	font-family: 'Aktiv Grotesk';
-	src: url('~assets/fonts/AktivGrotesk-Medium.eot') format('eot'),
-		url('~assets/fonts/AktivGrotesk-Medium.ttf') format('ttf'),
-		url('~assets/fonts/AktivGrotesk-Medium.woff') format('woff');
+	src: url('~assets/fonts/AktivGrotesk-Medium.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -114,27 +110,20 @@ body {
 
 @font-face {
 	font-family: 'Aktiv Grotesk';
-	src: url('~assets/fonts/AktivGrotesk-XBold.eot') format('eot'),
-		url('~assets/fonts/AktivGrotesk-XBold.ttf') format('ttf'),
-		url('~assets/fonts/AktivGrotesk-XBold.woff') format('woff');
+	src: url('~assets/fonts/AktivGrotesk-XBold.woff') format('woff');
 	font-weight: bolder;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Aktiv Grotesk';
-	src: url('~assets/fonts/AktivGrotesk-Light.eot') format('eot'),
-		url('~assets/fonts/AktivGrotesk-Light.ttf') format('ttf'),
-		url('~assets/fonts/AktivGrotesk-Light.woff') format('woff');
-	font-weight: lighter;
+	src: ('~assets/fonts/AktivGrotesk-Light.woff') format('woff');
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Aktiv Grotesk';
-	src: url('~assets/fonts/AktivGrotesk-Regular.eot') format('eot'),
-		url('~assets/fonts/AktivGrotesk-Regular.ttf') format('ttf'),
-		url('~assets/fonts/AktivGrotesk-Regular.woff') format('woff');
+	src: url('~assets/fonts/AktivGrotesk-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;

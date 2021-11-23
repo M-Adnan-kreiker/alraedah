@@ -120,9 +120,21 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { myProduct } from '~/types';
+import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
 export default class extends Vue {
+	head(): NuxtOptionsHead {
+		return {
+			link: [
+				{
+					rel: 'preload',
+					as: 'image',
+					href: '/calculator.webp',
+				},
+			],
+		};
+	}
 	get select() {
 		return this.$t('pricing.products');
 	}
