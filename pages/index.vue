@@ -4,8 +4,8 @@
 			:title="$t('seo.home.title')"
 			:description="$t('seo.home.description')"
 		></social-head>
-		<landing-page class="mb-8 mb-sm-0"></landing-page>
-		<achievements></achievements>
+		<landing-page :critical="true" class="mb-8 mb-sm-0"></landing-page>
+		<Lazy-achievements />
 		<Lazy-financing-solutions-page
 			class="my-sm-8"
 		></Lazy-financing-solutions-page>
@@ -17,25 +17,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { NuxtOptionsHead } from '@nuxt/types/config/head';
 @Component
 export default class extends Vue {
-	head(): NuxtOptionsHead {
-		return {
-			link: [
-				{
-					rel: 'preload',
-					as: 'image',
-					href: 'banner2.webp',
-				},
-				{
-					rel: 'preload',
-					as: 'image',
-					href: 'alraedah-logo.svg',
-				},
-			],
-		};
-	}
+
 	created() {
 		if (this.$route.query.source) {
 			this.$store.commit('modules/leads/setSource', this.$route.query.source);

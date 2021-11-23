@@ -15,6 +15,7 @@
 				>
 					<!-- prettier-ignore -->
 					<h1
+	
 						:class="$i18n.locale === 'ar' ? 'line-height-h1' : ''"
 
 						class="
@@ -26,9 +27,14 @@
 							pt-sm-4 pt-md-12 
 						"
 						style="font-size: clamp(2.8rem, 6vmin, 4.5rem); "
-					>{{ $t('landingPage.title') }}
+
+					><span
+					 v-font="$getFont('Aktiv Grotesk', 700)"
+					
+					>{{ $t('landingPage.title') }}</span>
 					</h1>
 					<p
+
 						:class="$i18n.locale === 'ar' ? 'line-height' : ''"
 						style="width: 60%; line-height: 150%"
 						class="
@@ -70,9 +76,27 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
-export default class extends Vue {}
+export default class extends Vue {
+		head(): NuxtOptionsHead {
+		return {
+			link: [
+				{
+					rel: 'preload',
+					as: 'image',
+					href: 'banner2.webp',
+				},
+				{
+					rel: 'preload',
+					as: 'image',
+					href: 'alraedah-logo.svg',
+				},
+			],
+		};
+	}
+}
 </script>
 
 <style scoped>

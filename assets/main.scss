@@ -97,7 +97,7 @@ body {
 	src: url('~assets/fonts/AktivGrotesk-Bold.woff') format('woff');
 	font-weight: bold;
 	font-style: normal;
-	font-display: swap;
+	font-display: optional;
 }
 
 @font-face {
@@ -105,7 +105,7 @@ body {
 	src: url('~assets/fonts/AktivGrotesk-Medium.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
+	font-display: optional;
 }
 
 @font-face {
@@ -113,20 +113,20 @@ body {
 	src: url('~assets/fonts/AktivGrotesk-XBold.woff') format('woff');
 	font-weight: bolder;
 	font-style: normal;
-	font-display: swap;
+	font-display: optional;
 }
 @font-face {
 	font-family: 'Aktiv Grotesk';
 	src: ('~assets/fonts/AktivGrotesk-Light.woff') format('woff');
 	font-style: normal;
-	font-display: swap;
+	font-display: optional;
 }
 @font-face {
 	font-family: 'Aktiv Grotesk';
 	src: url('~assets/fonts/AktivGrotesk-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
+	font-display: optional;
 }
 
 .v-list-item--link:before {

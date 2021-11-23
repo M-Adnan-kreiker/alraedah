@@ -73,43 +73,12 @@ export default {
 		// https://firebase.nuxtjs.org/
 		'@nuxtjs/firebase',
 		// https://sitemap.nuxtjs.org/
-		'@nuxtjs/sitemap',
 		// https://github.com/nuxt-community/robots-module
 		'@nuxtjs/robots',
 		'@nuxtjs/dotenv',
-		[
-			'nuxt-font-loader-strategy',
-			{
-				ignoreLighthouse: true,
-				ignoredEffectiveTypes: ['2g', 'slow-2g'],
-				fonts: [
-					// Font
-					{
-						fileExtensions: ['woff'],
-						fontFamily: 'Aktiv Grotesk',
-						fontFaces: [
-							// Font-Face
-							{
-								preload: true,
-								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Medium'],
-								src: '@/assets/fonts/AktivGrotesk-Medium',
-								fontWeight: 400,
-								fontStyle: 'normal',
-							},
-							// Font-Face
-							{
-								preload: true,
-								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Bold'],
-								src: '@/assets/fonts/AktivGrotesk-Bold',
-								fontWeight: 700,
-								fontStyle: 'normal',
-							},
-							// Font-Face
-						],
-					},
-				],
-			},
-		],
+		'nuxt-speedkit',
+		'@nuxtjs/sitemap',
+
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -126,6 +95,7 @@ export default {
 		customVariables: ['~/assets/variables.scss'],
 		optionsPath: '~/utils/configs/vuetify.config.ts',
 		treeShake: true,
+		// defaultAssets: { font: false, icons: true },
 	},
 
 	env: {
@@ -137,6 +107,56 @@ export default {
 	firebase: firebaseConfig,
 
 	robots: robotsConfig,
+
+	speedkit: {
+		 detection: {
+      performance: true,
+      browserSupport: true
+    },
+    performanceMetrics: {
+      device: {
+        hardwareConcurrency: { min: 2, max: 48 },
+        deviceMemory: { min: 2 }
+      },
+      timing: {
+        fcp: 800,
+        dcl: 1200
+      },
+      lighthouseDetectionByUserAgent: false
+    },
+
+				 fonts: [{
+      family: 'Aktiv Grotesk',
+      locals: ['Aktiv Grotesk'],
+      fallback: ['sans-serif'],
+      variances: [
+        {
+          style: 'normal',
+          weight: 500,
+          sources: [
+            { src: '@/assets/fonts/AktivGrotesk-Regular.woff', type:'woff' },
+          ]
+        },  {
+          style: 'normal',
+          weight: 700,
+          sources: [
+            { src: '@/assets/fonts/AktivGrotesk-Bold.woff', type:'woff' },
+          ]
+        }
+      ]
+    }],
+
+    componentAutoImport: false,
+    componentPrefix: undefined,
+
+    /**
+     * IntersectionObserver rootMargin for Compoennts and Assets
+     */
+    lazyOffset: {
+      component: '0%',
+      asset: '0%'
+    }
+	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
