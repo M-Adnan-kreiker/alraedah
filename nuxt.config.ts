@@ -109,7 +109,9 @@ export default {
 				],
 			},
 		],
-		'nuxt-lazy-load',
+		['nuxt-lazy-load',{
+			directiveOnly: true
+		}]
 		'@nuxtjs/sitemap',
 
 	],
