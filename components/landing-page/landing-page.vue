@@ -29,7 +29,6 @@
 						style="font-size: clamp(2.8rem, 6vmin, 4.5rem); "
 
 					><span
-					 v-font="$getFont('Aktiv Grotesk', 700)"
 					
 					>{{ $t('landingPage.title') }}</span>
 					</h1>
@@ -57,7 +56,7 @@
 				</v-col>
 				<v-col cols="3" class="d-none px-0 d-sm-inline">
 					<img
-						height="600"
+						height="630"
 						width="422"
 						:style="
 							$i18n.locale === 'ar'
@@ -105,14 +104,12 @@ p {
 	white-space: nowrap;
 }
 
-@media (max-width: 959px) {
+/* @media (max-width: 959px) {
 	.row {
 		max-height: 530px !important;
 	}
-	/* img {
-		height: 50vmax !important;
-	} */
-}
+
+} */
 
 @media (max-width: 599px) {
 	main {
@@ -140,8 +137,8 @@ p {
 	line-height: 150% !important;
 }
 img {
-	width: 110%;
-	height: 110%;
+	width: 120%;
+	height: 120%;
 	min-height: 470px;
 	min-width: 330px;
 	position: relative;

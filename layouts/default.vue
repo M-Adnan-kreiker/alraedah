@@ -415,7 +415,7 @@
 							</v-btn>
 						</div>
 					</v-col>
-					<v-dialog v-model="dialog" max-width="600">
+					<v-dialog v-model="dialog" width="80%">
 						<v-card class="rounded-lg">
 							<iframe :src="map" width="100%" height="450"></iframe>
 							<v-card-actions>
