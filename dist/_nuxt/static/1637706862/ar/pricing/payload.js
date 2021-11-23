@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ar/pricing", {data:[{}],fetch:{},mutations:[]});

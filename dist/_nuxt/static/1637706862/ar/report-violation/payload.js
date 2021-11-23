@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ar/report-violation", {data:[{}],fetch:{},mutations:[]});

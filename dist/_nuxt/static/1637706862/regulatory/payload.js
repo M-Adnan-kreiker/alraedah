@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/regulatory", {data:[{}],fetch:{},mutations:[]});
