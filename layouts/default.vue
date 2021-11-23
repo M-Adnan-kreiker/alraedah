@@ -6,7 +6,6 @@
 			height="80%"
 			color="white"
 			elevation="2"
-			:critical="true"
 
 		>
 			<v-row align-content="center" align="center" style="flex-wrap: nowrap">

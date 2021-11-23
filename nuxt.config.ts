@@ -130,7 +130,7 @@ export default {
 		customVariables: ['~/assets/variables.scss'],
 		optionsPath: '~/utils/configs/vuetify.config.ts',
 		treeShake: true,
-		// defaultAssets: { font: false, icons: true },
+		defaultAssets: { font: false, icons: true },
 	},
 
 	env: {

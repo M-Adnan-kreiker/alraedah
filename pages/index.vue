@@ -4,7 +4,7 @@
 			:title="$t('seo.home.title')"
 			:description="$t('seo.home.description')"
 		></social-head>
-		<landing-page :critical="true" class="mb-8 mb-sm-0"></landing-page>
+		<landing-page  class="mb-8 mb-sm-0"></landing-page>
 		<Lazy-achievements />
 		<Lazy-financing-solutions-page
 			class="my-sm-8"
