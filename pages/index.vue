@@ -17,8 +17,21 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { NuxtOptionsHead } from '@nuxt/types/config/head';
+
 @Component
 export default class extends Vue {
+			head(): NuxtOptionsHead {
+		return {
+			link: [
+				{
+					rel: 'subresource',
+					as: 'image',
+					href: '/banner2.webp',
+				}
+			],
+		};
+	}
 
 	created() {
 		if (this.$route.query.source) {

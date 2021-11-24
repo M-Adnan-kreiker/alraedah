@@ -76,44 +76,46 @@ export default {
 		// https://github.com/nuxt-community/robots-module
 		'@nuxtjs/robots',
 		'@nuxtjs/dotenv',
-		// 		[
-		// 	'nuxt-font-loader-strategy',
-		// 	{
-		// 		ignoreLighthouse: true,
-		// 		ignoredEffectiveTypes: ['2g', 'slow-2g'],
-		// 		fonts: [
-		// 			// Font
-		// 			{
-		// 				fileExtensions: ['woff'],
-		// 				fontFamily: 'Aktiv Grotesk',
-		// 				fontFaces: [
-		// 					// Font-Face
-		// 					{
-		// 						preload: true,
-		// 						localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Medium'],
-		// 						src: '@/assets/fonts/AktivGrotesk-Medium',
-		// 						fontWeight: 400,
-		// 						fontStyle: 'normal',
-		// 					},
-		// 					// Font-Face
-		// 					{
-		// 						preload: true,
-		// 						localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Bold'],
-		// 						src: '@/assets/fonts/AktivGrotesk-Bold',
-		// 						fontWeight: 700,
-		// 						fontStyle: 'normal',
-		// 					},
-		// 					// Font-Face
-		// 				],
-		// 			},
-		// 		],
-		// 	},
-		// ],
-		['nuxt-lazy-load',{
-			directiveOnly: true
-		}],
+		[
+			'nuxt-font-loader-strategy',
+			{
+				ignoreLighthouse: true,
+				ignoredEffectiveTypes: ['2g', 'slow-2g'],
+				fonts: [
+					// Font
+					{
+						fileExtensions: ['woff'],
+						fontFamily: 'Aktiv Grotesk',
+						fontFaces: [
+							// Font-Face
+							{
+								preload: true,
+								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Medium'],
+								src: '@/assets/fonts/AktivGrotesk-Medium',
+								fontWeight: 400,
+								fontStyle: 'normal',
+							},
+							// Font-Face
+							{
+								preload: true,
+								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Bold'],
+								src: '@/assets/fonts/AktivGrotesk-Bold',
+								fontWeight: 700,
+								fontStyle: 'normal',
+							},
+							// Font-Face
+						],
+					},
+				],
+			},
+		],
+		[
+			'nuxt-lazy-load',
+			{
+				directiveOnly: true,
+			},
+		],
 		'@nuxtjs/sitemap',
-
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -142,8 +144,6 @@ export default {
 	// firebase: firebaseConfig,
 
 	robots: robotsConfig,
-
-
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},

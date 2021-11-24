@@ -6,7 +6,6 @@
 			height="80%"
 			color="white"
 			elevation="2"
-
 		>
 			<v-row align-content="center" align="center" style="flex-wrap: nowrap">
 				<v-btn :to="localeRoute('/')" text color="white"
@@ -20,12 +19,10 @@
 				<v-spacer></v-spacer>
 				<v-list
 					id="nav-list"
-
 					class="d-flex flex-row flex-nowrap"
 					style="align-items: center; width: 80%; justify-content: space-evenly"
 				>
 					<v-btn
-
 						:to="localeRoute('/')"
 						text
 						nuxt
@@ -47,14 +44,12 @@
 						>{{ $t('header.home') }}</v-btn
 					>
 					<dropdown-menu
-
 						route="/products"
 						:text="$t('header.products')"
 						:items="products"
 					></dropdown-menu>
 
 					<v-btn
-
 						:to="localeRoute('/pricing')"
 						text
 						nuxt
@@ -75,7 +70,6 @@
 						>{{ $t('header.pricing') }}</v-btn
 					>
 					<v-btn
-
 						dense
 						text
 						exact-active-class="active"
@@ -94,7 +88,6 @@
 						>{{ $t('header.solutions') }}</v-btn
 					>
 					<v-btn
-
 						dense
 						text
 						nuxt
@@ -115,14 +108,12 @@
 						>{{ $t('header.careers') }}</v-btn
 					>
 					<dropdown-menu
-
 						route="/about-us"
 						:text="$t('header.aboutUs')"
 						:items="about"
 					></dropdown-menu>
 					<div class="d-flex px-2 justify-center">
 						<v-btn
-
 							@click="openDialog"
 							dense
 							class="
@@ -141,7 +132,7 @@
 							{{ $t('applyButtonHeader') }}
 						</v-btn>
 					</div>
-					<div class="">
+					<div>
 						<img
 							@click="setLang($i18n.locale === 'ar' ? 'en' : 'ar')"
 							height="20"
@@ -149,17 +140,18 @@
 							style="cursor: pointer"
 							class="d-block px-2 mx-auto"
 							src="/language.svg"
-							alt=""
+							alt="change language button"
 						/>
 					</div>
 
-					<div class="">
+					<div>
 						<img
 							height="20"
 							width="35"
+							srcset="/search.svg"
 							src="/search.svg"
 							class="d-block px-2 mx-auto"
-							alt="alraedah logo"
+							alt="search button"
 						/>
 					</div>
 				</v-list>
@@ -472,12 +464,17 @@ export default class extends Vue {
 				{
 					rel: 'preload',
 					as: 'image',
-					href: '/language.svg',
+					href: '/alraedah-logo.svg',
 				},
 				{
 					rel: 'preload',
 					as: 'image',
 					href: '/search.svg',
+				},
+				{
+					rel: 'preload',
+					as: 'image',
+					href: '/language.svg',
 				},
 			],
 		};
@@ -488,12 +485,11 @@ export default class extends Vue {
 	}
 	mounted() {
 		this.$nextTick(() => {
-		const tracker = new OpenReplay({
-			projectKey: 'ptApJJm32giY5X4e0tSU',
+			const tracker = new OpenReplay({
+				projectKey: 'ptApJJm32giY5X4e0tSU',
+			});
+			tracker.start();
 		});
-		tracker.start();
-		this.loaded = false;
-		})
 	}
 	created() {
 		this.$nuxt.$on('trigger-dialog', () => {

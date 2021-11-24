@@ -11,7 +11,7 @@
 							? 'px-l pl-sm-10 pl-lg-14'
 							: 'px-r pr-sm-10 pr-lg-14'
 					"
-					class="text-col d-flex flex-column"
+					class="text-col d-flex pt-6 pt-md-12 flex-column"
 				>
 					<!-- prettier-ignore -->
 					<h1
@@ -24,7 +24,6 @@
 							font-weight-bold
 							center-text
 							text-md-h1
-							pt-sm-4 pt-md-12 
 						"
 						style="font-size: clamp(2.8rem, 6vmin, 4.5rem); "
 
@@ -33,7 +32,6 @@
 					>{{ $t('landingPage.title') }}</span>
 					</h1>
 					<p
-
 						:class="$i18n.locale === 'ar' ? 'line-height' : ''"
 						style="width: 60%; line-height: 150%"
 						class="
@@ -75,27 +73,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
-export default class extends Vue {
-		head(): NuxtOptionsHead {
-		return {
-			link: [
-				{
-					rel: 'preload',
-					as: 'image',
-					href: 'banner2.webp',
-				},
-				{
-					rel: 'preload',
-					as: 'image',
-					href: 'alraedah-logo.svg',
-				},
-			],
-		};
-	}
-}
+export default class extends Vue {}
 </script>
 
 <style scoped>

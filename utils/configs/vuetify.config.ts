@@ -11,15 +11,6 @@ export default (ctx: Context): Framework => {
 		theme: {
 			dark: false,
 			themes: {
-				dark: {
-					primary: '#1e4382',
-					accent: '#5f6369',
-					secondary: '#4c83bd',
-					info: '#75787B',
-					warning: colors.amber.base,
-					error: colors.deepOrange.accent4,
-					success: colors.green.accent3,
-				},
 				light: {
 					primary: '#1e4382',
 					accent: '#5f6369',
