@@ -23,6 +23,7 @@
 							text-pre-line
 							font-weight-bold
 							center-text
+							text-md-h1
 			 main-text
 						"
 					
@@ -121,6 +122,6 @@ img {
 	z-index: 0;
 }
 .main-text {
-	font-size: clamp(2.5rem, 8vw, 4em);
+	font-size: clamp(2.5rem, 8vw, 4.5rem);
 }
 </style>
