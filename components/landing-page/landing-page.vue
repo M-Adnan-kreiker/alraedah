@@ -23,10 +23,9 @@
 							text-pre-line
 							font-weight-bold
 							center-text
-							text-md-h1
+			 main-text
 						"
-						style="font-size: clamp(2.5rem, 6vmin, 4.5rem); color:#1e4382; "
-
+					
 					><span
 					
 					>{{ $t('landingPage.title') }}</span>
@@ -36,7 +35,7 @@
 						style="width: 60%; line-height: 150%"
 						class="
 							info--text
-							text-wrap text-body-1 text-md-h6
+							text-wrap text-body-2 text-sm-body-1 text-md-h6
 							mx-0
 							my-6 my-sm-4 my-md-8
 							center-text
@@ -46,9 +45,13 @@
 					>
 						{{ $t('landingPage.text') }}
 					</p>
-					<div style="position: relative; z-index: 1" class="apply-button mb-8">
+					<div
+						style="position: relative; z-index: 1"
+						class="apply-button my-auto"
+					>
 						<apply-now-button-home-page
 							:buttonText="$t('applyButton')"
+							class="mb-md-4"
 						></apply-now-button-home-page>
 					</div>
 				</v-col>
@@ -61,8 +64,8 @@
 								? 'transform: scaleX(-1);float: left'
 								: 'float: right'
 						"
-						src="/banner2.webp"
-						class="mt-4 row"
+						src="/banner.webp"
+						class="mt-md-1 row"
 						:class="$i18n.locale === 'ar' ? 'ml-n12' : ''"
 					/>
 				</v-col>
@@ -83,13 +86,6 @@ h1,
 p {
 	white-space: nowrap;
 }
-
-/* @media (max-width: 959px) {
-	.row {
-		max-height: 530px !important;
-	}
-
-} */
 
 @media (max-width: 599px) {
 	main {
@@ -117,11 +113,14 @@ p {
 	line-height: 150% !important;
 }
 img {
-	width: 120%;
-	height: 120%;
+	width: 104%;
+	height: 104%;
 	min-height: 470px;
 	min-width: 330px;
 	position: relative;
 	z-index: 0;
+}
+.main-text {
+	font-size: clamp(2.5rem, 8vw, 4em);
 }
 </style>

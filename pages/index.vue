@@ -4,7 +4,7 @@
 			:title="$t('seo.home.title')"
 			:description="$t('seo.home.description')"
 		></social-head>
-		<landing-page class="mb-8 mb-sm-0"></landing-page>
+		<landing-page class="mb-4 mb-sm-0"></landing-page>
 		<achievements />
 		<v-lazy
 			v-model="achievements"
@@ -12,7 +12,7 @@
 				threshold: 0.5,
 			}"
 			min-height="200"
-			transition="fade-transition"
+			transition="fade"
 		>
 			<financing-solutions-page class="my-sm-8"></financing-solutions-page>
 		</v-lazy>
@@ -23,7 +23,7 @@
 				threshold: 0.5,
 			}"
 			min-height="200"
-			transition="fade-transition"
+			transition="fade"
 		>
 			<pricing-table class="mt-sm-16"></pricing-table>
 		</v-lazy>
@@ -33,7 +33,7 @@
 				threshold: 0.5,
 			}"
 			min-height="200"
-			transition="fade-transition"
+			transition="fade"
 		>
 			<partners></partners>
 		</v-lazy>
@@ -43,7 +43,7 @@
 				threshold: 0.5,
 			}"
 			min-height="200"
-			transition="fade-transition"
+			transition="fade"
 		>
 			<kick-start class="pb-8 pb-sm-16"></kick-start>
 		</v-lazy>

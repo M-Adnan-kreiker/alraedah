@@ -60,22 +60,15 @@ export default {
 		'@nuxt/typescript-build',
 		// https://go.nuxtjs.dev/vuetify
 		'@nuxtjs/vuetify',
+
+		'nuxt-compress',
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		// https://go.nuxtjs.dev/axios
-		'@nuxtjs/axios',
 		// https://i18n.nuxtjs.org/
 		'nuxt-i18n',
-		// https://auth.nuxtjs.org/
-		'@nuxtjs/auth-next',
-		// https://firebase.nuxtjs.org/
-		// '@nuxtjs/firebase',
-		// https://sitemap.nuxtjs.org/
-		// https://github.com/nuxt-community/robots-module
-		'@nuxtjs/robots',
-		'@nuxtjs/dotenv',
 		[
 			'nuxt-font-loader-strategy',
 			{
@@ -109,6 +102,27 @@ export default {
 				],
 			},
 		],
+		// https://auth.nuxtjs.org/
+		'@nuxtjs/auth-next',
+		// https://firebase.nuxtjs.org/
+		// '@nuxtjs/firebase',
+		// https://sitemap.nuxtjs.org/
+		// https://github.com/nuxt-community/robots-module
+		'@nuxtjs/robots',
+		'@nuxtjs/dotenv',
+		'@nuxtjs/axios',
+		[
+			'nuxt-compress',
+			{
+				gzip: {
+					threshold: 8192,
+				},
+				brotli: {
+					threshold: 8192,
+				},
+			},
+		],
+
 		[
 			'nuxt-lazy-load',
 			{
@@ -146,7 +160,9 @@ export default {
 	robots: robotsConfig,
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
-	build: {},
+	build: {
+		extractCss: true,
+	},
 	loading: {
 		color: '#4B82BC',
 		height: '3px',

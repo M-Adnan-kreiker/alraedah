@@ -465,16 +465,6 @@ export default class extends Vue {
 					as: 'image',
 					href: '/alraedah-logo.svg',
 				},
-				{
-					rel: 'preload',
-					as: 'image',
-					href: '/search.svg',
-				},
-				{
-					rel: 'preload',
-					as: 'image',
-					href: '/language.svg',
-				},
 			],
 		};
 	}
@@ -579,6 +569,6 @@ export default class extends Vue {
 }
 .bg {
 	background: url(/watermark2.jpg) no-repeat right bottom;
-	background-size: fit;
+	background-size: cover;
 }
 </style>
