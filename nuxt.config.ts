@@ -129,6 +129,7 @@ export default {
 				directiveOnly: true,
 			},
 		],
+		'@nuxtjs/pwa',
 		'@nuxtjs/sitemap',
 	],
 
@@ -151,6 +152,10 @@ export default {
 
 	env: {
 		EP: process.env.EP,
+	},
+
+	pwa: {
+		theme_color: '#1e4382',
 	},
 
 	sitemap: sitemapConfig,

@@ -463,7 +463,7 @@ export default class extends Vue {
 				{
 					rel: 'preload',
 					as: 'image',
-					href: '/alraedah-logo.svg',
+					href: '/banner.webp',
 				},
 			],
 		};
