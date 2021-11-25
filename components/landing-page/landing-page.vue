@@ -25,7 +25,7 @@
 							center-text
 							text-md-h1
 						"
-						style="font-size: clamp(2.8rem, 6vmin, 4.5rem); "
+						style="font-size: clamp(2.5rem, 6vmin, 4.5rem); color:#1e4382; "
 
 					><span
 					

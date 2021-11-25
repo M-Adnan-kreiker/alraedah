@@ -18,7 +18,7 @@
 					{{ $t('solutions.text') }}
 				</p>
 			</v-col>
-			<v-col class="" cols="12" md="6">
+			<v-col class="pa-0" cols="12" md="6">
 				<Lazy-video-info></Lazy-video-info>
 			</v-col>
 		</v-row>
@@ -202,7 +202,7 @@ export default class extends Vue {
 	}
 }
 
-.bg {
+/* .bg {
 	background: url(/raedah-bg.svg) no-repeat left center;
-}
+} */
 </style>

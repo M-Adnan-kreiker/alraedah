@@ -76,7 +76,7 @@
 											data-openreplay-obscured
 											:label="$t('genericForm.number')"
 											outlined
-											type="number"
+											type="tel"
 										></v-text-field>
 									</validation-provider>
 								</v-col>

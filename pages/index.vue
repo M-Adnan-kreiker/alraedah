@@ -4,14 +4,49 @@
 			:title="$t('seo.home.title')"
 			:description="$t('seo.home.description')"
 		></social-head>
-		<landing-page  class="mb-8 mb-sm-0"></landing-page>
-		<Lazy-achievements />
-		<Lazy-financing-solutions-page
-			class="my-sm-8"
-		></Lazy-financing-solutions-page>
-		<Lazy-pricing-table class="mt-sm-16"></Lazy-pricing-table>
-		<Lazy-partners></Lazy-partners>
-		<Lazy-kick-start class="pb-8 pb-sm-16"></Lazy-kick-start>
+		<landing-page class="mb-8 mb-sm-0"></landing-page>
+		<achievements />
+		<v-lazy
+			v-model="achievements"
+			:options="{
+				threshold: 0.5,
+			}"
+			min-height="200"
+			transition="fade-transition"
+		>
+			<financing-solutions-page class="my-sm-8"></financing-solutions-page>
+		</v-lazy>
+
+		<v-lazy
+			v-model="pricingTable"
+			:options="{
+				threshold: 0.5,
+			}"
+			min-height="200"
+			transition="fade-transition"
+		>
+			<pricing-table class="mt-sm-16"></pricing-table>
+		</v-lazy>
+		<v-lazy
+			v-model="partners"
+			:options="{
+				threshold: 0.5,
+			}"
+			min-height="200"
+			transition="fade-transition"
+		>
+			<partners></partners>
+		</v-lazy>
+		<v-lazy
+			v-model="kickStart"
+			:options="{
+				threshold: 0.5,
+			}"
+			min-height="200"
+			transition="fade-transition"
+		>
+			<kick-start class="pb-8 pb-sm-16"></kick-start>
+		</v-lazy>
 	</main>
 </template>
 
@@ -21,14 +56,14 @@ import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
 export default class extends Vue {
-			head(): NuxtOptionsHead {
+	head(): NuxtOptionsHead {
 		return {
 			link: [
 				{
 					rel: 'subresource',
 					as: 'image',
 					href: '/banner2.webp',
-				}
+				},
 			],
 		};
 	}
@@ -38,6 +73,10 @@ export default class extends Vue {
 			this.$store.commit('modules/leads/setSource', this.$route.query.source);
 		}
 	}
+	pricingTable = false;
+	achievements = false;
+	partners = false;
+	kickStart = false;
 }
 </script>
 

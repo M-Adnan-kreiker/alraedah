@@ -63,7 +63,7 @@
 											:label="$t('contactForm.mobile')"
 											outlined
 											required
-											type="number"
+											type="tel"
 										></v-text-field>
 									</validation-provider>
 								</v-col>

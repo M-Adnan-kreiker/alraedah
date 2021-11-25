@@ -455,7 +455,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import OpenReplay from '@openreplay/tracker/cjs';
 import { NuxtOptionsHead } from '@nuxt/types/config/head';
-
 @Component
 export default class extends Vue {
 	head(): NuxtOptionsHead {
@@ -502,7 +501,6 @@ export default class extends Vue {
 	map = '';
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
-
 		// logs an event in analytics, can be seen in the console
 		// this.$fire.analytics.logEvent('select_content', {
 		// 	content_type: 'changeing locale',
@@ -524,14 +522,12 @@ export default class extends Vue {
 	get about() {
 		return this.$t('header.about');
 	}
-
 	get links() {
 		return this.$t('footer.nav');
 	}
 	get locations() {
 		return this.$t('footer.addresses');
 	}
-
 	triggerDrawer() {
 		this.drawer = !this.drawer;
 	}
@@ -553,7 +549,6 @@ export default class extends Vue {
 .burger {
 	display: none;
 }
-
 @media (max-width: 1040px) {
 	.burger {
 		display: unset !important;
@@ -562,7 +557,6 @@ export default class extends Vue {
 		display: none !important;
 	}
 }
-
 .overlay {
 	position: fixed;
 	top: 0;
