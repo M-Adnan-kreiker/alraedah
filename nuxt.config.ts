@@ -129,6 +129,7 @@ export default {
 				directiveOnly: true,
 			},
 		],
+		'@luxdamore/nuxt-prune-html',
 		'@nuxtjs/sitemap',
 	],
 
