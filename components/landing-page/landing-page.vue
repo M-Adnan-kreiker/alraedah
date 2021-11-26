@@ -57,7 +57,7 @@
 						></apply-now-button-home-page>
 					</div>
 				</v-col>
-				<v-col v-if="desktop" cols="2" md="3" class="px-0">
+				<v-col cols="2" md="3" class="d-none px-0 d-sm-inline">
 					<img
 						height="630"
 						width="422"
@@ -82,11 +82,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class extends Vue {
-	get desktop() {
-		return this.$vuetify.breakpoint.smAndUp;
-	}
-}
+export default class extends Vue {}
 </script>
 
 <style scoped>

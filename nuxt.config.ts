@@ -130,6 +130,7 @@ export default {
 			},
 		],
 		'@nuxtjs/pwa',
+
 		'@nuxtjs/sitemap',
 	],
 
@@ -157,7 +158,7 @@ export default {
 	pwa: {
 		name: 'Alraedah',
 		theme_color: '#1e4382',
-		display: 'fullscreen'
+		display: 'fullscreen',
 	},
 
 	sitemap: sitemapConfig,

@@ -10,7 +10,7 @@
 		>
 			{{ $t('partners') }}
 		</h1>
-		<v-row v-if="desktop" justify="center">
+		<v-row justify="center" class="d-none d-sm-flex">
 			<v-col
 				class="d-flex justify-center"
 				cols="12"
@@ -28,7 +28,6 @@
 			</v-col>
 		</v-row>
 		<v-carousel
-			v-if="mobile"
 			class="d-block d-sm-none"
 			:show-arrows="false"
 			cycle
@@ -62,12 +61,6 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
-	get desktop() {
-		return this.$vuetify.breakpoint.smAndUp;
-	}
-	get mobile() {
-		return this.$vuetify.breakpoint.xsOnly;
-	}
 	images = [
 		{
 			src: '/geidea.webp',
