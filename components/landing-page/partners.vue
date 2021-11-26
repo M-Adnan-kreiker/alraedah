@@ -19,9 +19,9 @@
 				:key="image.src"
 			>
 				<img
-					max-height="250"
-					class="mx-auto"
-					max-width="300"
+					height="250"
+					width="300"
+					class="mx-auto partners-image"
 					:src="image.src"
 					style="max-width: 300px; width: 100%"
 				/>
@@ -75,12 +75,8 @@ export default class extends Vue {
 </script>
 
 <style scoped>
-/* main {
-	background: linear-gradient(
-		179.59deg,
-		rgba(255, 255, 255, 0.72) 3.17%,
-		rgba(140, 181, 225, 0.6) 50.93%,
-		rgba(255, 255, 255, 0.72) 99.97%
-	);
-} */
+.partners-image {
+	height: 100% !important;
+	width: 100% !important;
+}
 </style>

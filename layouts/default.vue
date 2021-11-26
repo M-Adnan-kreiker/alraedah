@@ -594,6 +594,9 @@ export default class extends Vue {
 }
 .footer-logo {
 	height: 100% !important;
+	max-height: 88px !important;
+	max-width: 174px !important;
+
 	width: 100% !important;
 }
 </style>
