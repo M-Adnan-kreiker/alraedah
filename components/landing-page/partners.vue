@@ -10,7 +10,7 @@
 		>
 			{{ $t('partners') }}
 		</h1>
-		<v-row justify="center" class="d-none d-sm-flex">
+		<v-row v-if="$vuetify.breakpoint.smAndUp" justify="center">
 			<v-col
 				class="d-flex justify-center"
 				cols="12"
@@ -28,6 +28,7 @@
 			</v-col>
 		</v-row>
 		<v-carousel
+			v-if="$vuetify.breakpoint.xsOnly"
 			class="d-block d-sm-none"
 			:show-arrows="false"
 			cycle

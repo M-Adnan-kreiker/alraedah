@@ -30,7 +30,7 @@
 			</v-col>
 		</v-row>
 
-		<section class="mt-16 mx-10 d-none d-sm-block">
+		<section v-if="$vuetify.breakpoint.smAndUp" class="mt-16 mx-10">
 			<v-row>
 				<v-col
 					class="d-flex justify-center"
@@ -91,7 +91,7 @@
 			</v-row>
 		</section>
 
-		<section class="d-block d-sm-none mt-10">
+		<section v-if="$vuetify.breakpoint.xsOnly" class="mt-10">
 			<v-card color="transparent" flat>
 				<v-window class="pa-4" v-model="onboarding">
 					<v-window-item v-for="card in cards" :key="card.id">

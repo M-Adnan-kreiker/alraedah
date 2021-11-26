@@ -341,10 +341,9 @@
 					></contact-form>
 				</transition>
 			</div>
-			<!-- <loading-spinner v-if="loaded"></loading-spinner> -->
-			<!-- <v-container> -->
-			<Nuxt />
-			<!-- </v-container> -->
+			<v-main>
+				<Nuxt />
+			</v-main>
 		</v-main>
 		<footer>
 			<v-container>
@@ -383,7 +382,7 @@
 					</v-col>
 				</v-row>
 				<v-divider></v-divider>
-				<v-row align="center" justify="center" class="mt-6">
+				<v-row align="start" justify="center" class="mt-6">
 					<v-col
 						class="text-center px-0"
 						cols="6"
@@ -477,20 +476,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import OpenReplay from '@openreplay/tracker/cjs';
-import { NuxtOptionsHead } from '@nuxt/types/config/head';
 @Component
 export default class extends Vue {
-	head(): NuxtOptionsHead {
-		return {
-			link: [
-				{
-					rel: 'preload',
-					as: 'image',
-					href: '/banner.webp',
-				},
-			],
-		};
-	}
 	loaded = true;
 	beforeCreate() {
 		this.loaded = true;
@@ -550,9 +537,6 @@ export default class extends Vue {
 	closeMap() {
 		this.dialog = false;
 	}
-	// befoprimary lighten-2 white--textestroy() {
-	// 	this.$nuxt.$off('trigger-dialog');
-	// }
 }
 </script>
 

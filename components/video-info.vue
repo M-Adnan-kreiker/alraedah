@@ -1,6 +1,6 @@
 <template>
 	<video
-		class="rounded-xl"
+		class="rounded-lg"
 		width="100%"
 		height="100%"
 		controls
@@ -24,6 +24,6 @@ export default class extends Vue {}
 
 <style scoped>
 video {
-	border: 4px solid #4c83bd;
+	border: 2px solid #4c83bd;
 }
 </style>

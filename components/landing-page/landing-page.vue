@@ -1,6 +1,6 @@
 <template>
 	<main>
-		<v-container fluid class="mx-0 px-0 mt-sm-n6 mt-md-n10">
+		<v-container fluid class="mx-0 px-0 mt-sm-n10 mt-md-n10">
 			<v-row align="center" class="row">
 				<v-col
 					style="position: relative; z-index: 1"
@@ -57,7 +57,7 @@
 						></apply-now-button-home-page>
 					</div>
 				</v-col>
-				<v-col cols="2" md="3" class="d-none px-0 d-sm-inline">
+				<v-col v-if="$vuetify.breakpoint.smAndUp" cols="2" md="3" class="px-0">
 					<img
 						height="630"
 						width="422"
@@ -97,7 +97,7 @@ p {
 		padding-bottom: 10px !important;
 	}
 	p {
-		width: 80% !important;
+		width: 70% !important;
 		margin-right: auto;
 		margin-left: auto;
 	}
