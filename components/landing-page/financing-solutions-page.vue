@@ -30,7 +30,7 @@
 			</v-col>
 		</v-row>
 
-		<section v-if="$vuetify.breakpoint.smAndUp" class="mt-16 mx-10">
+		<section v-if="desktop" class="mt-16 mx-10">
 			<v-row>
 				<v-col
 					class="d-flex justify-center"
@@ -91,7 +91,7 @@
 			</v-row>
 		</section>
 
-		<section v-if="$vuetify.breakpoint.xsOnly" class="mt-10">
+		<section v-if="mobile" class="mt-10">
 			<v-card color="transparent" flat>
 				<v-window class="pa-4" v-model="onboarding">
 					<v-window-item v-for="card in cards" :key="card.id">
@@ -174,7 +174,12 @@ export default class extends Vue {
 	get cards() {
 		return this.$t('solutions.cards');
 	}
-
+	get desktop() {
+		return this.$vuetify.breakpoint.smAndUp;
+	}
+	get mobile() {
+		return this.$vuetify.breakpoint.xsOnly;
+	}
 	onboarding = 0;
 	length = 6;
 	next() {
