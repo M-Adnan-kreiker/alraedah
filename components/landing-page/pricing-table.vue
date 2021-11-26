@@ -54,6 +54,8 @@
 									<div v-for="(item, j) in card.card.info" :key="j">
 										<div class="d-flex">
 											<img
+												width="15"
+												height="21"
 												class="mx-2 mx-sm-3 pt-2 align-self-start"
 												src="/checkMark.svg"
 												alt=""

@@ -155,7 +155,9 @@ export default {
 	},
 
 	pwa: {
+		name: 'Alraedah',
 		theme_color: '#1e4382',
+		display: 'fullscreen'
 	},
 
 	sitemap: sitemapConfig,

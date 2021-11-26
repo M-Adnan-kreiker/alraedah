@@ -1,84 +1,87 @@
 <template>
-	<div class="mx-4 mx-sm-16">
-		<social-head
-			:title="$t('seo.financialReports.title')"
-			:description="$t('seo.financialReports.description')"
-		></social-head>
-
-		<v-row class="my-12 my-md-16" justify="center">
-			<v-col
-				style="background: #1d4283"
-				class="text-center rounded-t-xl py-16"
-				cols="11"
-				md="8"
-				elevation="12"
-			>
-				<h1 class="white--text text-h5 text-md-h4 py-4">
-					{{ $t('financialReports.title') }}
-				</h1>
-			</v-col>
-			<v-col class="pt-0 px-0" cols="11" md="8" elevation="4">
-				<v-card class="rounded-b-xl">
-					<v-tabs
-						v-model="tab"
-						centered
-						mobile-breakpoint="100"
-						slider-color="primary"
-						background-color="#ffffff"
-						class="info--text"
-					>
-						<v-tabs-slider color="primary"></v-tabs-slider>
-						<v-tab
-							v-for="year in years"
-							class="info--text font-weight-bold text-h6 pt-5 text-sm-h5"
-							:key="year"
-							>{{ year }}</v-tab
+	<main>
+		<div class="mx-4 mx-sm-16">
+			<social-head
+				:title="$t('seo.financialReports.title')"
+				:description="$t('seo.financialReports.description')"
+			></social-head>
+			<v-row class="my-12 my-md-16" justify="center">
+				<v-col
+					style="background: #1d4283"
+					class="text-center rounded-t-xl py-16"
+					cols="11"
+					md="8"
+					elevation="12"
+				>
+					<h1 class="white--text text-h5 text-md-h4 py-4">
+						{{ $t('financialReports.title') }}
+					</h1>
+				</v-col>
+				<v-col class="pt-0 px-0" cols="11" md="8" elevation="4">
+					<v-card class="rounded-b-xl">
+						<v-tabs
+							v-model="tab"
+							centered
+							mobile-breakpoint="100"
+							slider-color="primary"
+							background-color="#ffffff"
+							class="info--text"
 						>
-					</v-tabs>
-
-					<v-divider class="my-4"></v-divider>
-					<v-tabs-items v-model="tab">
-						<v-tab-item v-for="(reportYear, i) in reports" :key="reportYear[i]">
-							<v-card>
-								<v-row class="text-center">
-									<v-col
-										v-for="report in reportYear"
-										:key="report.name"
-										cols="12"
-										sm="6"
-										class="px-8 py-4 d-flex"
-									>
-										<p
-											class="
-												pt-2
-												d-inline
-												text-body-1 text-md-h6
-												align-self-center
-												font-weight-bold
-												text-no-wrap
-												flex-grow-1
-											"
+							<v-tabs-slider color="primary"></v-tabs-slider>
+							<v-tab
+								v-for="year in years"
+								class="info--text font-weight-bold text-h6 pt-5 text-sm-h5"
+								:key="year"
+								>{{ year }}</v-tab
+							>
+						</v-tabs>
+						<v-divider class="my-4"></v-divider>
+						<v-tabs-items v-model="tab">
+							<v-tab-item
+								v-for="(reportYear, i) in reports"
+								:key="reportYear[i]"
+							>
+								<v-card>
+									<v-row class="text-center">
+										<v-col
+											v-for="report in reportYear"
+											:key="report.name"
+											cols="12"
+											sm="6"
+											class="px-8 py-4 d-flex"
 										>
-											{{ report.attributes.name }}
-										</p>
-										<a
-											:href="report.attributes.file"
-											target="#"
-											:download="report.attributes.name"
-										>
-											<v-icon class="px-2 mb-3" large color="primary"
-												>mdi-download-box-outline</v-icon
+											<p
+												class="
+													pt-2
+													d-inline
+													text-body-1 text-md-h6
+													align-self-center
+													font-weight-bold
+													text-no-wrap
+													flex-grow-1
+												"
 											>
-										</a>
-									</v-col>
-								</v-row>
-							</v-card>
-						</v-tab-item>
-					</v-tabs-items>
-				</v-card>
-			</v-col>
-		</v-row>
-	</div>
+												{{ report.attributes.name }}
+											</p>
+											<a
+												:href="report.attributes.file"
+												target="#"
+												:download="report.attributes.name"
+											>
+												<v-icon class="px-2 mb-3" large color="primary"
+													>mdi-download-box-outline</v-icon
+												>
+											</a>
+										</v-col>
+									</v-row>
+								</v-card>
+							</v-tab-item>
+						</v-tabs-items>
+					</v-card>
+				</v-col>
+			</v-row>
+		</div>
+	</main>
 </template>
 
 <script lang="ts">
@@ -123,4 +126,10 @@ export default class extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (min-width: 700px) {
+	main {
+		min-height: 80vh;
+	}
+}
+</style>

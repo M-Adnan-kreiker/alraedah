@@ -352,8 +352,16 @@
 					class="d-flex flex-column flex-sm-row mb-4"
 					style="align-items: center; text-align: center"
 				>
-					<v-col cols="6" sm="2">
-						<v-img src="/alraedah-logo.svg"></v-img>
+					<v-col cols="8" sm="2">
+						<div>
+							<v-img
+								height="87"
+								width="173"
+								contain
+								src="/alraedah-logo.svg"
+								class="mx-auto my-4 my-sm-0 footer-logo"
+							></v-img>
+						</div>
 						<p class="text-subtitle-2 accent--text">{{ $t('footer.moto') }}</p>
 					</v-col>
 					<v-col class="px-0" v-for="(link, i) in links" :key="i">
@@ -422,15 +430,30 @@
 						<a
 							href="https://www.linkedin.com/company/alraedah-finance/"
 							target="_"
-							><img class="mx-1" src="/linkedin.svg" alt=""
+							><img
+								height="24"
+								width="24"
+								class="mx-1"
+								src="/linkedin.svg"
+								alt=""
 						/></a>
 						<a
 							href="https://www.instagram.com/alraedah.finance.sa/?hl=en"
 							target="_"
-							><img class="mx-1" src="/instagram.svg" alt=""
+							><img
+								height="24"
+								width="24"
+								class="mx-1"
+								src="/instagram.svg"
+								alt=""
 						/></a>
 						<a href="https://twitter.com/alraedahfinance" target="_"
-							><img class="mx-1" src="/twitter.svg" alt=""
+							><img
+								height="24"
+								width="24"
+								class="mx-1"
+								src="/twitter.svg"
+								alt=""
 						/></a>
 						<p class="text-subtitle-2 mt-2 mb-1">
 							{{ $t('footer.contactCol.saudi') }}
@@ -568,5 +591,9 @@ export default class extends Vue {
 .bg {
 	background: url(/watermark2.jpg) no-repeat right bottom;
 	background-size: cover;
+}
+.footer-logo {
+	height: 100% !important;
+	width: 100% !important;
 }
 </style>

@@ -19,7 +19,7 @@
 			</h1>
 			<h2
 				style="text-shadow: 2px 2px 5px gray"
-				class="text-center pt-8 text-h6 mx-4 text-sm-h5 text-md-h3 white--text"
+				class="text-center pt-8 mx-4 text-h6 text-sm-h5 text-md-h3 white--text"
 			>
 				<!-- A Glimpse of Our Achievements -->
 				{{ $t('achievements.text') }}
@@ -52,7 +52,7 @@
 							letter-spacing: 1.5px !important;
 							text-shadow: 2px 2px 5px gray;
 						"
-						class="text-h6 text-uppercase white--text"
+						class="text-body-1 text-sm-h6 text-uppercase white--text"
 					>
 						{{ card.text }}
 					</p>

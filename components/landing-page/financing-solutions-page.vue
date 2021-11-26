@@ -3,7 +3,7 @@
 		<v-row class="mx-4 mx-sm-8">
 			<v-col cols="12">
 				<!-- prettier-ignore -->
-				<h1
+				<h2
 					class="
 						font-weight-bold
 						text-h5 text-sm-h4 text-md-h3 text-wrap
@@ -11,10 +11,17 @@
 						text-start
 					"
 				>{{ $t('solutions.title') }}
-				</h1>
+				</h2>
 			</v-col>
-			<v-col class="" cols="12" md="6">
-				<p class="accent--text text-body-1 text-sm-h6 text-md-h5 text-wrap">
+			<v-col cols="12" md="6">
+				<p
+					class="
+						accent--text
+						text-body-1
+						solution-text
+						text-sm-h6 text-md-h5 text-wrap
+					"
+				>
 					{{ $t('solutions.text') }}
 				</p>
 			</v-col>
@@ -202,7 +209,11 @@ export default class extends Vue {
 	}
 }
 
-/* .bg {
-	background: url(/raedah-bg.svg) no-repeat left center;
-} */
+.solution-text {
+	line-height: 170% !important;
+}
+
+h2 {
+	line-height: 140% !important;
+}
 </style>

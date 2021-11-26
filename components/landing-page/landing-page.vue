@@ -5,7 +5,8 @@
 				<v-col
 					style="position: relative; z-index: 1"
 					cols="12"
-					sm="9"
+					sm="10"
+					md="9"
 					:class="
 						$i18n.locale === 'en'
 							? 'px-l pl-sm-10 pl-lg-14'
@@ -16,7 +17,7 @@
 					<!-- prettier-ignore -->
 					<h1
 	
-						:class="$i18n.locale === 'ar' ? 'line-height-h1' : ''"
+						:class="$i18n.locale === 'ar' ? 'line-height-h1 pl-6' : ''"
 
 						class="
 							primary--text
@@ -36,7 +37,7 @@
 						style="width: 60%; line-height: 150%"
 						class="
 							info--text
-							text-wrap text-body-2 text-sm-body-1 text-md-h6
+							text-wrap
 							mx-0
 							my-6 my-sm-4 my-md-8
 							center-text
@@ -56,7 +57,7 @@
 						></apply-now-button-home-page>
 					</div>
 				</v-col>
-				<v-col cols="3" class="d-none px-0 d-sm-inline">
+				<v-col cols="2" md="3" class="d-none px-0 d-sm-inline">
 					<img
 						height="630"
 						width="422"
@@ -66,8 +67,10 @@
 								: 'float: right'
 						"
 						src="/banner.webp"
-						class="mt-md-1 row"
-						:class="$i18n.locale === 'ar' ? 'ml-n12' : ''"
+						class="mt-6 row"
+						:class="
+							$i18n.locale === 'ar' ? 'ml-n16 ml-md-n12' : 'mr-n12 mr-md-0'
+						"
 					/>
 				</v-col>
 			</v-row>
@@ -108,7 +111,7 @@ p {
 	}
 }
 .line-height {
-	line-height: 200% !important;
+	line-height: 150% !important;
 }
 .line-height-h1 {
 	line-height: 150% !important;
@@ -122,6 +125,14 @@ img {
 	z-index: 0;
 }
 .main-text {
-	font-size: clamp(2.5rem, 8vw, 4.5rem);
+	font-size: clamp(2.5rem, 9vw, 4.5rem);
+}
+/* @media (min-width: 700px) {
+	main {
+		min-height: calc(100vh - 55px);
+	}
+} */
+p {
+	font-size: clamp(1rem, 2vw, 1.5rem);
 }
 </style>

@@ -12,6 +12,7 @@
 				width="95"
 				:src="currentCard.image"
 				class="mx-3 mx-sm-4 align-self-center big-img flex-grow-1"
+				style="object-fit: contain"
 			/>
 			<div class="align-self-center">
 				<v-row
