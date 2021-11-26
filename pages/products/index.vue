@@ -70,7 +70,13 @@
 					max-width="600"
 					height="100%"
 				>
-					<v-img max-height="300" :src="product.image"></v-img>
+					<v-img
+						class="product-image"
+						height="300"
+						width="600"
+						max-height="300"
+						:src="product.image"
+					></v-img>
 					<v-card-title
 						class="primary--text font-weight-bold text-md-h5 flex-grow-1"
 						>{{ product.name }}</v-card-title
@@ -117,32 +123,16 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
 export default class extends Vue {
-	head(): NuxtOptionsHead {
-		return {
-			link: [
-				{
-					rel: 'preload',
-					as: 'image',
-					href: '/POS.webp',
-				},
-			],
-		};
-	}
 	products = this.$t('products');
 }
 </script>
 
 <style scoped>
-html {
-	background: linear-gradient(
-			51.66deg,
-			rgba(238, 238, 238, 0.2) 75.46%,
-			rgba(0, 0, 0, 0.2) 96.37%
-		),
-		#ffffff;
+.product-image {
+	height: 100% !important;
+	width: 100% !important;
 }
 </style>
