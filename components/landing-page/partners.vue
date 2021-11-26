@@ -34,6 +34,7 @@
 			interval="2500"
 			height="250"
 			hide-delimiter-background
+			hide-delimiters
 		>
 			<v-carousel-item v-for="image in images" :key="image.src">
 				<v-sheet color="transparent" height="100%">
