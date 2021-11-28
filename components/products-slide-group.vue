@@ -66,8 +66,16 @@
 			</pricing-card>
 		</swiper-slide>
 
-		<div class="swiper-button-prev" slot="button-prev"></div>
-		<div class="swiper-button-next" slot="button-next"></div>
+		<div
+			:class="$vuetify.locale == 'ar' ? 'left' : 'right'"
+			class="swiper-button-prev"
+			slot="button-prev"
+		></div>
+		<div
+			:class="$vuetify.locale == 'ar' ? 'right' : 'left'"
+			class="swiper-button-next"
+			slot="button-next"
+		></div>
 	</swiper>
 </template>
 
@@ -141,10 +149,10 @@ export default {
 	border-radius: 50%;
 	padding: 25px;
 }
-.swiper-button-next {
+.indent-right {
 	right: 0;
 }
-.swiper-button-prev {
+.indent-left {
 	left: 0;
 }
 </style>
