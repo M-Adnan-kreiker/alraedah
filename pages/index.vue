@@ -5,13 +5,22 @@
 			:description="$t('seo.home.description')"
 		></social-head>
 		<landing-page class="mb-4 mb-sm-0"></landing-page>
-		<achievements />
+		<v-lazy
+			v-model="achievements"
+			:options="{
+				threshold: 0.15,
+			}"
+			min-height="500"
+			transition="fade"
+		>
+			<achievements />
+		</v-lazy>
 		<v-lazy
 			v-model="solutions"
 			:options="{
-				threshold: 0.5,
+				threshold: 0.15,
 			}"
-			min-height="200"
+			min-height="500"
 			transition="fade"
 		>
 			<financing-solutions-page class="my-sm-8"></financing-solutions-page>
@@ -20,9 +29,9 @@
 		<v-lazy
 			v-model="pricingTable"
 			:options="{
-				threshold: 0.5,
+				threshold: 0.15,
 			}"
-			min-height="200"
+			min-height="500"
 			transition="fade"
 		>
 			<pricing-table class="mt-sm-16"></pricing-table>
@@ -30,9 +39,9 @@
 		<v-lazy
 			v-model="partners"
 			:options="{
-				threshold: 0.5,
+				threshold: 0.15,
 			}"
-			min-height="200"
+			min-height="400"
 			transition="fade"
 		>
 			<partners></partners>
@@ -40,9 +49,9 @@
 		<v-lazy
 			v-model="kickStart"
 			:options="{
-				threshold: 0.5,
+				threshold: 0.15,
 			}"
-			min-height="200"
+			min-height="400"
 			transition="fade"
 		>
 			<kick-start class="pb-8 pb-sm-16"></kick-start>
@@ -64,6 +73,7 @@ export default class extends Vue {
 	solutions = false;
 	partners = false;
 	kickStart = false;
+	achievements = false;
 }
 </script>
 
