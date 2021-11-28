@@ -15,6 +15,7 @@
 					{{ $t('paybackPeriod') }}
 				</p>
 				<v-select
+					:append-icon="mdiChevronDown"
 					class="pt-4 mx-4"
 					:items="items"
 					label="Payback period"
@@ -203,9 +204,11 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { mdiChevronDown } from '@mdi/js';
 
 @Component
 export default class extends Vue {
+	mdiChevronDown = mdiChevronDown;
 	@Prop({ required: true }) min!: number;
 	@Prop({ required: true }) max!: number;
 	@Prop({ required: true }) step!: number;

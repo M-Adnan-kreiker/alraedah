@@ -52,17 +52,5 @@ export default class extends Vue {
 		#163364f8
 	);
 	background-size: 100% 100%;
-	/* animation: gradient 0.5s ease infinite; */
 }
-/* @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 50% 75%;
-	}
-	100% {
-		background-position: 75% 100%;
-	}
-} */
 </style>

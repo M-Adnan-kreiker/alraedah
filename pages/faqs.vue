@@ -25,9 +25,10 @@
 						class="mb-4"
 					>
 						<v-expansion-panel-header
+							:expand-icon="mdiChevronDown"
 							class="text-sm-h6 text-body-1 font-weight-regular"
-							>{{ qAndA.q }}</v-expansion-panel-header
-						>
+							>{{ qAndA.q }}
+						</v-expansion-panel-header>
 						<v-expansion-panel-content
 							class="
 								text-sm-h6 text-body-1
@@ -47,9 +48,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mdiChevronDown } from '@mdi/js';
 
 @Component
 export default class extends Vue {
+	mdiChevronDown = mdiChevronDown;
 	get questionsAndAnswers() {
 		return this.$t('faqs.questionsAndAnswers');
 	}

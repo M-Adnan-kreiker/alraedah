@@ -6,6 +6,10 @@ body {
 	overflow: hidden;
 	box-sizing: border-box;
 }
+$font-family: 'Aktiv Grotesk';
+$body-font-family: 'Aktiv Grotesk' !important;
+
+$heading-font-family: $body-font-family;
 
 .page-enter-active,
 .page-leave-active {

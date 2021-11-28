@@ -24,83 +24,8 @@
 				{{ $t('productsTable.text') }}
 			</h2>
 		</div>
-		<v-sheet color="transparent" class="mx-n6">
-			<v-slide-group class="py-sm-6 mx-2 px-4" mobile-breakpoint="100">
-				<v-slide-item
-					class="mx-2 mx-sm-4"
-					v-for="card in productCards"
-					:key="card.id"
-				>
-					<div>
-						<pricing-card :card="card">
-							<template v-slot:header>
-								{{ card.type }}
-							</template>
-							<template v-slot:amount>
-								<div
-									class="
-										white--text
-										py-0
-										my-auto
-										text-center text-h5 text-sm-h5
-									"
-								>
-									{{ $t('upTo') }} <br />
-									<span>{{ card.upTo }}</span>
-								</div>
-							</template>
-							<template v-slot:content>
-								<div class="d-flex flex-column">
-									<div v-for="(item, j) in card.card.info" :key="j">
-										<div class="d-flex">
-											<img
-												width="15"
-												height="21"
-												class="mx-2 mx-sm-3 pt-2 align-self-start"
-												src="/checkMark.svg"
-												alt=""
-											/>
-											<p
-												class="
-													my-1
-													px-2
-													white--text
-													text-subtitle-2
-													px-0
-													mx-2
-													py-0
-													text-sm-subtitle-1
-													px-0
-													mx-2
-													py-0
-												"
-											>
-												{{ item }}
-											</p>
-										</div>
-									</div>
-								</div>
-							</template>
-							<template v-slot:button>
-								<v-btn
-									:to="localeRoute(card.link)"
-									class="
-										primary--text
-										rounded-lg
-										font-weight-bold
-										px-4
-										py-6
-										px-sm-12
-										py-sm-6
-										text-body-1
-									"
-									>{{ $t('moreInfoButton') }}</v-btn
-								>
-							</template>
-						</pricing-card>
-					</div>
-				</v-slide-item>
-			</v-slide-group>
+		<v-sheet color="transparent" class="">
+			<products-slide-group></products-slide-group>
 		</v-sheet>
 	</div>
 </template>
@@ -109,11 +34,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class extends Vue {
-	get productCards() {
-		return this.$t('products');
-	}
-}
+export default class extends Vue {}
 </script>
 
 <style scoped>
@@ -145,8 +66,4 @@ export default class extends Vue {
 		height: 580px !important;
 	}
 }
-/* .bg {
-	background: url(/watermark.jpg);
-	background-size: 100%;
-} */
 </style>

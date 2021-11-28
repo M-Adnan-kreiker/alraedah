@@ -4,7 +4,6 @@ import axiosConfig from './utils/configs/axios.config';
 import headConfig from './utils/configs/head.config';
 import i18nConfig from './utils/configs/i18n.config';
 import robotsConfig from './utils/configs/robots.config';
-// const MAIN_URL = 'https://alraedah-livid.vercel.app/'
 import sitemapConfig from './utils/configs/sitemap.config';
 require('dotenv').config();
 
@@ -19,7 +18,7 @@ export default {
 	target: 'static',
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
-	css: ['~/assets/main.scss'],
+	css: ['~/assets/main.scss', 'swiper/css/swiper.css'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	// !!! Always use object syntax for adding in plugins !!!
@@ -27,8 +26,9 @@ export default {
 		{ src: '~/utils/plugins/i18n.plugin.ts' },
 		{ src: '~/utils/plugins/axios.plugin.ts' },
 		{ src: '~/utils/plugins/auth.plugin.ts' },
-		{ src: '~/utils/plugins/openreplay.plugin.ts' },
 		{ src: '~/utils/plugins/veeValidate.plugin.client.ts', mode: 'client' },
+		{ src: '~/utils/plugins/vue-awesome-swiper.plugin.ts', mode: 'client' },
+		{ src: '~/utils/plugins/openreplay.plugin.ts' },
 	],
 
 	extendPlugins(plugins: { src: string }[]) {
@@ -61,7 +61,7 @@ export default {
 		// https://go.nuxtjs.dev/vuetify
 		'@nuxtjs/vuetify',
 
-		'nuxt-compress',
+		// 'nuxt-compress',
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
@@ -69,39 +69,7 @@ export default {
 		// https://go.nuxtjs.dev/axios
 		// https://i18n.nuxtjs.org/
 		'nuxt-i18n',
-		[
-			'nuxt-font-loader-strategy',
-			{
-				ignoreLighthouse: true,
-				ignoredEffectiveTypes: ['2g', 'slow-2g'],
-				fonts: [
-					// Font
-					{
-						fileExtensions: ['woff'],
-						fontFamily: 'Aktiv Grotesk',
-						fontFaces: [
-							// Font-Face
-							{
-								preload: true,
-								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Medium'],
-								src: '@/assets/fonts/AktivGrotesk-Medium',
-								fontWeight: 400,
-								fontStyle: 'normal',
-							},
-							// Font-Face
-							{
-								preload: true,
-								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Bold'],
-								src: '@/assets/fonts/AktivGrotesk-Bold',
-								fontWeight: 700,
-								fontStyle: 'normal',
-							},
-							// Font-Face
-						],
-					},
-				],
-			},
-		],
+
 		// https://auth.nuxtjs.org/
 		'@nuxtjs/auth-next',
 		// https://firebase.nuxtjs.org/
@@ -148,7 +116,7 @@ export default {
 		customVariables: ['~/assets/variables.scss'],
 		optionsPath: '~/utils/configs/vuetify.config.ts',
 		treeShake: true,
-		defaultAssets: { font: false, icons: 'mdi' },
+		defaultAssets: false,
 	},
 
 	env: {

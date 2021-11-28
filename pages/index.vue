@@ -7,7 +7,7 @@
 		<landing-page class="mb-4 mb-sm-0"></landing-page>
 		<achievements />
 		<v-lazy
-			v-model="achievements"
+			v-model="solutions"
 			:options="{
 				threshold: 0.5,
 			}"
@@ -61,19 +61,10 @@ export default class extends Vue {
 		}
 	}
 	pricingTable = false;
-	achievements = false;
+	solutions = false;
 	partners = false;
 	kickStart = false;
 }
 </script>
 
-<style>
-.mdi-chevron-right::before,
-.mdi-chevron-left::before {
-	/* content: "\F0142"; */
-	background: #4b82bc;
-	border-radius: 50%;
-	color: white;
-	padding: 3px;
-}
-</style>
+<style></style>

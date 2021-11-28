@@ -25,6 +25,7 @@
 						width="95"
 						:src="currentCard.image"
 						class="mx-auto mt-4 mx-sm-4 d-none sm-img"
+						style="object-fit: contain"
 					/>
 				</v-row>
 				<p

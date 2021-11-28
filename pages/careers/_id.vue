@@ -23,7 +23,7 @@
 				</v-list>
 				<h3 class="mt-6 secondary--text">{{ $t('benefits') }}</h3>
 				<v-list>
-					<v-list-item>
+					<v-list-item style="background: transparent">
 						{{ job.attributes.benefits }}
 					</v-list-item>
 				</v-list>
@@ -43,7 +43,7 @@
 								class="pt-0"
 								flat
 								prepend-icon=""
-								prepend-inner-icon="mdi-paperclip"
+								:prepend-inner-icon="mdiPaperclip"
 								outlined
 								solo
 								accept=".pdf"
@@ -68,11 +68,12 @@
 </template>
 
 <script lang="ts">
-import { params } from 'vee-validate/dist/types/rules/alpha';
 import { Component, Vue } from 'vue-property-decorator';
+import { mdiPaperclip } from '@mdi/js';
 
 @Component
 export default class extends Vue {
+	mdiPaperclip = mdiPaperclip;
 	job = null;
 	async fetch() {
 		try {
@@ -91,4 +92,8 @@ export default class extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.theme--light.v-list {
+	background: transparent !important;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-	<v-app>
+	<v-app class="hero">
 		<!-- Header -->
 		<v-app-bar
 			style="position: absolute; z-index: 10"
@@ -185,7 +185,7 @@
 						:to="localeRoute('/')"
 					>
 						<v-list-item-icon>
-							<v-icon>mdi-home-variant-outline</v-icon>
+							<v-icon>{{ mdiHomeVariantOutline }}</v-icon>
 						</v-list-item-icon>
 						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.home')
@@ -193,7 +193,8 @@
 					</v-list-item>
 					<v-list-group
 						:value="false"
-						prepend-icon="mdi-folder-star-multiple-outline"
+						:prepend-icon="mdiShopping"
+						:append-icon="mdiChevronDown"
 					>
 						<template v-slot:activator>
 							<v-list-item-title
@@ -227,7 +228,7 @@
 						:to="localeRoute('/pricing')"
 					>
 						<v-list-item-icon>
-							<v-icon>mdi-cash-multiple</v-icon>
+							<v-icon>{{ mdiCashMultiple }}</v-icon>
 						</v-list-item-icon>
 						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.pricing')
@@ -236,7 +237,7 @@
 
 					<v-list-item exact-active-class="primary lighten-2 white--text">
 						<v-list-item-icon>
-							<v-icon>mdi-toolbox-outline</v-icon>
+							<v-icon>{{ mdiLightbulbOnOutline }}</v-icon>
 						</v-list-item-icon>
 						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.solutions')
@@ -248,13 +249,17 @@
 						:to="localeRoute('/careers')"
 					>
 						<v-list-item-icon>
-							<v-icon>mdi-clipboard-edit-outline</v-icon>
+							<v-icon>{{ mdiClipboardEditOutline }}</v-icon>
 						</v-list-item-icon>
 						<v-list-item-title class="text-subtitle-1 py-4">{{
 							$t('header.careers')
 						}}</v-list-item-title>
 					</v-list-item>
-					<v-list-group :value="false" prepend-icon="mdi-web">
+					<v-list-group
+						:value="false"
+						:prepend-icon="mdiWeb"
+						:append-icon="mdiChevronDown"
+					>
 						<template v-slot:activator>
 							<v-list-item-title class="text-subtitle-1 py-4">{{
 								$t('language')
@@ -275,7 +280,11 @@
 							>
 						</v-list-item>
 					</v-list-group>
-					<v-list-group :value="false" prepend-icon="mdi-information-outline">
+					<v-list-group
+						:value="false"
+						:prepend-icon="mdiInformationOutline"
+						:append-icon="mdiChevronDown"
+					>
 						<template v-slot:activator>
 							<v-list-item-title
 								class="text-subtitle-1 py-4"
@@ -315,15 +324,9 @@
 			color="primary"
 			@click="toTop"
 		>
-			<v-icon>mdi-chevron-up</v-icon>
+			<v-icon>{{ mdiChevronUp }}</v-icon>
 		</v-btn>
-		<v-main
-			:class="[
-				$vuetify.breakpoint.xs ? 'hero' : '',
-				$vuetify.breakpoint.smAndUp ? 'bg' : '',
-			]"
-			class="mt-14"
-		>
+		<v-main class="mt-14">
 			<div :class="modal ? 'd-block' : 'd-none'" class="overlay">
 				<transition name="fade" mode="out-in">
 					<contact-form
@@ -476,8 +479,30 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import OpenReplay from '@openreplay/tracker/cjs';
+import {
+	mdiChevronUp,
+	mdiHomeVariantOutline,
+	mdiInformationOutline,
+	mdiWeb,
+	mdiClipboardEditOutline,
+	mdiLightbulbOnOutline,
+	mdiCashMultiple,
+	mdiShopping,
+	mdiChevronDown,
+} from '@mdi/js';
+
 @Component
 export default class extends Vue {
+	mdiChevronUp = mdiChevronUp;
+	mdiHomeVariantOutline = mdiHomeVariantOutline;
+	mdiInformationOutline = mdiInformationOutline;
+	mdiWeb = mdiWeb;
+	mdiClipboardEditOutline = mdiClipboardEditOutline;
+	mdiLightbulbOnOutline = mdiLightbulbOnOutline;
+	mdiCashMultiple = mdiCashMultiple;
+	mdiShopping = mdiShopping;
+	mdiChevronDown = mdiChevronDown;
+
 	loaded = true;
 	beforeCreate() {
 		this.loaded = true;
@@ -569,13 +594,10 @@ export default class extends Vue {
 	}
 }
 .hero {
-	background: url(/watermark.jpg);
-	background-size: 140%;
+	background: url(/watermark2.jpg);
+	background-size: 100%;
 }
-.bg {
-	background: url(/watermark2.jpg) no-repeat right bottom;
-	background-size: cover;
-}
+
 .footer-logo {
 	height: 100% !important;
 	max-height: 88px !important;

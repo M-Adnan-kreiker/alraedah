@@ -17,7 +17,7 @@
 					<!-- prettier-ignore -->
 					<h1
 	
-						:class="$i18n.locale === 'ar' ? 'line-height-h1 pl-6' : ''"
+						:class="$i18n.locale === 'ar' ? 'line-height-h1 pl-sm-6' : ''"
 
 						class="
 							primary--text
@@ -67,7 +67,7 @@
 								: 'float: right'
 						"
 						src="/banner.webp"
-						class="mt-6 row"
+						class="mt-6 row banner-img"
 						:class="
 							$i18n.locale === 'ar' ? 'ml-n16 ml-md-n12' : 'mr-n12 mr-md-0'
 						"
@@ -135,4 +135,5 @@ img {
 p {
 	font-size: clamp(1rem, 2vw, 1.5rem);
 }
+
 </style>

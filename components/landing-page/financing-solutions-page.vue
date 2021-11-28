@@ -110,8 +110,8 @@
 							>
 								<v-img
 									class="d-block mt-10"
-									max-height="110"
-									max-width="103"
+									height="100"
+									width="103"
 									:src="card.img"
 								></v-img>
 								<v-card-title
@@ -147,10 +147,8 @@
 						active-class="secondary"
 						v-model="onboarding"
 						class="text-center"
-						mandatory
 					>
 						<v-item
-							active-class="secondary"
 							v-for="n in length"
 							:key="`btn-${n}`"
 							v-slot="{ active, toggle }"
@@ -215,5 +213,13 @@ export default class extends Vue {
 
 h2 {
 	line-height: 140% !important;
+}
+.v-btn--icon.v-size--default .v-icon,
+.v-btn--fab.v-size--default .v-icon {
+	height: 15px;
+	font-size: 24px;
+	width: 15px;
+	background: darkgray;
+	border-radius: 50%;
 }
 </style>

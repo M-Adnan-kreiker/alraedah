@@ -69,21 +69,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
 export default class extends Vue {
-	head(): NuxtOptionsHead {
-		return {
-			link: [
-				{
-					rel: 'preload',
-					as: 'image',
-					href: '/mission.webp',
-				},
-			],
-		};
-	}
 	get pillars() {
 		return this.$t('aboutUs.subCards');
 	}

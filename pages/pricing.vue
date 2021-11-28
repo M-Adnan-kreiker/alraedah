@@ -22,6 +22,7 @@
 					</p>
 				</div>
 				<v-select
+					:append-icon="mdiChevronDown"
 					class=""
 					nudge-bottom="30"
 					:items="select"
@@ -120,21 +121,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { myProduct } from '~/types';
-import { NuxtOptionsHead } from '@nuxt/types/config/head';
+import { mdiChevronDown } from '@mdi/js';
 
 @Component
 export default class extends Vue {
-	head(): NuxtOptionsHead {
-		return {
-			link: [
-				{
-					rel: 'preload',
-					as: 'image',
-					href: '/calculator.webp',
-				},
-			],
-		};
-	}
+	mdiChevronDown = mdiChevronDown;
 	get select() {
 		return this.$t('pricing.products');
 	}
