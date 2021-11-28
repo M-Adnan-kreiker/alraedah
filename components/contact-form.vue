@@ -119,8 +119,19 @@
 								</v-col>
 								<v-col cols="12" sm="4" class="py-0 pl-6 pl-sm-0">
 									<v-radio-group mandatory v-model="commercialRegistration" row>
-										<v-radio class="" :label="$t('yes')" value="true"></v-radio>
-										<v-radio :label="$t('no')" value="false"></v-radio>
+										<v-radio
+											:off-icon="mdiRadioboxBlank"
+											:on-icon="mdiRadioboxMarked"
+											class=""
+											:label="$t('yes')"
+											value="true"
+										></v-radio>
+										<v-radio
+											:off-icon="mdiRadioboxBlank"
+											:on-icon="mdiRadioboxMarked"
+											:label="$t('no')"
+											value="false"
+										></v-radio>
 									</v-radio-group>
 								</v-col>
 							</v-row>
@@ -143,8 +154,18 @@
 										class="py-0"
 										row
 									>
-										<v-radio :label="$t('yes')" value="true"></v-radio>
-										<v-radio :label="$t('no')" value="false"></v-radio>
+										<v-radio
+											:off-icon="mdiRadioboxBlank"
+											:on-icon="mdiRadioboxMarked"
+											:label="$t('yes')"
+											value="true"
+										></v-radio>
+										<v-radio
+											:off-icon="mdiRadioboxBlank"
+											:on-icon="mdiRadioboxMarked"
+											:label="$t('no')"
+											value="false"
+										></v-radio>
 									</v-radio-group>
 								</v-col>
 							</v-row>
@@ -159,6 +180,8 @@
 										type="checkbox"
 										required
 										value="0"
+										:off-icon="mdiCheckboxBlankOutline"
+										:on-icon="mdiCheckboxMarked"
 										:error-messages="errors"
 										v-model="tos"
 										mode="eager"
@@ -227,11 +250,21 @@
 <script lang="ts">
 import { Component, Emit, Vue } from 'vue-property-decorator';
 import { lead, VeeValidateObserverRef } from '~/types';
+import {
+	mdiCheckboxBlankOutline,
+	mdiCheckboxMarked,
+	mdiRadioboxBlank,
+	mdiRadioboxMarked,
+} from '@mdi/js';
 
 // setInteractionMode('lazy');
 
 @Component({})
 export default class extends Vue {
+	mdiCheckboxBlankOutline = mdiCheckboxBlankOutline;
+	mdiCheckboxMarked = mdiCheckboxMarked;
+	mdiRadioboxBlank = mdiRadioboxBlank;
+	mdiRadioboxMarked = mdiRadioboxMarked;
 	$refs!: {
 		observer: VeeValidateObserverRef;
 	};

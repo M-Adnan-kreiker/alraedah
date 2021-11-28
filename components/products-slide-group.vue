@@ -137,8 +137,14 @@ export default {
 .swiper-button-next,
 .swiper-button-prev {
 	color: #1e4382;
-	background: #f3f3f3;
+	background: #c4c4c4 !important;
 	border-radius: 50%;
-	padding: 20px;
+	padding: 25px;
+}
+.swiper-button-next {
+	right: 0;
+}
+.swiper-button-prev {
+	left: 0;
 }
 </style>
