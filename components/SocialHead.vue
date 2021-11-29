@@ -42,7 +42,7 @@ export default class extends Vue {
 				{
 					hid: 'twitter:image',
 					name: 'twitter:image',
-					content: this.image,
+					content: '/alraedah-logo.svg',
 				},
 				{
 					hid: 'twitter:image:alt',
@@ -62,12 +62,12 @@ export default class extends Vue {
 				{
 					hid: 'og:image',
 					property: 'og:image',
-					content: this.image,
+					content: '/alraedah-logo.svg',
 				},
 				{
 					hid: 'og:image:secure_url',
 					property: 'og:image:secure_url',
-					content: this.image,
+					content: '/alraedah-logo.svg',
 				},
 				{
 					hid: 'og:image:alt',
