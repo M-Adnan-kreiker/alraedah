@@ -42,6 +42,16 @@
 				</nuxt-link>
 			</v-col>
 		</v-row>
+		<v-row justify="center" v-else>
+			<v-col cols="1">
+				<v-progress-circular
+					:size="50"
+					color="primary"
+					indeterminate
+					class="mx-auto"
+				></v-progress-circular>
+			</v-col>
+		</v-row>
 	</div>
 </template>
 
@@ -51,7 +61,7 @@ import { Job } from '~/types';
 
 @Component
 export default class extends Vue {
-	jobs = [] as Job[];
+	jobs: Job[] | null = null;
 	async fetch() {
 		try {
 			const res = await this.$axios.$get(`${process.env.CAREERS_ENDPOINT}`, {

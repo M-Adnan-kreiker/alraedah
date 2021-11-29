@@ -109,6 +109,7 @@
 								class="d-flex flex-column justify-center align-center"
 							>
 								<v-img
+									contain
 									class="d-block mt-10"
 									height="100"
 									width="103"
