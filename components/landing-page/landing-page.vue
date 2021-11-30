@@ -1,6 +1,6 @@
 <template>
 	<main>
-		<v-container fluid class="mx-0 px-0 mt-sm-n10 mt-md-n10">
+		<v-container fluid class="mx-0 px-0 mt-sm-n10 mt-lg-n13">
 			<v-row align="center" class="">
 				<v-col
 					style="position: relative; z-index: 1"
