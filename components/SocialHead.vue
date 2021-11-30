@@ -42,7 +42,7 @@ export default class extends Vue {
 				{
 					hid: 'twitter:image',
 					name: 'twitter:image',
-					content: '/alraedah-logo.svg',
+					content: 'https://media-exp1.licdn.com/dms/image/C4D0BAQGTixe0GA25-g/company-logo_200_200/0/1519899921853?e=1646265600&v=beta&t=12dFKzhF_zwlU0t_NpObOnMt0LK7idobK5WPzIFD4SE',
 				},
 				{
 					hid: 'twitter:image:alt',
@@ -62,12 +62,12 @@ export default class extends Vue {
 				{
 					hid: 'og:image',
 					property: 'og:image',
-					content: '/alraedah-logo.svg',
+					content: 'https://media-exp1.licdn.com/dms/image/C4D0BAQGTixe0GA25-g/company-logo_200_200/0/1519899921853?e=1646265600&v=beta&t=12dFKzhF_zwlU0t_NpObOnMt0LK7idobK5WPzIFD4SE',
 				},
 				{
 					hid: 'og:image:secure_url',
 					property: 'og:image:secure_url',
-					content: '/alraedah-logo.svg',
+					content: 'https://media-exp1.licdn.com/dms/image/C4D0BAQGTixe0GA25-g/company-logo_200_200/0/1519899921853?e=1646265600&v=beta&t=12dFKzhF_zwlU0t_NpObOnMt0LK7idobK5WPzIFD4SE',
 				},
 				{
 					hid: 'og:image:alt',
