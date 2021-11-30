@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<v-container fluid class="mx-0 px-0 mt-sm-n10 mt-md-n10">
-			<v-row align="center" class="row">
+			<v-row align="center" class="">
 				<v-col
 					style="position: relative; z-index: 1"
 					cols="12"
@@ -10,14 +10,14 @@
 					:class="
 						$i18n.locale === 'en'
 							? 'px-l pl-sm-10 pl-lg-14'
-							: 'px-r pr-sm-10 pr-lg-14'
+							: 'px-r pr-sm-10 pr-lg-14 pl-0'
 					"
-					class="text-col d-flex pt-6 pt-md-12 flex-column"
+					class="text-col d-flex flex-column main-col pt-6 pt-sm-14 pt-md-12"
 				>
 					<!-- prettier-ignore -->
 					<h1
 	
-						:class="$i18n.locale === 'ar' ? 'line-height-h1 pl-sm-6' : ''"
+						:class="$i18n.locale === 'ar' ? 'line-height-h1 padding-l' : ''"
 
 						class="
 							primary--text
@@ -25,7 +25,7 @@
 							font-weight-bold
 							center-text
 							text-md-h1
-			 main-text
+			        main-text
 						"
 					
 					><span
@@ -34,7 +34,7 @@
 					</h1>
 					<p
 						:class="$i18n.locale === 'ar' ? 'line-height' : ''"
-						style="width: 60%; line-height: 150%"
+						style="width: 60%"
 						class="
 							info--text
 							text-wrap
@@ -67,7 +67,7 @@
 								: 'float: right'
 						"
 						src="/banner.webp"
-						class="mt-6 row banner-img"
+						class="mt-6"
 						:class="
 							$i18n.locale === 'ar' ? 'ml-n16 ml-md-n12' : 'mr-n12 mr-md-0'
 						"
@@ -110,9 +110,7 @@ p {
 		width: 100% !important;
 	}
 }
-.line-height {
-	line-height: 150% !important;
-}
+
 .line-height-h1 {
 	line-height: 150% !important;
 }
@@ -127,13 +125,22 @@ img {
 .main-text {
 	font-size: clamp(2.5rem, 9vw, 4.5rem);
 }
-/* @media (min-width: 700px) {
-	main {
-		min-height: calc(100vh - 55px);
-	}
-} */
+
 p {
 	font-size: clamp(1rem, 2vw, 1.5rem);
 }
+@media (min-width: 600px) {
+	.main-col {
+		min-height: 600px;
+	}
+}
+.line-height {
+	line-height: 170% !important;
+}
 
+@media (min-width: 821px) and (max-width: 882px) {
+	.padding-l {
+		padding-left: 30px;
+	}
+}
 </style>

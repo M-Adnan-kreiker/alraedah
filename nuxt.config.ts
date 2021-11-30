@@ -61,7 +61,7 @@ export default {
 		// https://go.nuxtjs.dev/vuetify
 		'@nuxtjs/vuetify',
 
-		// 'nuxt-compress',
+		'nuxt-compress',
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
@@ -69,6 +69,39 @@ export default {
 		// https://go.nuxtjs.dev/axios
 		// https://i18n.nuxtjs.org/
 		'nuxt-i18n',
+		[
+			'nuxt-font-loader-strategy',
+			{
+				ignoreLighthouse: true,
+				ignoredEffectiveTypes: ['2g', 'slow-2g'],
+				fonts: [
+					// Font
+					{
+						fileExtensions: ['woff'],
+						fontFamily: 'Aktiv Grotesk',
+						fontFaces: [
+							// Font-Face
+							{
+								preload: true,
+								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Medium'],
+								src: '@/assets/fonts/AktivGrotesk-Medium',
+								fontWeight: 400,
+								fontStyle: 'normal',
+							},
+							// Font-Face
+							{
+								preload: true,
+								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Bold'],
+								src: '@/assets/fonts/AktivGrotesk-Bold',
+								fontWeight: 700,
+								fontStyle: 'normal',
+							},
+							// Font-Face
+						],
+					},
+				],
+			},
+		],
 
 		// https://auth.nuxtjs.org/
 		'@nuxtjs/auth-next',

@@ -41,7 +41,7 @@
 			:options="{
 				threshold: 0.15,
 			}"
-			min-height="400"
+			min-height="200"
 			transition="fade"
 		>
 			<partners></partners>
