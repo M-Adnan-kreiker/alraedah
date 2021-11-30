@@ -25,7 +25,12 @@
 				</p>
 			</v-col>
 			<v-col cols="12" md="6">
-				<v-img class="rounded-lg mt-md-n8" src="/mission.webp"></v-img>
+				<v-img
+					width="470"
+					height="453"
+					class="rounded-lg mt-md-n8 about-us-img"
+					src="/mission.webp"
+				></v-img>
 			</v-col>
 		</v-row>
 		<v-row>
@@ -85,5 +90,9 @@ export default class extends Vue {
 <style scoped>
 .line-height {
 	line-height: 240% !important;
+}
+.about-us-img {
+	height: 100% !important;
+	width: 100% !important;
 }
 </style>

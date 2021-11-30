@@ -325,7 +325,7 @@ export default {
 			type: 'e-commerce',
 			upTo: '500,000 SAR',
 			link: '/products/e-commerce',
-			image: '/e-commerce.webp',
+			image: '/e-commerce.jpg',
 			name: 'E-Commerce Financing Program with our partners',
 			info: 'Through this unique product, we strive to provide exceptional features to customers affiliated with economic entities, businesses, and partners who have established strategic relationships with us, mainly platforms active in the fields of technology and e-commerce, led by customers or dealers of the Noon platform, to whom we offer this unique product.',
 			step: 50000,
