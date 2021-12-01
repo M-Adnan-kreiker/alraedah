@@ -10,9 +10,9 @@
 					:class="
 						$i18n.locale === 'en'
 							? 'px-l pl-sm-10 pl-lg-14'
-							: 'px-r pr-sm-10 pr-lg-14 pl-0'
+							: 'px-r pr-sm-10 pr-lg-14 '
 					"
-					class="text-col d-flex flex-column main-col pt-6 pt-sm-14 pt-md-12"
+					class="text-col d-flex flex-column main-col pt-2 pt-sm-14 pt-md-12"
 				>
 					<!-- prettier-ignore -->
 					<h1
