@@ -5,16 +5,7 @@
 			:description="$t('seo.home.description')"
 		></social-head>
 		<landing-page class="mb-4 mb-sm-0"></landing-page>
-		<v-lazy
-			v-model="achievements"
-			:options="{
-				threshold: 0.15,
-			}"
-			min-height="500"
-			transition="fade"
-		>
-			<achievements />
-		</v-lazy>
+		<achievements />
 		<v-lazy
 			v-model="solutions"
 			:options="{
@@ -73,7 +64,6 @@ export default class extends Vue {
 	solutions = false;
 	partners = false;
 	kickStart = false;
-	achievements = false;
 }
 </script>
 
