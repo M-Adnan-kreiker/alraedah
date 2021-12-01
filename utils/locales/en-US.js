@@ -1,4 +1,14 @@
 export default {
+	formValidation: {
+		name: 'Name',
+		email: 'Email',
+		phoneNumber: 'Phone Number',
+		goodTimeToCall: 'Good time to call',
+		company: "Company's name",
+		tos: 'TOS',
+		subject: 'Subject',
+		message: 'Message',
+	},
 	seo: {
 		home: {
 			title: 'Alraedah Finance',

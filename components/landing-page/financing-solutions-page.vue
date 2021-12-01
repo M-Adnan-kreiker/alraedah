@@ -155,7 +155,7 @@
 							v-slot="{ active, toggle }"
 						>
 							<v-btn :input-value="active" icon @click="toggle">
-								<v-icon>mdi-record</v-icon>
+								<v-icon>{{ mdiRecord }}</v-icon>
 							</v-btn>
 						</v-item>
 					</v-item-group>
@@ -167,9 +167,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mdiRecord } from '@mdi/js';
 
 @Component
 export default class extends Vue {
+	mdiRecord = mdiRecord;
 	get cards() {
 		return this.$t('solutions.cards');
 	}

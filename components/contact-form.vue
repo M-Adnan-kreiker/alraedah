@@ -14,7 +14,7 @@
 								<v-col cols="12" sm="6" class="py-1 mb-0">
 									<validation-provider
 										v-slot="{ errors }"
-										name="Name"
+										:name="$t('formValidation.name')"
 										rules="required|max:20"
 									>
 										<v-text-field
@@ -30,7 +30,7 @@
 								<v-col cols="12" sm="6" class="py-1 my-0 mt-n3">
 									<validation-provider
 										v-slot="{ errors }"
-										name="email"
+										:name="$t('formValidation.email')"
 										rules="required|email"
 									>
 										<v-text-field
@@ -48,7 +48,7 @@
 								<v-col cols="12" sm="6" class="py-1 ma-0">
 									<validation-provider
 										v-slot="{ errors }"
-										name="phone number"
+										:name="$t('formValidation.phoneNumber')"
 										:rules="{
 											required: true,
 											digits: 10,
@@ -70,7 +70,7 @@
 								<v-col class="py-1 ma-0" cols="12" sm="6">
 									<validation-provider
 										v-slot="{ errors }"
-										name="select"
+										:name="$t('formValidation.goodTimeToCall')"
 										rules="required"
 									>
 										<v-select
@@ -92,7 +92,7 @@
 							>
 								<validation-provider
 									v-slot="{ errors }"
-									name="Company's name"
+									:name="$t('formValidation.company')"
 									rules="required|max:10"
 								>
 									<v-text-field
@@ -173,7 +173,7 @@
 								<validation-provider
 									v-slot="{ errors }"
 									rules="required"
-									name="checkbox"
+									:name="$t('formValidation.tos')"
 									mode="eager"
 								>
 									<v-checkbox

@@ -29,7 +29,7 @@
 								<v-col cols="12" class="py-0 mb-0">
 									<validation-provider
 										v-slot="{ errors }"
-										name="Name"
+										:name="$t('formValidation.name')"
 										rules="required|max:20"
 									>
 										<v-text-field
@@ -45,7 +45,7 @@
 								<v-col cols="12" class="py-0 my-0 mt-n3">
 									<validation-provider
 										v-slot="{ errors }"
-										name="email"
+										:name="$t('formValidation.email')"
 										rules="required|email"
 									>
 										<v-text-field
@@ -61,13 +61,12 @@
 								<v-col cols="12" class="py-0 ma-0">
 									<validation-provider
 										v-slot="{ errors }"
-										name="phone number"
+										:name="$t('formValidation.phoneNumber')"
 										mode="lazy"
 										:rules="{
 											required: true,
 											digits: 10,
-											regex:
-												'^(050|051|058|059|054|056|058|059|0570|0571|0572|0576|)',
+											regex: '^(050|)',
 										}"
 									>
 										<v-text-field
@@ -83,7 +82,7 @@
 								<v-col cols="12" class="py-0 mb-0">
 									<validation-provider
 										v-slot="{ errors }"
-										name="Subject"
+										:name="$t('formValidation.subject')"
 										rules="required|max:20"
 									>
 										<v-text-field
@@ -100,7 +99,7 @@
 								<v-col cols="12" class="py-0">
 									<validation-provider
 										v-slot="{ errors }"
-										name="Message"
+										:name="$t('formValidation.message')"
 										rules="required|max:120"
 									>
 										<v-textarea

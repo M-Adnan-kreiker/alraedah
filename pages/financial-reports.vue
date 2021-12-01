@@ -10,27 +10,35 @@
 					style="background: #1d4283"
 					class="text-center rounded-t-xl py-16"
 					cols="11"
-					md="8"
+					sm="12"
+					md="10"
 					elevation="12"
 				>
 					<h1 class="white--text text-h5 text-md-h4 py-4">
 						{{ $t('financialReports.title') }}
 					</h1>
 				</v-col>
-				<v-col class="pt-0 px-0" cols="11" md="8" elevation="4">
+				<v-col class="pt-0 px-0" cols="11" sm="12" md="10" elevation="4">
 					<v-card class="rounded-b-xl">
 						<v-tabs
 							v-model="tab"
-							centered
-							mobile-breakpoint="100"
-							slider-color="primary"
+							mobile-breakpoint="350"
 							background-color="#ffffff"
-							class="info--text"
+							class="info--text px-0"
+							:next-icon="mdiArrowRight"
+							:prev-icon="mdiArrowLeft"
+							centered
 						>
-							<v-tabs-slider color="primary"></v-tabs-slider>
+							<!-- <v-tabs-slider color="primary"></v-tabs-slider> -->
 							<v-tab
 								v-for="year in years"
-								class="info--text font-weight-bold text-h6 pt-5 text-sm-h5"
+								class="
+									info--text
+									font-weight-bold
+									px-0 px-sm-6 px-md-8 px-lg-12
+									pt-5
+									text-body-2 text-md-h5
+								"
 								:key="year"
 								>{{ year }}</v-tab
 							>
@@ -68,9 +76,9 @@
 												target="#"
 												:download="report.attributes.name"
 											>
-												<v-icon class="px-2 mb-3" large color="primary"
-													>mdi-download-box-outline</v-icon
-												>
+												<v-icon class="px-2 mb-3" large color="primary">{{
+													mdiDownloadBox
+												}}</v-icon>
 											</a>
 										</v-col>
 									</v-row>
@@ -87,9 +95,13 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { FinancialReport } from '~/types';
+import { mdiArrowRight, mdiArrowLeft, mdiDownloadBox } from '@mdi/js';
 
 @Component
 export default class extends Vue {
+	mdiArrowRight = mdiArrowRight;
+	mdiArrowLeft = mdiArrowLeft;
+	mdiDownloadBox = mdiDownloadBox;
 	get years() {
 		return this.$t('financialReports.years');
 	}

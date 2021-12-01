@@ -183,3 +183,14 @@ $heading-font-family: $body-font-family;
 	transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	transform: translateY(-20%) translateY(-12 px) translateX(-50%) rotate(45deg) !important;
 }
+
+.v-tab {
+	min-width: 50px !important;
+}
+
+.v-tabs:not(.v-tabs--vertical):not(.v-tabs--right)
+	> .v-slide-group--is-overflowing.v-tabs-bar--is-mobile:not(.v-slide-group--has-affixes)
+	.v-slide-group__prev {
+	display: none !important;
+	visibility: hidden;
+}

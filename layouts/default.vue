@@ -479,6 +479,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import OpenReplay from '@openreplay/tracker/cjs';
+import { localeChanged } from 'vee-validate';
 import {
 	mdiChevronUp,
 	mdiHomeVariantOutline,
@@ -524,6 +525,8 @@ export default class extends Vue {
 	map = '';
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
+		localeChanged();
+
 		// logs an event in analytics, can be seen in the console
 		// this.$fire.analytics.logEvent('select_content', {
 		// 	content_type: 'changeing locale',

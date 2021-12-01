@@ -25,10 +25,10 @@ export default {
 	plugins: [
 		{ src: '~/utils/plugins/i18n.plugin.ts' },
 		{ src: '~/utils/plugins/axios.plugin.ts' },
-		{ src: '~/utils/plugins/auth.plugin.ts' },
 		{ src: '~/utils/plugins/veeValidate.plugin.client.ts', mode: 'client' },
 		{ src: '~/utils/plugins/vue-awesome-swiper.plugin.ts', mode: 'client' },
 		{ src: '~/utils/plugins/openreplay.plugin.ts' },
+		{ src: '~/utils/plugins/auth.plugin.ts' },
 	],
 
 	extendPlugins(plugins: { src: string }[]) {

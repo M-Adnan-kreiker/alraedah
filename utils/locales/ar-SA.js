@@ -1,4 +1,14 @@
 export default {
+	formValidation: {
+		name: 'الاسم',
+		email: 'البريد الالكتروني',
+		phoneNumber: 'رقم الجوال',
+		goodTimeToCall: 'الوقت المناسب للتواصل',
+		company: 'اسم الشركة',
+		tos: 'حقل سياسة الشروط والأحكام',
+		subject: 'العنوان',
+		message: 'حقل الرسالة',
+	},
 	seo: {
 		home: {
 			title: 'الرائدة للتمويل',
