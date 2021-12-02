@@ -77,10 +77,10 @@ $heading-font-family: $body-font-family;
 }
 
 .slide-fade-enter-active {
-	transition: all 0.4s ease;
+	transition: all 0.28s ease;
 }
 .slide-fade-leave-active {
-	transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+	transition: all 0.28s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
@@ -90,7 +90,7 @@ $heading-font-family: $body-font-family;
 
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity 0.7s;
+	transition: opacity 0.28s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
 	opacity: 0;

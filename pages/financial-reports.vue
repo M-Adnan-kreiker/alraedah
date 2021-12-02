@@ -76,7 +76,7 @@
 												target="#"
 												:download="report.attributes.name"
 											>
-												<v-icon class="px-2 mb-3" large color="primary">{{
+												<v-icon class="px-2 mt-2" color="primary">{{
 													mdiDownloadBox
 												}}</v-icon>
 											</a>
