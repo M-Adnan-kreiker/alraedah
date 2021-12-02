@@ -7,12 +7,13 @@
 					cols="12"
 					sm="10"
 					md="9"
+					align-self="center"
 					:class="
 						$i18n.locale === 'en'
 							? 'px-l pl-sm-10 pl-lg-14'
-							: 'px-r pr-sm-10 pr-lg-14 '
+							: 'px-r pr-sm-10 pr-lg-14 pl-sm-0 '
 					"
-					class="text-col d-flex flex-column main-col pt-2 pt-sm-14 pt-md-12"
+					class="text-col d-flex flex-column main-col pt-2 pt-sm-10 pt-md-14"
 				>
 					<!-- prettier-ignore -->
 					<h1
@@ -25,7 +26,7 @@
 							font-weight-bold
 							center-text
 							text-md-h1
-			        main-text
+			        main-text 
 						"
 					
 					><span
@@ -47,13 +48,10 @@
 					>
 						{{ $t('landingPage.text') }}
 					</p>
-					<div
-						style="position: relative; z-index: 1"
-						class="apply-button my-auto"
-					>
+					<div style="position: relative; z-index: 1" class="apply-button">
 						<apply-now-button-home-page
 							:buttonText="$t('applyButton')"
-							class="mb-md-4"
+							class="my-lg-4"
 						></apply-now-button-home-page>
 					</div>
 				</v-col>
@@ -127,20 +125,25 @@ img {
 }
 
 p {
-	font-size: clamp(1rem, 2vw, 1.5rem);
+	font-size: clamp(1.1rem, 2vw, 1.5rem);
 }
 @media (min-width: 600px) {
 	.main-col {
-		min-height: 600px;
+		min-height: 634px;
 	}
 }
 .line-height {
 	line-height: 170% !important;
 }
 
-@media (min-width: 821px) and (max-width: 882px) {
+@media (min-width: 820px) and (max-width: 894px) {
 	.padding-l {
-		padding-left: 30px;
+		padding-left: 60px !important;
+	}
+}
+@media (min-width: 894px) and (max-width: 950px) {
+	.padding-l {
+		padding-left: 110px !important;
 	}
 }
 </style>

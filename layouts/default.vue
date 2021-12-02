@@ -491,9 +491,21 @@ import {
 	mdiShopping,
 	mdiChevronDown,
 } from '@mdi/js';
+import { NuxtOptionsHead } from '@nuxt/types/config/head';
 
 @Component
 export default class extends Vue {
+	head(): NuxtOptionsHead {
+		return {
+			link: [
+				{
+					rel: 'preload',
+					as: 'image',
+					href: '/banner.webp',
+				},
+			],
+		};
+	}
 	mdiChevronUp = mdiChevronUp;
 	mdiHomeVariantOutline = mdiHomeVariantOutline;
 	mdiInformationOutline = mdiInformationOutline;
@@ -503,7 +515,6 @@ export default class extends Vue {
 	mdiCashMultiple = mdiCashMultiple;
 	mdiShopping = mdiShopping;
 	mdiChevronDown = mdiChevronDown;
-
 	loaded = true;
 	beforeCreate() {
 		this.loaded = true;
@@ -522,11 +533,16 @@ export default class extends Vue {
 	beforeDestroy() {
 		this.$nuxt.$off('trigger-dialog');
 	}
+	reload() {
+		window.location.reload(true);
+	}
 	map = '';
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
-		localeChanged();
+		setTimeout(this.reload, 400);
+		// window.location.reload(true);
 
+		// this.$router.push(this.$route.path);
 		// logs an event in analytics, can be seen in the console
 		// this.$fire.analytics.logEvent('select_content', {
 		// 	content_type: 'changeing locale',

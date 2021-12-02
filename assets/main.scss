@@ -61,7 +61,7 @@ $heading-font-family: $body-font-family;
 
 .apply-now span {
 	color: #ffffff;
-	padding: 40px;
+	padding: 20px;
 	font-size: 24px;
 }
 
@@ -77,7 +77,7 @@ $heading-font-family: $body-font-family;
 }
 
 .slide-fade-enter-active {
-	transition: all 0.6s ease;
+	transition: all 0.4s ease;
 }
 .slide-fade-leave-active {
 	transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
