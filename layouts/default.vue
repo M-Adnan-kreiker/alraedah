@@ -539,7 +539,7 @@ export default class extends Vue {
 	map = '';
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
-		setTimeout(this.reload, 400);
+		setTimeout(this.reload, 50);
 		// window.location.reload(true);
 
 		// this.$router.push(this.$route.path);
