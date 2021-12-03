@@ -77,12 +77,12 @@ export default {
 				fonts: [
 					// Font
 					{
-						fileExtensions: ['woff'],
+						fileExtensions: ['woff2'],
 						fontFamily: 'Aktiv Grotesk',
 						fontFaces: [
 							// Font-Face
 							{
-								preload: true,
+								preload: false,
 								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Medium'],
 								src: '@/assets/fonts/AktivGrotesk-Medium',
 								fontWeight: 400,
@@ -90,7 +90,7 @@ export default {
 							},
 							// Font-Face
 							{
-								preload: true,
+								preload: false,
 								localSrc: ['Aktiv Grotesk', 'AktivGrotesk-Bold'],
 								src: '@/assets/fonts/AktivGrotesk-Bold',
 								fontWeight: 700,
