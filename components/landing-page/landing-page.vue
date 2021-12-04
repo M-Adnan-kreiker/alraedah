@@ -51,7 +51,7 @@
 					<div style="position: relative; z-index: 1" class="apply-button">
 						<apply-now-button-home-page
 							:buttonText="$t('applyButton')"
-							class="my-lg-4"
+							class="my-sm-8 my-md-0 my-lg-4"
 						></apply-now-button-home-page>
 					</div>
 				</v-col>
@@ -136,12 +136,12 @@ p {
 	line-height: 170% !important;
 }
 
-@media (min-width: 820px) and (max-width: 894px) {
+@media (min-width: 800px) and (max-width: 874px) {
 	.padding-l {
 		padding-left: 60px !important;
 	}
 }
-@media (min-width: 894px) and (max-width: 950px) {
+@media (min-width: 875px) and (max-width: 950px) {
 	.padding-l {
 		padding-left: 110px !important;
 	}
