@@ -533,14 +533,12 @@ export default class extends Vue {
 	beforeDestroy() {
 		this.$nuxt.$off('trigger-dialog');
 	}
-	reload() {
-		window.location.reload(true);
-	}
+
 	map = '';
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);
-		setTimeout(this.reload, 300);
-		// window.location.reload(true);
+		localeChanged();
+
 
 		// this.$router.push(this.$route.path);
 		// logs an event in analytics, can be seen in the console
